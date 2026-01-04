@@ -13,7 +13,8 @@ public enum ItemType
     Award,        //½±×´
     Beads,        //´®Öé
     Duck,         //ÏğÆ¤Ñ¼  
-    Map           //µØÍ¼
+    Map,          //µØÍ¼
+    Cart          //Ğ¡³Ô³µ
 }
 public enum RoomState
 {

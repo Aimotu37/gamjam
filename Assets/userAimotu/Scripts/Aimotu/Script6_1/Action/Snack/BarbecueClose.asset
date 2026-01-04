@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82e5af67126b73a40b2dd5b89f39836d, type: 3}
+  m_Name: BarbecueClose
+  m_EditorClassIdentifier: Assembly-CSharp::PopupInfoAction
+  triggerState: 9
+  mode: 1
+  content: "\u5C0F\u65F6\u5019\u603B\u5E7B\u60F3\uFF0C\u5728\u98D8\u8361\u7740\u6CB9\u9999\u7684\u70B8\u4E32\u644A\u524D\u80FD\u4E0D\u80FD\u4E00\u6B21\u6027\u5403\u5230\u6240\u6709\u7684\u5783\u573E\u98DF\u54C1\uFF1F\r\n\u6D41\u6DCC\u7740\u7EA2\u6CB9\u7684\u4E32\u4E32\u9999\u3001\u6CBE\u7740\u8FA3\u6912\u9762\u7684\u70B8\u8C46\u8150\u3001\u88F9\u6EE1\u751C\u9762\u9171\u7684\u6DC0\u7C89\u80A0.....\r\n\u5F53\u65F6\u5988\u5988\u8FD8\u8BF4\uFF0C\u5982\u679C\u6211\u8003\u5230\u4E00\u767E\u5206\uFF0C\u5C31\u5E26\u6211\u53BB\u5403\u70B8\u4E32\u5168\u5BB6\u798F\u3002\r\n\u5168\u5BB6\u798F\u7684\u610F\u601D\u662F\uFF0C\u6211\u60F3\u5403\u4EC0\u4E48\uFF0C\u5C31\u5403\u4EC0\u4E48\u3002"
+  sticker: 7

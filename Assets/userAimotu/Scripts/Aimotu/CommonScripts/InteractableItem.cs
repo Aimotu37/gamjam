@@ -43,12 +43,16 @@ using System.Collections.Generic;
         {
             if (S4.GameManager.Instance != null) return S4.GameManager.Instance;
             if (S6.GameManager.Instance != null) return S6.GameManager.Instance;
+            if (S61.GameManager.Instance != null) return S61.GameManager.Instance;
 
-            // 如果单例没拿到，再尝试全局找一次
-            return Object.FindAnyObjectByType<S4.GameManager>();
+
+        // 如果单例没拿到，再尝试全局找一次
+            var manager = Object.FindAnyObjectByType<MonoBehaviour>() as IGameManager;
+            return manager;
         }
         private void OnMouseDown()
         {
+            
             var manager = GetManager();
             string managerStatus = (manager == null) ? "丢失(NULL)" : "正常";
             bool dialogueActive = (DialogueManager.instance != null && DialogueManager.instance.IsDialogueActive);
@@ -56,6 +60,7 @@ using System.Collections.Generic;
             Debug.Log($"<color=orange>[Interaction Check]</color> 点击物体: {gameObject.name}\n" +
                   $"1. 管理器: {managerStatus} | " +
                   $"2. UI阻断(UIBlocking): {(manager != null ? manager.IsUIBlocking.ToString() : "N/A")} | " +
+                  $"3. 是否阻断(IsBlocking): {(manager != null ? manager.IsUIBlocking.ToString() : "N/A")} | " +
                   $"3. 玩家靠近: {isPlayerNearby} | " +
                   $"4. 权限(canInteract): {canInteract} | " +
                   $"5. 执行中: {isExecuting} | " +

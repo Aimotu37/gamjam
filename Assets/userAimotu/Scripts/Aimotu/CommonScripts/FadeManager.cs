@@ -15,7 +15,8 @@ public class FadeManager : MonoBehaviour
         if (Instance == null)
         {
             Instance = this;
-            DontDestroyOnLoad(gameObject);
+            DontDestroyOnLoad(gameObject); 
+          
         }
         else
         {
@@ -54,6 +55,12 @@ public class FadeManager : MonoBehaviour
             yield return null;
         }
         if (fadeScreen != null) fadeScreen.alpha = 0;
+
+        // --- 生效结束立刻销毁 ---
+        /*Debug.Log("<color=yellow>[FadeManager]</color> 准备销毁。正在释放所有潜在子物体...");
+        transform.DetachChildren();
+        Instance = null; // 清空单例引用
+        Destroy(this.gameObject*/
     }
     public IEnumerator FadeOut(float duration)
     {

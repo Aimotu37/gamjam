@@ -16,6 +16,18 @@ public class DialogueManager : MonoBehaviour
         {
             if (mono is IGameManager gm) return gm;
         }
+
+        // 2. 这里的 Debug 是核心：监控管理器冲突
+        List<IGameManager> foundManagers = new List<IGameManager>();
+        if (foundManagers.Count > 1)
+        {
+            Debug.LogError($"[CRITICAL] 场景中发现 {foundManagers.Count} 个 GameManager！这会导致 POP 失败。");
+            foreach (var m in foundManagers)
+            {
+                MonoBehaviour mb = m as MonoBehaviour;
+                Debug.Log($"--- 冲突管理器实例: {mb.gameObject.name} | 路径: {GetGameObjectPath(mb.gameObject)} | 激活状态: {mb.gameObject.activeInHierarchy}");
+            }
+        }
         Debug.LogWarning("IGameManager 未找到！请检查场景中的 GameManager 是否勾选了脚本并实现了接口。");
         return null;
     }
@@ -225,10 +237,30 @@ public class DialogueManager : MonoBehaviour
         isDialogueActive = false;
         dialoguePanel.SetActive(false);
 
-        GetManager().PopUIBlock("Dialogue");
-        
+        // 重点排查：获取 manager 的结果
+        var manager = GetManager();
+        if (manager != null)
+        {
+            manager.PopUIBlock("Dialogue");
+            Debug.Log($"<color=cyan>[Dialogue Step 2]</color> 尝试执行 PopUIBlock，当前 Manager 为: {(manager as MonoBehaviour).name}");
+
+        }
+        else
+        {
+            Debug.LogError("<color=red>[Dialogue Error]</color> 对话结束时无法获取 IGameManager！PopUIBlock 失败，UI 将被永久阻塞。");
+        }
 
         onDialogueFinished?.Invoke();
         onDialogueFinished = null;
+    }
+    private string GetGameObjectPath(GameObject obj)
+    {
+        string path = "/" + obj.name;
+        while (obj.transform.parent != null)
+        {
+            obj = obj.transform.parent.gameObject;
+            path = "/" + obj.name + path;
+        }
+        return path;
     }
 }

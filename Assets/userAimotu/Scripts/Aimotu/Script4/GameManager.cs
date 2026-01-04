@@ -85,14 +85,9 @@ namespace S4
 
         private void Awake()
         {
-            if (Instance == null)
-            {
-                Instance = this;
-                DontDestroyOnLoad(gameObject);
-                // 自动寻找挂在自己身上的插件
-                task1 = GetComponent<Task_S4>();
-            }
-            else Destroy(gameObject);
+            Instance = this;
+            task1 = GetComponent<Task_S4>();
+            Debug.Log("<color=green>[Singleton Repair]</color> S4管理器已成功接管场景。");
         }
         private void Start()
         {

@@ -455,7 +455,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 164e1487654ab02498a790bda894ec48, type: 2}
   - {fileID: 11400000, guid: a20ad67472a061d46917b4e68bf2027c, type: 2}
   stateSpecificEvents: []
-  clickSFX: {fileID: 8300000, guid: c5d8e70ff9c080a42a041d52eeb872af, type: 3}
+  clickSFX: {fileID: 8300000, guid: c29ba37ad755d3749ab629b12d15ae9f, type: 3}
 --- !u!1 &70482140
 GameObject:
   m_ObjectHideFlags: 0
@@ -592,7 +592,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: ac7e25e0d6fa3624d88e6647eef20bd8, type: 2}
   - {fileID: 11400000, guid: cc5182d8a61f96e458e3605afb273930, type: 2}
   stateSpecificEvents: []
-  clickSFX: {fileID: 8300000, guid: c5d8e70ff9c080a42a041d52eeb872af, type: 3}
+  clickSFX: {fileID: 8300000, guid: 5cb333b45aa70254d8adb99b032b2c76, type: 3}
 --- !u!1 &85574493
 GameObject:
   m_ObjectHideFlags: 0
@@ -912,7 +912,7 @@ MonoBehaviour:
     - {fileID: 11400000, guid: bcaa023c2745bec4ea7c99bcbf0c32f1, type: 2}
     - {fileID: 11400000, guid: eaa01827471ee8043b1d552ee2abc563, type: 2}
     - {fileID: 11400000, guid: d525a73adc59e1142aca5ca46e2a4372, type: 2}
-  clickSFX: {fileID: 0}
+  clickSFX: {fileID: 8300000, guid: c29ba37ad755d3749ab629b12d15ae9f, type: 3}
 --- !u!1 &223367408
 GameObject:
   m_ObjectHideFlags: 0
@@ -1295,7 +1295,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u5BC6\u7801\u66F4\u65B0"
+  m_text: "\u627E\u56DE 0 / 3\u4F4D\u5BC6\u7801"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ec557c23f80c0934ab4335dc2447ebd9, type: 2}
   m_sharedMaterial: {fileID: -1534538092846079766, guid: ec557c23f80c0934ab4335dc2447ebd9, type: 2}
@@ -1392,7 +1392,7 @@ RectTransform:
   m_GameObject: {fileID: 311656051}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.0000001, y: 1.0000001, z: 1.0000001}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 536721203}
@@ -1561,7 +1561,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 500
   m_TargetDisplay: 0
 --- !u!1 &353576714
 GameObject:
@@ -1630,6 +1630,53 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &359722839
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 359722841}
+  - component: {fileID: 359722840}
+  m_Layer: 0
+  m_Name: Fade
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &359722840
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 359722839}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce802e7c4ce745044ba88f858f39fc74, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fadeScreen: {fileID: 2022238942}
+  musicSource: {fileID: 1606480128}
+  fadeDuration: 3
+--- !u!4 &359722841
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 359722839}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -10.390015, y: -0.17999268, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &392834799
 GameObject:
@@ -2039,7 +2086,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -10}
+  m_LocalPosition: {x: 8.15, y: 0, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4061,7 +4108,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 0.9921569, g: 0.9921569, b: 1, a: 0}
-  m_RaycastTarget: 0
+  m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -4341,7 +4388,6 @@ GameObject:
   - component: {fileID: 1576953280}
   - component: {fileID: 1576953282}
   - component: {fileID: 1576953283}
-  - component: {fileID: 1576953284}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -4448,21 +4494,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5ce7114c0fce2a4ebd1cfa53e45f783, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1576953284
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1576953277}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ce802e7c4ce745044ba88f858f39fc74, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  fadeScreen: {fileID: 2022238942}
-  musicSource: {fileID: 1606480128}
-  fadeDuration: 3
 --- !u!1 &1586963481
 GameObject:
   m_ObjectHideFlags: 0
@@ -5738,7 +5769,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u65E5\u8BB0\u66F4\u65B0"
+  m_text: "\u627E\u56DE 0 / 1\u7BC7\u65E5\u8BB0"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ec557c23f80c0934ab4335dc2447ebd9, type: 2}
   m_sharedMaterial: {fileID: -1534538092846079766, guid: ec557c23f80c0934ab4335dc2447ebd9, type: 2}

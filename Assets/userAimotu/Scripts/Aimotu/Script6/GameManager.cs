@@ -16,8 +16,8 @@ namespace S6
           [Header("UI 引用绑定")]
           public S6.Task_S6 taskS6_Instance;
           public GameObject TaskModuleObject => taskS6_Instance != null ? taskS6_Instance.gameObject : null;
-          // 实现接口属性
-          public S6.Task_S6 TaskS6 => taskS6_Instance;
+        // 实现接口属性
+          public Task_S6 TaskS6 => taskS6_Instance;
           public DialogueManager Dialog => dialogueManager;
           [Header("Video Setup")]
           // Inspector 里拖入对应的组件
@@ -73,12 +73,11 @@ namespace S6
 
           private void Awake()
           {
-              if (Instance == null)
-              {
-                  Instance = this;
-              }
-              else Destroy(gameObject);
-          }
+            Instance = this;
+            Debug.Log("<color=green>[Singleton Repair]</color> S6管理器已成功接管场景。");
+
+
+        }
           private void Start()
           {
               EnterState(RoomState.S6_Bedroom_Intro);

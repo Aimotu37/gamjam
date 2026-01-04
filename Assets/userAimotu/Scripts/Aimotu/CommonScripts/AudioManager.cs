@@ -11,9 +11,17 @@ using System.Collections;
         private Coroutine fadeCoroutine; // 用于记录当前正在进行的渐变，防止冲突
         private void Awake()
         {
-            if (Instance == null) { Instance = this; DontDestroyOnLoad(gameObject); }
-            else Destroy(gameObject);
-        }
+            if (Instance == null)
+            {
+                Instance = this;
+                // 如果它被意外放到了某个 Canvas 或空物体下，强行移出到根目录
+                if (transform.parent != null) transform.SetParent(null);
+            }
+            else
+            {
+                Destroy(gameObject);
+            }
+    }
         public void FadeBGMVolume(float targetVolume, float duration)
         {
             // 如果之前有正在进行的渐变，先停止它，避免音量“打架”

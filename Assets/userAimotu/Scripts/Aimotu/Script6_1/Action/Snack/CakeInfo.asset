@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82e5af67126b73a40b2dd5b89f39836d, type: 3}
+  m_Name: CakeInfo
+  m_EditorClassIdentifier: Assembly-CSharp::PopupInfoAction
+  triggerState: 9
+  mode: 0
+  content: "\u5341\u5C81\u751F\u65E5\u7684\u65F6\u5019\uFF0C\u6211\u548C\u5F53\u65F6\u7684\u597D\u670B\u53CB\u4EEC\u5206\u4EAB\u8FC7\u4E00\u4E2A\u5927\u5976\u6CB9\u86CB\u7CD5\u3002\r\n\u767D\u8272\u7684\u5976\u6CB9\u4E0A\u9762\u753B\u7740\u5C0F\u82B1\uFF0C\u82B1\u6258\u8F6F\u8F6F\u7684\uFF0C\u91CC\u9762\u4E5F\u88C5\u6EE1\u4E86\u5976\u6CB9\uFF0C\r\n\u5728\u7EFF\u82B1\u74E3\u65C1\u88C5\u9970\u7740\u94F6\u8272\u7684\u7CD6\u73E0\uFF0C\u5403\u86CB\u7CD5\u65F6\u6BCF\u4E2A\u4EBA\u7684\u773C\u775B\u90FD\u5F2F\u8D77\u6765\u3002"
+  sticker: 5
