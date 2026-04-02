@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82e5af67126b73a40b2dd5b89f39836d, type: 3}
+  m_Name: BubbleInfo
+  m_EditorClassIdentifier: Assembly-CSharp::PopupInfoAction
+  triggerState: 9
+  mode: 0
+  content: "\u4F60\u8981\u95EE\u6211\uFF0C\u7C89\u51B2\u5976\u8336\u662F\u4EC0\u4E48\u5473\u9053\uFF0C\u6211\u73B0\u5728\u4E5F\u5F62\u5BB9\u4E0D\u51FA\u6765\uFF0C\u9999\u828B\u5473\uFF1F\u8349\u8393\u5473\uFF1F\u5DE7\u514B\u529B\u5473\uFF1F\r\n\u53EA\u8BB0\u5F97\u5F88\u751C\u5F88\u6E29\u6696\uFF0C\u6211\u7528\u529B\u5438\u6BCF\u4E00\u9897\u73CD\u73E0\uFF0C\u7136\u540E\u5FEB\u4E50\u5730\u5480\u56BC\u3002\r\n\u559D\u4E00\u53E3\uFF0C\u8BA9\u4EBA\u60F3\u8D77\u5F00\u5FC3\u7684\u653E\u5B66\u508D\u665A\u3002"
+  sticker: 6

@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: b558c569e0ab1394382a4083e0ef6952
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - popupPanel: {instanceID: 0}
+  - contentText: {instanceID: 0}
+  - stickerImage: {instanceID: 0}
+  - defaultSticker: {instanceID: 0}
+  - fishtankSticker: {fileID: 21300000, guid: 75b503d0edc13974ba1a058f986c99f4, type: 3}
+  - dollSticker: {fileID: 21300000, guid: 8651f560cb0a0f041a5c2840fdbc2865, type: 3}
+  - awardSticker: {fileID: 21300000, guid: 00a9b7b8ab539ad4eac6614f309d248c, type: 3}
+  - beadsSticker: {fileID: 21300000, guid: cea98886c38919d4e914f650ee18f931, type: 3}
+  - cakeSticker: {fileID: 21300000, guid: fc2b74d816ef0df4ab78957b5af7468c, type: 3}
+  - bubbleteaSticker: {fileID: 21300000, guid: cc7492b120dcc244fa6e701ed9f7ea64, type: 3}
+  - barbecueSticker: {fileID: 21300000, guid: 56e58805d3c785042a39c6b70fce0e51, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

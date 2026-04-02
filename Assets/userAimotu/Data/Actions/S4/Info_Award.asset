@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e967a21024cc3b64d8ff8fa63b0c011a, type: 3}
+  m_Name: Info_Award
+  m_EditorClassIdentifier: 
+  triggerState: 0
+  stickerType: 3
+  content: "\u892A\u8272\u7684\u91D1\u592A\u9633\u548C\u5927\u7EA2\u82B1\u3002\n\"\u597D\u5B69\u5B50\"\u548C\"\u4E09\u597D\u5B66\u751F\"\u7684\u5B57\u8FF9\u5F00\u59CB\u6A21\u7CCA\u4E86\u3002\n\u90A3\u5929\u56DE\u5BB6\uFF0C\u6211\u8D70\u5F97\u7279\u522B\u5FEB\uFF0C\u95E8\u7259\u51C9\u51C9\u7684\u3002"

@@ -1,0 +1,24 @@
+fileFormatVersion: 2
+guid: 872fd41c7e50c6c43ac12134a3480f9b
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - _uiRawImage: {instanceID: 0}
+  - _uiVideoPlayer: {instanceID: 0}
+  - _uiRenderTexture: {instanceID: 0}
+  - _transitionMaskGroup: {instanceID: 0}
+  - sfxSource: {instanceID: 0}
+  - dialogueManager: {instanceID: 0}
+  - child_neutral: {fileID: 21300000, guid: 77d0cff24627b814386963dc34444155, type: 3}
+  - child_happy1: {instanceID: 0}
+  - child_happy2: {instanceID: 0}
+  - child_confused: {instanceID: 0}
+  - child_surprised: {instanceID: 0}
+  - child_pout: {instanceID: 0}
+  - taskS4_Instance: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
