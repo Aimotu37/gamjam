@@ -24,7 +24,6 @@ using System.Collections;
     }
         public void FadeBGMVolume(float targetVolume, float duration)
         {
-            // 如果之前有正在进行的渐变，先停止它，避免音量“打架”
             if (fadeCoroutine != null) StopCoroutine(fadeCoroutine);
             fadeCoroutine = StartCoroutine(DoFade(targetVolume, duration));
         }

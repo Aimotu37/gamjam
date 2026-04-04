@@ -6,6 +6,8 @@ public class AreaSwitchAction : StateAction
 {
     [Header("目标场景名称")]
     public string targetSceneName;
+    [Header("目标场景的玩家出生位置（留 Vector3.zero 表示不覆盖）")]
+    public Vector3 playerSpawnPosition;
 
     [Header("转场后进入的状态")]
     public RoomState nextState;
@@ -17,7 +19,11 @@ public class AreaSwitchAction : StateAction
             Debug.LogError("场景中缺少 FadeManager!");
             yield break;
         }
-
+        if (playerSpawnPosition != Vector3.zero)
+        {
+            GlobalData.NextSpawnPosition = playerSpawnPosition;
+            GlobalData.HasSpawnOverride = true;
+        }
         // 1. 调用 FadeManager 执行淡出并加载场景
         // 注意：这里需要修改 FadeManager 让它支持在加载后执行回调
         FadeManager.Instance.TransitionToScene(targetSceneName);

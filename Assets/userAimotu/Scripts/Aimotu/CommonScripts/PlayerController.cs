@@ -21,6 +21,13 @@ public class PlayerController : MonoBehaviour
     private Animator animator;
     void Start()
     {
+        //读取出生点
+        if (GlobalData.HasSpawnOverride)
+        {
+            transform.position = GlobalData.NextSpawnPosition;
+            GlobalData.HasSpawnOverride = false; // 用完清掉，防止下次误用
+        }
+
         rb = GetComponent<Rigidbody2D>();
         mySpriteRenderer = GetComponent<SpriteRenderer>();
         animator = GetComponent<Animator>();

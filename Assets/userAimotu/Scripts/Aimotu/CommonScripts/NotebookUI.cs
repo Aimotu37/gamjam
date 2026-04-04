@@ -14,7 +14,7 @@ public class NotebookUI : MonoBehaviour
     public GameObject[] diaryPages; // 0=日记1, 1=日记2 ... 6=日记7
 
 
-    private IGameManager GameMgr => FindAnyObjectByType<SceneManagerBase>();
+    private IGameManager GameMgr => (IGameManager)FindAnyObjectByType<SceneManagerBase>();
 
     private void Awake()
     {

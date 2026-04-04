@@ -11,11 +11,11 @@ public class ChoiceUISystem : MonoBehaviour
     private IGameManager GetManager()
     {
         // 1. 尝试直接通过单例获取（最推荐）
-        if (S61.GameManager.Instance != null) return S61.GameManager.Instance;
+        if (S61.GameManager.Instance != null) return (IGameManager)S61.GameManager.Instance;
 
         // 2. 如果单例不可用，尝试在场景中寻找挂载了 GameManager 脚本的物体
         var gm = FindObjectOfType<S61.GameManager>();
-        if (gm != null) return gm;
+        if (gm != null) return (IGameManager)gm;
 
         return null;
     }

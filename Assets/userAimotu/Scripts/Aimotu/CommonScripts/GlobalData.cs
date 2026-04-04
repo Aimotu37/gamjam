@@ -17,6 +17,9 @@ public static class GlobalData
     // ──────────────────────────────────────────
     private static readonly HashSet<DiaryID> _unlockedDiaries = new();
 
+    //传出生点信息
+    public static Vector3 NextSpawnPosition = Vector3.zero;
+    public static bool HasSpawnOverride = false;
     public static void UnlockDiary(DiaryID id)
     {
         if (_unlockedDiaries.Add(id))

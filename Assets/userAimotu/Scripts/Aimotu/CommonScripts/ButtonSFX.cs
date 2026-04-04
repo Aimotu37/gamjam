@@ -43,10 +43,10 @@ public class ButtonSFX : MonoBehaviour
     private IGameManager FindActiveManager()
     {
         // 按照你项目中出现的命名空间顺序检查单例
-        if (S6.GameManager.Instance != null) return S6.GameManager.Instance;
+        if (S6.GameManager.Instance != null) return (IGameManager)S6.GameManager.Instance;
         // 针对日志中出现的 S61 路径进行兼容
         // if (S61.GameManager.Instance != null) return S61.GameManager.Instance; 
-        if (S4.GameManager.Instance != null) return S4.GameManager.Instance;
+        if (S4.GameManager.Instance != null) return (IGameManager)S4.GameManager.Instance;
 
         return null;
     }
