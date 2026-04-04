@@ -5,7 +5,7 @@ using UnityEngine;
 ¾µÍ·ÇÐ»»½Ú×à¿ØÖÆ
 */
 
-    [CreateAssetMenu(menuName = "Game/State Actions/Wait")]
+    [CreateAssetMenu(menuName = "Actions/Wait")]
     public class WaitAction : StateAction
     {
         public float duration = 1f;

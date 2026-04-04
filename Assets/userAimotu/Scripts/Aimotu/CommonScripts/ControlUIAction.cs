@@ -1,7 +1,7 @@
 using System.Collections;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "ControlUIAction", menuName = "Game/State Actions/Control UI")]
+[CreateAssetMenu(fileName = "ControlUIAction", menuName = "Actions/Control UI")]
 public class ControlUIAction : StateAction
 {
     public enum UIType { Notebook, NoteBigImage, Map, Cart }

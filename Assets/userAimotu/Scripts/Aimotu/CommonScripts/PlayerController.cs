@@ -64,6 +64,9 @@ public class PlayerController : MonoBehaviour
         // 1. 接收输入，不处理物理移动
 
         float horizontalInput = Input.GetAxisRaw("Horizontal");
+        // 应该在这里加判断：对话/弹窗期间不能移动
+        var manager = FindAnyObjectByType<SceneManagerBase>() as IGameManager;
+        if (manager != null && manager.IsUIBlocking) horizontalInput = 0;
         movement.x = horizontalInput;
         movement.y = 0;
 

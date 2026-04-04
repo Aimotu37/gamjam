@@ -20,7 +20,6 @@ public class CameraFollow : MonoBehaviour
 
 
 
-    private float camWidth;
     private float minX, maxX;
     private float fixedY; // 固定的 Y 轴
 
@@ -46,17 +45,17 @@ public class CameraFollow : MonoBehaviour
         if (background != null)
         {
             Bounds bgBounds = background.bounds;
+            float camHalfWidth = cam.orthographicSize * cam.aspect;
 
             // 1. 计算左右移动的极限
-            minX = bgBounds.min.x + camWidth;
-            maxX = bgBounds.max.x - camWidth;
+            minX = bgBounds.min.x + camHalfWidth;
+            maxX = bgBounds.max.x - camHalfWidth;
 
             // 2. 【关键】锁定高度为背景的中心高度
             // 这样相机永远正对着背景图的中间
             fixedY = bgBounds.center.y;
 
             // 计算横向 Clamp 范围（让 Pixel Perfect Camera 控制 Size）
-            float camHalfWidth = cam.orthographicSize * cam.aspect;
             minX = bgBounds.min.x + camHalfWidth;
             maxX = bgBounds.max.x - camHalfWidth;
         }

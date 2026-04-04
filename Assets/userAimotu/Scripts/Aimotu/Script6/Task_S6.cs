@@ -2,7 +2,7 @@ using UnityEngine;
 using TMPro;
 namespace S6
 {
-    public class Task_S6 : MonoBehaviour
+    public class Task_S6 : MonoBehaviour, TaskModule
     {
         [Header("UI 文本引用")]
         public TextMeshProUGUI diaryTaskText; // 对应左上角 "找回 0 / 6 篇日记"   

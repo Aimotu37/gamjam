@@ -1,7 +1,7 @@
 using System.Collections;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "AreaSwitchAction", menuName = "Game/State Actions/Area Switch")]
+[CreateAssetMenu(fileName = "AreaSwitchAction", menuName = "Actions/Area Switch")]
 public class AreaSwitchAction : StateAction
 {
     [Header("目标场景名称")]

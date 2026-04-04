@@ -4,7 +4,7 @@ using UnityEngine;
 using TMPro;
 namespace S4
 {
-    public class Task_S4 : MonoBehaviour
+    public class Task_S4 : MonoBehaviour, TaskModule
     {
         [Header("UI 文本引用")]
         public TextMeshProUGUI passwordTaskText;

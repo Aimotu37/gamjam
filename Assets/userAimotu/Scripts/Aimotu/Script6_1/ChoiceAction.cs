@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 namespace S6
 {
-    [CreateAssetMenu(fileName = "ChoiceAction", menuName = "Game/State Actions/Choice Action")]
+    [CreateAssetMenu(fileName = "ChoiceAction", menuName = "Actions/Choice Action")]
     public class ChoiceAction : StateAction
     {
         public string question;

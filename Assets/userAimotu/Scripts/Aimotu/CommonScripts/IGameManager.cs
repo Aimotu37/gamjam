@@ -4,7 +4,6 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Video;
-using S4;
 
 public interface IGameManager
 {
@@ -22,7 +21,7 @@ public interface IGameManager
 
     // 子系统引用
     DialogueManager Dialog { get; }
-    GameObject TaskModuleObject { get; }
+    TaskModule TaskModule { get; }
 
     // 视频播放（供 PlayClipAction 使用）
     RawImage uiRawImage { get; }

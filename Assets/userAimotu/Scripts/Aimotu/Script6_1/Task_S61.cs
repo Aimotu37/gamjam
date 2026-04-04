@@ -6,7 +6,7 @@ using System.Collections.Generic;
 
 namespace S61
 {
-    public class Task_S61 : MonoBehaviour
+    public class Task_S61 : MonoBehaviour, TaskModule
     {
         public static Task_S61 Instance;
 
@@ -19,6 +19,8 @@ namespace S61
         [Header("小吃车状态")]
         private HashSet<string> finishedSnacks = new();
         private int requiredSnackCount = 3; // 奶茶、炸串、蛋糕
+        public bool IsAllCompleted() => SnackTaskDone;
+
 
         private bool SnackTaskDone => GlobalData.IsDiaryUnlocked(DiaryID.Diary2_SnackCart);
         private void Awake()

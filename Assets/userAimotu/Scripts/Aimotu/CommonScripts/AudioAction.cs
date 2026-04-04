@@ -1,7 +1,7 @@
 using UnityEngine;
 using System.Collections;
 
-[CreateAssetMenu(fileName = "AudioAction", menuName = "Game/State Actions/Audio Control")]
+[CreateAssetMenu(fileName = "AudioAction", menuName = "Actions/Audio Control")]
 public class AudioAction : StateAction
 {
     public enum AudioCommand { PlaySFX, PlayBGM, StopBGM, FadeBGM }

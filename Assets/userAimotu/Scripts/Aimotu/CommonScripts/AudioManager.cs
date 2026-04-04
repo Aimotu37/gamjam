@@ -57,18 +57,6 @@ using System.Collections;
             bgmSource.Play();
         }
 
-        // BGM µ­Èëµ­³öÂß¼­
-        public IEnumerator FadeBGM(float targetVolume, float duration)
-        {
-            float startVolume = bgmSource.volume;
-            float timer = 0;
-            while (timer < duration)
-            {
-                timer += Time.deltaTime;
-                bgmSource.volume = Mathf.Lerp(startVolume, targetVolume, timer / duration);
-                yield return null;
-            }
-            bgmSource.volume = targetVolume;
-        }
+       
     }
 

@@ -1,4 +1,3 @@
-// 放在 CommonScripts/ 文件夹下
 // 这是所有 Scene GameManager 的公共基类
 // S4/S6/S61 的 GameManager 只需继承它，写自己独有的部分
 
@@ -10,7 +9,7 @@ using UnityEngine.UI;
 using UnityEngine.Video;
 using S4; // IGameManager、PortraitOption 等公共类型在 S4 命名空间里
 
-public abstract class SceneManagerBase : MonoBehaviour, IGameManager
+public abstract class SceneManagerBase : MonoBehaviour
 {
     // ──────────────────────────────────────────
     //  子类必须实现：返回初始状态

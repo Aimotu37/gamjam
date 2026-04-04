@@ -2,7 +2,7 @@ using UnityEngine;
 using System.Collections;
 
 
-[CreateAssetMenu(fileName = "PlayAudioAction", menuName = "Game/State Actions/Play Audio")]
+[CreateAssetMenu(fileName = "PlayAudioAction", menuName = "Actions/Play Audio")]
 public class PlayAudioAction : StateAction
 {
     [Header("“Ù–ß…Ë÷√")]

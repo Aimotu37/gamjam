@@ -3,7 +3,7 @@ using UnityEngine;
 //Intro 对话后 → NoteLocked
 //AllTasksDone → ReadyToExit
 
-[CreateAssetMenu(fileName = "ChangRoomState",menuName = "Game/State Actions/Change Room State")]
+[CreateAssetMenu(fileName = "ChangRoomState",menuName = "Actions/Change Room State")]
 public class ChangeRoomStateAction : StateAction
 {
     [Header("输入状态枚举的名字 (例如: Intro, AllTasksDone)")]

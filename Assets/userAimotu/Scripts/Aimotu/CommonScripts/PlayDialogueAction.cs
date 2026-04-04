@@ -3,7 +3,7 @@ using UnityEngine;
 
 //Intro、ReadyToExit对话和旁白，状态切换提示
 
-[CreateAssetMenu(fileName = "PlayDialogueAction", menuName = "Game/State Actions/Play Dialogue")]
+[CreateAssetMenu(fileName = "PlayDialogueAction", menuName = "Actions/Play Dialogue")]
 public class PlayDialogueAction : StateAction
 {
     public DialogueSession dialogue;

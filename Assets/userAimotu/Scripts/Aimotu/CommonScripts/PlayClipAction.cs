@@ -2,7 +2,7 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.Video;
 
-[CreateAssetMenu(fileName ="PlayClip", menuName = "Game/State Actions/Play Clip")]
+[CreateAssetMenu(fileName ="PlayClip", menuName = "Actions/Play Clip")]
 public class PlayClipAction : StateAction
 {
     [Header("遮罩设置")]
@@ -53,7 +53,7 @@ public class PlayClipAction : StateAction
             if (enableDebugLog) Debug.Log("[PlayClip] 开始渐隐(变暗)...");
 
             if (transitionSFX != null) AudioManager.Instance.PlaySFX(transitionSFX);
-            if (isAudioFade) (manager as MonoBehaviour)?.StartCoroutine(AudioManager.Instance.FadeBGM(0, duration));
+            if (isAudioFade) (manager as MonoBehaviour)?.StartCoroutine(AudioManager.Instance.FadeBGMVolume());
            // GameManager.Instance.StartCoroutine(AudioManager.Instance.FadeBGM(0, fadeSpeed));
             while (mask.alpha < 1.0f)
             {
@@ -144,7 +144,7 @@ public class PlayClipAction : StateAction
 
             if (enableDebugLog) Debug.Log("[PlayClip] 开始渐显(恢复)...");
             if (isAudioFade) AudioManager.Instance.FadeBGMVolume(targetBGMVolume, duration);
-            (manager as MonoBehaviour)?.StartCoroutine(AudioManager.Instance.FadeBGM(1f, fadeSpeed));
+            (manager as MonoBehaviour)?.StartCoroutine(AudioManager.Instance.FadeBGMVolume(targetBGMVolume));
             while (mask.alpha > 0.0f)
             {
                 mask.alpha = Mathf.MoveTowards(mask.alpha, 0.0f, fadeSpeed * Time.deltaTime);

@@ -3,7 +3,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 
-[CreateAssetMenu(fileName = "SceneTrans", menuName = "Game/State Actions/Scene Transition")]
+[CreateAssetMenu(fileName = "SceneTrans", menuName = "Actions/Scene Transition")]
 public class SceneTransitionAction : StateAction
 {
     public string targetSceneName;
@@ -11,6 +11,7 @@ public class SceneTransitionAction : StateAction
     public Vector3 playerSpawnPos; // 比如设置出现在最右侧
     public override IEnumerator Execute()
     {
-        yield return SceneTransitionManager.Instance.FadeTo(targetSceneName, fadeDuration, playerSpawnPos);
+        yield return FadeManager.Instance.FadeOut(fadeDuration);
+        FadeManager.Instance.TransitionToScene(targetSceneName);
     }
 }
