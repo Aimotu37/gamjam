@@ -2195,7 +2195,7 @@ Canvas:
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
-  m_AdditionalShaderChannelsFlag: 0
+  m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: 0
   m_SortingOrder: 400
   m_TargetDisplay: 0
@@ -3448,7 +3448,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &624047816
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5811,8 +5811,8 @@ MonoBehaviour:
   - triggerState: 1
     actions:
     - {fileID: 11400000, guid: 01ef02dad7c7dc845b352bbb9bf8b1c5, type: 2}
-    - {fileID: 11400000, guid: feb65c66347041742b52f3326022adc6, type: 2}
     - {fileID: 11400000, guid: ae23a81fa21b3c64c86ced5b20ab6f37, type: 2}
+    - {fileID: 11400000, guid: feb65c66347041742b52f3326022adc6, type: 2}
   - triggerState: 2
     actions:
     - {fileID: 11400000, guid: 7ac8a59537c97f344af4d9a52263d137, type: 2}
@@ -5830,9 +5830,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1576953277}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b5ce7114c0fce2a4ebd1cfa53e45f783, type: 3}
+  m_Script: {fileID: 11500000, guid: c06592e4840208f47a19fd779e1e12a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  passwordTaskText: {fileID: 301002196}
+  diaryTaskText: {fileID: 1840068381}
 --- !u!1 &1586963481
 GameObject:
   m_ObjectHideFlags: 0
