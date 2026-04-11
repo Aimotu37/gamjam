@@ -17,4 +17,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/userAimotu/Scenes/Script6 1.unity
     guid: 7caedc57478bf1442928b6d4345792e9
+  - enabled: 1
+    path: Assets/userAimotu/Scenes/Script1.unity
+    guid: 5a64eb60db728234a8863f7ce3a5f5ab
+  - enabled: 1
+    path: Assets/userAimotu/Scenes/Script2.unity
+    guid: abd8a7d706c24be40964727e4a758e76
   m_configObjects: {}

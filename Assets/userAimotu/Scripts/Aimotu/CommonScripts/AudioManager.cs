@@ -56,6 +56,26 @@ using System.Collections;
             bgmSource.Play();
         }
 
+        //音量控制方法
+        public void SetBGMVolume(float volume)
+        {
+            bgmSource.volume = volume;
+        }
+
+        public void SetSFXVolume(float volume)
+        {
+            sfxSource.volume = volume;
+        }
+
+        public float GetBGMVolume()
+        {
+            return bgmSource.volume;
+        }
+
+        public float GetSFXVolume()
+        {
+            return sfxSource.volume;
+        }
        
     }
 
