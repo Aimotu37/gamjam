@@ -2,7 +2,7 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.Video;
 
-[CreateAssetMenu(fileName ="PlayClip", menuName = "Actions/Play Clip")]
+[CreateAssetMenu(fileName = "PlayClip", menuName = "Actions/Play Clip")]
 public class PlayClipAction : StateAction
 {
     [Header("遮罩设置")]
@@ -53,8 +53,8 @@ public class PlayClipAction : StateAction
             if (enableDebugLog) Debug.Log("[PlayClip] 开始渐隐(变暗)...");
 
             if (transitionSFX != null) AudioManager.Instance.PlaySFX(transitionSFX);
-            if (isAudioFade) (manager as MonoBehaviour)?.StartCoroutine(AudioManager.Instance.FadeBGMVolume(0.0f, 1.0f));
-           // GameManager.Instance.StartCoroutine(AudioManager.Instance.FadeBGM(0, fadeSpeed));
+            //if (isAudioFade) (manager as MonoBehaviour)?.StartCoroutine(AudioManager.Instance.FadeBGMVolume(0.0f, 1.0f));
+            // GameManager.Instance.StartCoroutine(AudioManager.Instance.FadeBGM(0, fadeSpeed));
             while (mask.alpha < 1.0f)
             {
                 mask.alpha = Mathf.MoveTowards(mask.alpha, 1.0f, fadeSpeed * Time.deltaTime);
@@ -85,7 +85,7 @@ public class PlayClipAction : StateAction
         rawImage.texture = renderTexture;
         rawImage.gameObject.SetActive(true);
 
-      //  if (enableDebugLog) Debug.Log("[PlayAnimation] UI 已显示，准备播放视频");
+        //  if (enableDebugLog) Debug.Log("[PlayAnimation] UI 已显示，准备播放视频");
 
         // 5. 准备视频（重要！）
         videoPlayer.Prepare();
@@ -113,7 +113,7 @@ public class PlayClipAction : StateAction
             {
                 if (!videoPlayer.isPlaying && videoPlayer.time < videoPlayer.length - 0.2f) if (elapsed > timeout)
                 {
-                        videoPlayer.Play(); 
+                    videoPlayer.Play();
                 }
                 yield return null;
             }
@@ -144,7 +144,7 @@ public class PlayClipAction : StateAction
 
             if (enableDebugLog) Debug.Log("[PlayClip] 开始渐显(恢复)...");
             if (isAudioFade) AudioManager.Instance.FadeBGMVolume(targetBGMVolume, duration);
-            (manager as MonoBehaviour)?.StartCoroutine(AudioManager.Instance.FadeBGMVolume(targetBGMVolume));
+            //(manager as MonoBehaviour)?.StartCoroutine(AudioManager.Instance.FadeBGMVolume(targetBGMVolume));
             while (mask.alpha > 0.0f)
             {
                 mask.alpha = Mathf.MoveTowards(mask.alpha, 0.0f, fadeSpeed * Time.deltaTime);
