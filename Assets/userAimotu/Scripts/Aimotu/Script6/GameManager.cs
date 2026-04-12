@@ -1,7 +1,7 @@
-// 放在 Script6/ 文件夹下
+﻿// 放在 Script6/ 文件夹下
 
 using UnityEngine;
-using S4;
+using S6;
 
 namespace S6
 {
@@ -16,14 +16,14 @@ namespace S6
             taskS6_Instance != null ? taskS6_Instance.gameObject : null;
         public Task_S6 TaskS6 => taskS6_Instance;
 
-        // S6 独有：初始状态
+        // S6 独有：初始状�?
         protected override RoomState InitialState => RoomState.S6_Bedroom_Intro;
 
         protected override void Awake()
         {
             Instance = this;
             base.Awake();
-            Debug.Log("<color=green>[S6 GameManager]</color> 初始化完成");
+            Debug.Log("<color=green>[S6 GameManager]</color> 初始化完�?");
         }
     }
 }
