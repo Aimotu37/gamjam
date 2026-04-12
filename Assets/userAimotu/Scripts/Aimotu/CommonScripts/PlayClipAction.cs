@@ -53,7 +53,8 @@ public class PlayClipAction : StateAction
             if (enableDebugLog) Debug.Log("[PlayClip] ¿ªÊ¼½¥Òþ(±ä°µ)...");
 
             if (transitionSFX != null) AudioManager.Instance.PlaySFX(transitionSFX);
-            //if (isAudioFade) (manager as MonoBehaviour)?.StartCoroutine(AudioManager.Instance.FadeBGMVolume(0.0f, 1.0f));
+            if (isAudioFade) AudioManager.Instance.FadeBGMVolume(0, duration);
+
             // GameManager.Instance.StartCoroutine(AudioManager.Instance.FadeBGM(0, fadeSpeed));
             while (mask.alpha < 1.0f)
             {
