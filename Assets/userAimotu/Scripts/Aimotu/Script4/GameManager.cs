@@ -1,5 +1,4 @@
 using UnityEngine;
-using S4;
 
 namespace S4
 {

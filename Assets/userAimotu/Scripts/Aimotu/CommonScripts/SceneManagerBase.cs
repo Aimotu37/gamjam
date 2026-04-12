@@ -1,5 +1,5 @@
 // 这是所有 Scene GameManager 的公共基类
-// S4/S6/S61 的 GameManager 只需继承它，写自己独有的部分
+//其他场景的 GameManager 只需继承它，写自己独有的部分
 
 using UnityEngine;
 using System;
@@ -7,9 +7,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.UI;
 using UnityEngine.Video;
-using S4; // IGameManager、PortraitOption 等公共类型在 S4 命名空间里
 
-public abstract class SceneManagerBase : MonoBehaviour
+public abstract class SceneManagerBase : MonoBehaviour, IGameManager
 {
     // ──────────────────────────────────────────
     //  子类必须实现：返回初始状态
@@ -28,6 +27,7 @@ public abstract class SceneManagerBase : MonoBehaviour
     public VideoPlayer uiVideoPlayer => _uiVideoPlayer;
     public RenderTexture uiRenderTexture => _uiRenderTexture;
     public CanvasGroup transitionMaskGroup => _transitionMaskGroup;
+
 
     [Header("音效")]
     public AudioSource sfxSource;
@@ -63,6 +63,8 @@ public abstract class SceneManagerBase : MonoBehaviour
     //  接口实现
     // ──────────────────────────────────────────
     public abstract GameObject TaskModuleObject { get; }
+    public TaskModule TaskModule => TaskModuleObject?.GetComponent<TaskModule>();//满足 IGameManager 接口
+
 
     // ──────────────────────────────────────────
     //  生命周期
