@@ -154,6 +154,90 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &22595860
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 22595862}
+  - component: {fileID: 22595861}
+  m_Layer: 0
+  m_Name: Search
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!212 &22595861
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 22595860}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: -1261820061
+  m_SortingLayer: 2
+  m_SortingOrder: 1
+  m_Sprite: {fileID: 21300000, guid: 6c52f199f3c469b438b00724e2d19823, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 0.29, y: 0.29}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
+--- !u!4 &22595862
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 22595860}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.27, y: 1.0803242, z: 0.053298272}
+  m_LocalScale: {x: 5.8266, y: 6.1242, z: 6}
+  m_ConstrainProportionsScale: 1
+  m_Children: []
+  m_Father: {fileID: 257013311}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &52411349
 GameObject:
   m_ObjectHideFlags: 0
@@ -247,9 +331,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sequence:
   - {fileID: 11400000, guid: 649764de2636bd446ba03d5da7e559e1, type: 2}
-  - {fileID: 11400000, guid: 10997ba5ef273c041934eb91dfa2c4bc, type: 2}
+  - {fileID: 0}
   - {fileID: 11400000, guid: 79036e9db86571d4e9686ab52a4b18ee, type: 2}
-  - {fileID: 11400000, guid: a72791d858f77ae4f8cecce929979e3d, type: 2}
+  - {fileID: 0}
 --- !u!114 &52411354
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -513,6 +597,7 @@ MonoBehaviour:
   popupPanel: {fileID: 1772638392}
   contentText: {fileID: 967788163}
   stickerImage: {fileID: 1210344917}
+  closeButton: {fileID: 0}
   defaultSticker: {fileID: 0}
   fishtankSticker: {fileID: 21300000, guid: 75b503d0edc13974ba1a058f986c99f4, type: 3}
   dollSticker: {fileID: 21300000, guid: 8651f560cb0a0f041a5c2840fdbc2865, type: 3}
@@ -716,6 +801,87 @@ MonoBehaviour:
   nameText: {fileID: 1195421556}
   contentText: {fileID: 457141186}
   typingSpeed: 0.05
+--- !u!1 &257013309
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 257013311}
+  - component: {fileID: 257013310}
+  - component: {fileID: 257013312}
+  m_Layer: 0
+  m_Name: MallEntrance
+  m_TagString: Interactable
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &257013310
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 257013309}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48265cf264811544db45afaad591052e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eligibleStates: 
+  type: 0
+  allowRepeatClick: 1
+  canInteract: 0
+  questionMarkIcon: {fileID: 22595860}
+  defaultActions:
+  - {fileID: 11400000, guid: ff6ee472841ca42d8ae5c47efea81495, type: 2}
+  stateSpecificEvents: []
+  clickSFX: {fileID: 0}
+--- !u!4 &257013311
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 257013309}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.19105208, y: -4.317904, z: -0.053298272}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 22595862}
+  m_Father: {fileID: 0}
+  m_RootOrder: 15
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &257013312
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 257013309}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.26988, y: 0.65293515}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.8879923, y: 1.6790526}
+  m_EdgeRadius: 0
 --- !u!1 &301002193
 GameObject:
   m_ObjectHideFlags: 0
@@ -1351,7 +1517,6 @@ MonoBehaviour:
   diaryTaskText: {fileID: 1840068381}
   snackCartPanel: {fileID: 555999402}
   finalChoiceSequence: {fileID: 956718708}
-  hasFinishedSnackTask: 0
 --- !u!1 &457141184
 GameObject:
   m_ObjectHideFlags: 0
@@ -3441,8 +3606,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1576953279}
   - component: {fileID: 1576953280}
-  - component: {fileID: 1576953283}
-  - component: {fileID: 1576953286}
+  - component: {fileID: 1576953282}
+  - component: {fileID: 1576953281}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -3498,7 +3663,7 @@ VideoPlayer:
   m_WaitForFirstFrame: 0
   m_FrameReadyEventEnabled: 0
   m_VideoShaders: []
---- !u!114 &1576953283
+--- !u!114 &1576953281
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3507,10 +3672,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1576953277}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b5ce7114c0fce2a4ebd1cfa53e45f783, type: 3}
+  m_Script: {fileID: 11500000, guid: e2111618334811e479a3a80c105591c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1576953286
+  diaryTaskText: {fileID: 0}
+  snackCartPanel: {fileID: 0}
+  finalChoiceSequence: {fileID: 0}
+--- !u!114 &1576953282
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3519,34 +3687,24 @@ MonoBehaviour:
   m_GameObject: {fileID: 1576953277}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fc24b4a2694cd2e459b132c7f371445a, type: 3}
+  m_Script: {fileID: 11500000, guid: 6d4678424d1479b47a4ea749ecea44c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Name: Dream2_Street
-  taskS61_Instance: {fileID: 392834806}
-  _uiRawImage: {fileID: 1331166207}
-  _uiVideoPlayer: {fileID: 53924601}
-  _uiRenderTexture: {fileID: 8400000, guid: 218264d0fef85f448baec61fd85f6990, type: 2}
-  _transitionMaskGroup: {fileID: 2022238942}
-  sfxSource: {fileID: 1606480128}
-  playClipAction: {fileID: 0}
-  dialogueManager: {fileID: 223367415}
+  _uiRawImage: {fileID: 0}
+  _uiVideoPlayer: {fileID: 0}
+  _uiRenderTexture: {fileID: 0}
+  _transitionMaskGroup: {fileID: 0}
+  sfxSource: {fileID: 0}
+  dialogueManager: {fileID: 0}
+  child_neutral: {fileID: 0}
+  child_happy1: {fileID: 0}
+  child_happy2: {fileID: 0}
+  child_confused: {fileID: 0}
+  child_surprised: {fileID: 0}
+  child_pout: {fileID: 0}
+  roomStateEvents: []
   uiBlockCount: 0
-  roomStateEvents:
-  - triggerState: 9
-    actions:
-    - {fileID: 11400000, guid: 8356f925d4de1604bbaa6f35eb8b091d, type: 2}
-    - {fileID: 11400000, guid: e86c06331fdc953418cca46f7bf36f46, type: 2}
-  - triggerState: 10
-    actions:
-    - {fileID: 11400000, guid: 8356f925d4de1604bbaa6f35eb8b091d, type: 2}
-    - {fileID: 11400000, guid: 91e3103efe1a19442ae7e9520e214e4f, type: 2}
-  child_neutral: {fileID: 21300000, guid: 74665b29e4017814da936b25358bf491, type: 3}
-  child_happy1: {fileID: 21300000, guid: 77d0cff24627b814386963dc34444155, type: 3}
-  child_happy2: {fileID: 21300000, guid: 058d795b1523ae14aa2f1b366356efb8, type: 3}
-  child_confused: {fileID: 21300000, guid: d5c93d1fb5ae4a84992b4e281a59715d, type: 3}
-  child_surprised: {fileID: 21300000, guid: e565b6bf4116f0a4c9cb5b9cfe702113, type: 3}
-  child_pout: {fileID: 21300000, guid: a1dec3b71ca59c948a098aafd4c192c9, type: 3}
+  taskS61_Instance: {fileID: 1576953281}
 --- !u!1 &1586963481
 GameObject:
   m_ObjectHideFlags: 0
@@ -4016,9 +4174,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sequence:
   - {fileID: 11400000, guid: 82d3b145f4eaa4d489e9f814c4a77f8d, type: 2}
-  - {fileID: 11400000, guid: 0c0eb0da13b59f24da56b9c1c0c9a0b4, type: 2}
+  - {fileID: 0}
   - {fileID: 11400000, guid: 3cc764e91dbc1b340838ef8b77eefefc, type: 2}
-  - {fileID: 11400000, guid: 346c9cffd8790d640badec55c9db7c59, type: 2}
+  - {fileID: 0}
   - {fileID: 11400000, guid: 51362d4dd27f6fa499eaa594bcce2f13, type: 2}
 --- !u!114 &1705361572
 MonoBehaviour:
@@ -4844,9 +5002,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sequence:
   - {fileID: 11400000, guid: 1b72bde0d9fd36d4ab1705d5b7ad0335, type: 2}
-  - {fileID: 11400000, guid: 2e6c1d2f4832ae745a481fa163a4f3d4, type: 2}
+  - {fileID: 0}
   - {fileID: 11400000, guid: 7c3eb26174306d64f8ad2c2c01cb998b, type: 2}
-  - {fileID: 11400000, guid: 94bda5bdaa462934e97ed1e493bd0fbb, type: 2}
+  - {fileID: 0}
   - {fileID: 11400000, guid: 28633835b57f27f44bbefdaa167b70e0, type: 2}
 --- !u!114 &1951633206
 MonoBehaviour:
