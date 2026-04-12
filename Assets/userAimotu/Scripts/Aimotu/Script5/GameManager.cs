@@ -9,7 +9,7 @@ namespace S5
         public Task_S5 taskS5;
         public override GameObject TaskModuleObject => taskS5 != null ? taskS5.gameObject : null;
 
-        //S5 Ó¦¸ÃÊÇÒª½¨Ò»¸öÐÂµÄroom state£¿
+        //S5 åº”è¯¥æ˜¯è¦å»ºä¸€ä¸ªæ–°çš„room stateï¼Ÿ
         protected override RoomState InitialState => RoomState.Intro;
         protected override void Awake()
         {
