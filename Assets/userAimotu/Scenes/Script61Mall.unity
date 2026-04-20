@@ -3400,6 +3400,7 @@ GameObject:
   - component: {fileID: 1576953283}
   - component: {fileID: 1576953284}
   - component: {fileID: 1576953285}
+  - component: {fileID: 1576953286}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -3569,6 +3570,27 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.2098885, y: 6.0987997}
   m_EdgeRadius: 0
+--- !u!114 &1576953286
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1576953277}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48265cf264811544db45afaad591052e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eligibleStates: 
+  type: 0
+  allowRepeatClick: 1
+  canInteract: 0
+  questionMarkIcon: {fileID: 0}
+  defaultActions:
+  - {fileID: 11400000, guid: 19ac98d98ee0d2a4da87ea06959c3d01, type: 2}
+  stateSpecificEvents: []
+  clickSFX: {fileID: 0}
 --- !u!1 &1586963481
 GameObject:
   m_ObjectHideFlags: 0

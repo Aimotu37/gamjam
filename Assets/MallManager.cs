@@ -21,6 +21,10 @@ public class MallManager : MonoBehaviour
     //是否已进入恐怖商场状态
     private bool _creepyMall = false;
 
+    public List<StateAction> _ScaryTransitionActions;
+    private bool isExecuting = false; // 类成员变量
+
+
 
 
     void Start()
@@ -84,6 +88,7 @@ public class MallManager : MonoBehaviour
 
     void EnterScaryMallState()
     {
+        StartCoroutine(ExecuteActions(_ScaryTransitionActions));
         Debug.Log("弹出对话");
         Debug.Log("播放视频");
         Debug.Log("切换背景");
@@ -106,4 +111,16 @@ public class MallManager : MonoBehaviour
         }
     }
 
+    private IEnumerator ExecuteActions(List<StateAction> actions)
+    {
+        isExecuting = true;
+        foreach (var action in actions)
+        {
+            if (action != null)
+                yield return action.Execute();
+        }
+        isExecuting = false; // 结束后解锁
+    }
+
 }
+
