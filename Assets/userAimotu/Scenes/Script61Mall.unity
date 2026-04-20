@@ -3400,6 +3400,7 @@ GameObject:
   - component: {fileID: 1576953283}
   - component: {fileID: 1576953284}
   - component: {fileID: 1576953285}
+  - component: {fileID: 1576953287}
   - component: {fileID: 1576953286}
   m_Layer: 0
   m_Name: GameManager
@@ -3471,6 +3472,8 @@ MonoBehaviour:
   background: {fileID: 1673434993}
   _playerRb: {fileID: 1310276393}
   _playerSpriteRender: {fileID: 1310276388}
+  _ScaryTransitionActions:
+  - {fileID: 11400000, guid: f5773e11838e74c4e904730e335336c6, type: 2}
 --- !u!61 &1576953282
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3579,18 +3582,39 @@ MonoBehaviour:
   m_GameObject: {fileID: 1576953277}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 48265cf264811544db45afaad591052e, type: 3}
+  m_Script: {fileID: 11500000, guid: e2111618334811e479a3a80c105591c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  eligibleStates: 
-  type: 0
-  allowRepeatClick: 1
-  canInteract: 0
-  questionMarkIcon: {fileID: 0}
-  defaultActions:
-  - {fileID: 11400000, guid: 19ac98d98ee0d2a4da87ea06959c3d01, type: 2}
-  stateSpecificEvents: []
-  clickSFX: {fileID: 0}
+  diaryTaskText: {fileID: 0}
+  snackCartPanel: {fileID: 0}
+  finalChoiceSequence: {fileID: 0}
+--- !u!114 &1576953287
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1576953277}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d4678424d1479b47a4ea749ecea44c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _uiRawImage: {fileID: 0}
+  _uiVideoPlayer: {fileID: 0}
+  _uiRenderTexture: {fileID: 0}
+  _transitionMaskGroup: {fileID: 0}
+  sfxSource: {fileID: 0}
+  dialogueManager: {fileID: 223367415}
+  child_neutral: {fileID: 21300000, guid: e565b6bf4116f0a4c9cb5b9cfe702113, type: 3}
+  child_happy1: {fileID: 21300000, guid: 77d0cff24627b814386963dc34444155, type: 3}
+  child_happy2: {fileID: 21300000, guid: 058d795b1523ae14aa2f1b366356efb8, type: 3}
+  child_confused: {fileID: 0}
+  child_surprised: {fileID: 0}
+  child_pout: {fileID: 0}
+  roomStateEvents: []
+  uiBlockCount: 0
+  taskS61_Instance: {fileID: 1576953286}
 --- !u!1 &1586963481
 GameObject:
   m_ObjectHideFlags: 0
