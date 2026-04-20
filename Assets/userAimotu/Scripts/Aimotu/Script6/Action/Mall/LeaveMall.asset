@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 27ed11fc7be007b46981493888ff7815, type: 3}
+  m_Name: LeaveMall
+  m_EditorClassIdentifier: 
+  triggerState: 0
+  question: "\u662F\u5426\u79BB\u5F00\u5546\u573A\uFF1F"
+  options:
+  - "\u662F"
+  - "\u5426"
+  branchActions:
+  - actions:
+    - {fileID: 11400000, guid: 3cbb29e8c66a84f0fa3d1e998d500988, type: 2}
+  - actions:
+    - {fileID: 0}

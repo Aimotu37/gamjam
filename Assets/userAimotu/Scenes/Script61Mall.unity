@@ -3474,9 +3474,10 @@ MonoBehaviour:
   _playerRb: {fileID: 1310276393}
   _playerSpriteRender: {fileID: 1310276388}
   _ScaryTransitionActions:
-  - {fileID: 11400000, guid: f5773e11838e74c4e904730e335336c6, type: 2}
+  - {fileID: 11400000, guid: 7036c3e255d134bb2815f19c9c3054b4, type: 2}
+  - {fileID: 11400000, guid: 7aa114e47fada407ab6370313108dc57, type: 2}
   _exitMallActions:
-  - {fileID: 11400000, guid: 19ac98d98ee0d2a4da87ea06959c3d01, type: 2}
+  - {fileID: 11400000, guid: f59dc9c6766d54096a187bfdc51778a9, type: 2}
 --- !u!61 &1576953282
 BoxCollider2D:
   m_ObjectHideFlags: 0
