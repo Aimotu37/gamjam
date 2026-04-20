@@ -5,12 +5,13 @@ using UnityEngine;
 public class MallManager : MonoBehaviour
 {
 
-    //1.切换恐怖商场状态-走到商场最右边触发+播放视频
-    //2.走回到电视机附近吓人
+    //1.切换恐怖商场状态-走到商场最右边触发+播放视频！
+    //2.走回到电视机附近吓人(播放视频！)
     //3.走回最左侧弹出回到街道选项
 
     //地图边界
-    public GameObject background;
+    public GameObject backgroundMall;
+    public GameObject backgroundScaryMall;
     private float _minX; // 左边s
     private float _maxX;  // 右边
 
@@ -29,36 +30,7 @@ public class MallManager : MonoBehaviour
 
     void Start()
     {
-        if (background != null)
-        {
-            // 1. 获取背景和主角的渲染器 (Renderer)
 
-            Renderer bgRenderer = background.GetComponent<Renderer>();
-
-            if (bgRenderer != null && _playerSpriteRender != null)
-            {
-                // 2. 获取主角的一半宽度 (extents.x 就是物体宽度的一半)
-                float playerHalfWidth = _playerSpriteRender.bounds.extents.x;
-
-                // 3. 计算左边界：背景的最左边 + 主角半宽
-                // bounds.min.x 是物体在世界坐标中最左边的点
-                _minX = bgRenderer.bounds.min.x + playerHalfWidth;
-
-                // 4. 计算右边界：背景的最右边 - 主角半宽
-                // bounds.max.x 是物体在世界坐标中最右边的点
-                _maxX = bgRenderer.bounds.max.x - playerHalfWidth;
-
-                Debug.Log($"Mall边界已自动计算: 左 {_minX} / 右 {_maxX}");
-            }
-            else
-            {
-                Debug.LogError("错误：背景或主角缺少 Renderer 组件！");
-            }
-        }
-        else
-        {
-            Debug.LogError("请在 Inspector 面板中把【背景物体】拖进去！");
-        }
     }
 
     private void OnCollisionEnter2D(Collision2D other)
@@ -88,11 +60,17 @@ public class MallManager : MonoBehaviour
 
     void EnterScaryMallState()
     {
-        StartCoroutine(ExecuteActions(_ScaryTransitionActions));
-        Debug.Log("弹出对话");
-        Debug.Log("播放视频");
-        Debug.Log("切换背景");
-        _creepyMall = true;
+        if (_creepyMall == false)
+        {
+            StartCoroutine(ExecuteActions(_ScaryTransitionActions));
+            Debug.Log("弹出对话");
+            Debug.Log("播放视频");
+            Debug.Log("切换背景");
+            _creepyMall = true;
+            backgroundMall.SetActive(false);
+            backgroundScaryMall.SetActive(true);
+        }
+
     }
 
     void ScaryTV()
