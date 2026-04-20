@@ -3475,6 +3475,8 @@ MonoBehaviour:
   _playerSpriteRender: {fileID: 1310276388}
   _ScaryTransitionActions:
   - {fileID: 11400000, guid: f5773e11838e74c4e904730e335336c6, type: 2}
+  _exitMallActions:
+  - {fileID: 11400000, guid: 19ac98d98ee0d2a4da87ea06959c3d01, type: 2}
 --- !u!61 &1576953282
 BoxCollider2D:
   m_ObjectHideFlags: 0

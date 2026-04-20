@@ -23,6 +23,7 @@ public class MallManager : MonoBehaviour
     private bool _creepyMall = false;
 
     public List<StateAction> _ScaryTransitionActions;
+    public List<StateAction> _exitMallActions;
     private bool isExecuting = false; // 类成员变量
 
 
@@ -86,6 +87,7 @@ public class MallManager : MonoBehaviour
         if (_creepyMall == true)
         {
             Debug.Log("弹出选项");
+            StartCoroutine(ExecuteActions(_exitMallActions));
         }
     }
 
