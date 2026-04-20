@@ -9,11 +9,13 @@ public class MallManager : MonoBehaviour
     //2.走回到电视机附近吓人(播放视频！)
     //3.走回最左侧弹出回到街道选项
 
-    //地图边界
-    public GameObject backgroundMall;
-    public GameObject backgroundScaryMall;
-    private float _minX; // 左边s
-    private float _maxX;  // 右边
+    //地图
+    public GameObject _backgroundMall;
+    public GameObject _backgroundScaryMall;
+
+    //背景视频
+    public GameObject _scrayTransitionVideo;
+    public GameObject _scaryTVVideo;
 
     //玩家位置
     public Rigidbody2D _playerRb;
@@ -68,8 +70,9 @@ public class MallManager : MonoBehaviour
             Debug.Log("播放视频");
             Debug.Log("切换背景");
             _creepyMall = true;
-            backgroundMall.SetActive(false);
-            backgroundScaryMall.SetActive(true);
+            _backgroundMall.SetActive(false);
+            _scrayTransitionVideo.SetActive(true);
+
         }
 
     }
@@ -79,6 +82,7 @@ public class MallManager : MonoBehaviour
         if (_creepyMall == true)
         {
             Debug.Log("电视闪屏");
+            _scaryTVVideo.SetActive(true);
         }
     }
 

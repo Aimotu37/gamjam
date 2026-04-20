@@ -502,6 +502,7 @@ GameObject:
   - component: {fileID: 110098494}
   - component: {fileID: 110098493}
   - component: {fileID: 110098492}
+  - component: {fileID: 110098495}
   m_Layer: 0
   m_Name: MallScaryTransitionVideo
   m_TagString: Untagged
@@ -609,6 +610,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &110098495
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 110098491}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c99ee4a876957493c953a21a422f9f2f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _backgroundScaryMall: {fileID: 340415057}
 --- !u!1 &223367408
 GameObject:
   m_ObjectHideFlags: 0
@@ -815,13 +829,14 @@ GameObject:
   - component: {fileID: 267300228}
   - component: {fileID: 267300227}
   - component: {fileID: 267300226}
+  - component: {fileID: 267300229}
   m_Layer: 0
   m_Name: TVScaryVideo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!328 &267300226
 VideoPlayer:
   m_ObjectHideFlags: 0
@@ -922,6 +937,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &267300229
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 267300225}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c99ee4a876957493c953a21a422f9f2f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _backgroundScaryMall: {fileID: 340415057}
 --- !u!1 &301002193
 GameObject:
   m_ObjectHideFlags: 0
@@ -3599,8 +3627,6 @@ GameObject:
   - component: {fileID: 1576953283}
   - component: {fileID: 1576953284}
   - component: {fileID: 1576953285}
-  - component: {fileID: 1576953287}
-  - component: {fileID: 1576953286}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -3668,8 +3694,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df72366a4c8154d6c90d664b2cb914c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  backgroundMall: {fileID: 1673434993}
-  backgroundScaryMall: {fileID: 340415057}
+  _backgroundMall: {fileID: 1673434993}
+  _backgroundScaryMall: {fileID: 340415057}
+  _scrayTransitionVideo: {fileID: 110098491}
+  _scaryTVVideo: {fileID: 267300225}
   _playerRb: {fileID: 1310276393}
   _playerSpriteRender: {fileID: 1310276388}
   _ScaryTransitionActions:
@@ -3737,7 +3765,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 1.6160846, y: -0.2107935}
+  m_Offset: {x: -4.822136, y: -0.2107935}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -3748,7 +3776,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 4.232169, y: 9.010164}
+  m_Size: {x: 17.293886, y: 9.010164}
   m_EdgeRadius: 0
 --- !u!61 &1576953285
 BoxCollider2D:
@@ -3776,48 +3804,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.2098885, y: 6.0987997}
   m_EdgeRadius: 0
---- !u!114 &1576953286
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1576953277}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e2111618334811e479a3a80c105591c8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  diaryTaskText: {fileID: 0}
-  snackCartPanel: {fileID: 0}
-  finalChoiceSequence: {fileID: 0}
---- !u!114 &1576953287
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1576953277}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6d4678424d1479b47a4ea749ecea44c4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _uiRawImage: {fileID: 0}
-  _uiVideoPlayer: {fileID: 0}
-  _uiRenderTexture: {fileID: 0}
-  _transitionMaskGroup: {fileID: 0}
-  sfxSource: {fileID: 0}
-  dialogueManager: {fileID: 223367415}
-  child_neutral: {fileID: 21300000, guid: e565b6bf4116f0a4c9cb5b9cfe702113, type: 3}
-  child_happy1: {fileID: 21300000, guid: 77d0cff24627b814386963dc34444155, type: 3}
-  child_happy2: {fileID: 21300000, guid: 058d795b1523ae14aa2f1b366356efb8, type: 3}
-  child_confused: {fileID: 0}
-  child_surprised: {fileID: 0}
-  child_pout: {fileID: 0}
-  roomStateEvents: []
-  uiBlockCount: 0
-  taskS61_Instance: {fileID: 1576953286}
 --- !u!1 &1586963481
 GameObject:
   m_ObjectHideFlags: 0
@@ -4071,7 +4057,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!212 &1673434994
 SpriteRenderer:
   m_ObjectHideFlags: 0
