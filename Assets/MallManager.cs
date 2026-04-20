@@ -5,6 +5,10 @@ using UnityEngine;
 public class MallManager : MonoBehaviour
 {
 
+    //1.切换恐怖商场状态-走到商场最右边触发+播放视频
+    //2.走回到电视机附近吓人
+    //3.走回最左侧弹出回到街道选项
+
     //地图边界
     public GameObject background;
     private float _minX; // 左边s
@@ -14,6 +18,10 @@ public class MallManager : MonoBehaviour
     public Rigidbody2D _playerRb;
     public SpriteRenderer _playerSpriteRender;
 
+    //是否已进入恐怖商场状态
+    private bool _creepyMall = false;
+
+
 
     void Start()
     {
@@ -22,7 +30,6 @@ public class MallManager : MonoBehaviour
             // 1. 获取背景和主角的渲染器 (Renderer)
 
             Renderer bgRenderer = background.GetComponent<Renderer>();
-
 
             if (bgRenderer != null && _playerSpriteRender != null)
             {
@@ -50,8 +57,53 @@ public class MallManager : MonoBehaviour
         }
     }
 
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+        EnterScaryMallState();
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (_playerRb.position.x <= -30)
+        {
+            LeaveMall();
+        }
+        else
+        {
+            ScaryTV();
+        }
+
+    }
 
 
+    void Update()
+    {
 
+    }
+
+
+    void EnterScaryMallState()
+    {
+        Debug.Log("弹出对话");
+        Debug.Log("播放视频");
+        Debug.Log("切换背景");
+        _creepyMall = true;
+    }
+
+    void ScaryTV()
+    {
+        if (_creepyMall == true)
+        {
+            Debug.Log("电视闪屏");
+        }
+    }
+
+    void LeaveMall()
+    {
+        if (_creepyMall == true)
+        {
+            Debug.Log("弹出选项");
+        }
+    }
 
 }
