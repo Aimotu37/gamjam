@@ -8,13 +8,13 @@ public class S6VideoManager : MonoBehaviour
 
     void Awake()
     {
-        _backgroundScaryMall.SetActive(false);
 
     }
 
 
     void Start()
     {
+        _backgroundScaryMall.SetActive(false);
         videoPlayer = GetComponent<VideoPlayer>();
         videoPlayer.loopPointReached += EndReached;
     }
