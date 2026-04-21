@@ -70,9 +70,9 @@ public class MallManager : MonoBehaviour
             Debug.Log("≤•∑≈ ”∆µ");
             Debug.Log("«–ªª±≥æ∞");
             _creepyMall = true;
-            _backgroundMall.SetActive(false);
-            _backgroundScaryMall.SetActive(true);
+            //_backgroundMall.SetActive(false);
             _scrayTransitionVideo.SetActive(true);
+            _backgroundScaryMall.SetActive(true);
 
         }
 

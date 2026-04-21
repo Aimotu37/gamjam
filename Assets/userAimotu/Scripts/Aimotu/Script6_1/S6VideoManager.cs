@@ -14,7 +14,7 @@ public class S6VideoManager : MonoBehaviour
 
     void Start()
     {
-        _backgroundScaryMall.SetActive(false);
+        //_backgroundScaryMall.SetActive(false);
         videoPlayer = GetComponent<VideoPlayer>();
         videoPlayer.loopPointReached += EndReached;
     }
@@ -22,7 +22,7 @@ public class S6VideoManager : MonoBehaviour
     void EndReached(VideoPlayer vp)
     {
         Debug.Log("Video has finished playing!");
-        _backgroundScaryMall.SetActive(true);
+        //_backgroundScaryMall.SetActive(true);
         this.gameObject.SetActive(false);
 
     }
