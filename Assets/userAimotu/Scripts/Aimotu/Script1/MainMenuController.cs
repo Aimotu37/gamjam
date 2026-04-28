@@ -9,6 +9,7 @@ public class MainMenuController : SceneManagerBase
     [SerializeField] public Button continueBtn;
     [SerializeField] public Button setBtn;    
     [SerializeField] public Button detailsBtn;
+    [SerializeField] public Button returnBtn;
     
     public GameObject settingsPanel;
     public GameObject detailsPanel;
@@ -23,7 +24,7 @@ public class MainMenuController : SceneManagerBase
         continueBtn.onClick.AddListener(OnClickContinue);
         setBtn.onClick.AddListener(OnClickSetting);
         detailsBtn.onClick.AddListener(OnClickDetails);
-        
+        returnBtn.onClick.AddListener(OnCloseDetail);
     }
 
     private void OnClickPlay()
@@ -64,6 +65,9 @@ public class MainMenuController : SceneManagerBase
     {
         detailsPanel.SetActive(true);
     }
-    
-    
+
+    private void OnCloseDetail()
+    {
+        detailsPanel.SetActive(false);
+    }
 }
