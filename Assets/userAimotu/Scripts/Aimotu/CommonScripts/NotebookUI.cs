@@ -14,6 +14,8 @@ public class NotebookUI : MonoBehaviour
     [Header("日记页面 — 按顺序拖入 Page_Diary1~7")]
     public GameObject[] diaryPages; // 0=日记1, 1=日记2 ... 6=日记7
 
+    public int _currentpage = 0;
+
 
     private IGameManager GameMgr => (IGameManager)FindAnyObjectByType<SceneManagerBase>();
 
@@ -47,17 +49,42 @@ public class NotebookUI : MonoBehaviour
     //———日记页打开————
     public void OpenPages()
     {
-
         pages.SetActive(true);
-        GameMgr?.PushUIBlock("DiaryPages");
-        RefreshDiaryPages();
+        diaryPages[_currentpage].SetActive(true);
+        //GameMgr?.PushUIBlock("DiaryPages");
+        //RefreshDiaryPages();
     }
 
     public void ClosePages()
     {
         pages.SetActive(false);
+        diaryPages[_currentpage].SetActive(true);
         GameMgr?.PopUIBlock("DiaryPages");
     }
+
+    //———日记页翻页————
+
+    public void TurnPageLeft()
+    {
+        if (_currentpage - 1 >= 0)
+        {
+            diaryPages[_currentpage].SetActive(false);
+            diaryPages[_currentpage - 1].SetActive(true);
+            _currentpage--;
+        }
+    }
+
+    public void TurnPageRight()
+    {
+        if (_currentpage + 1 < diaryPages.Length)
+        {
+            diaryPages[_currentpage].SetActive(false);
+            diaryPages[_currentpage + 1].SetActive(true);
+            _currentpage++;
+        }
+    }
+
+
 
     // ── 日记页刷新 ──
     private void RefreshDiaryPages()
