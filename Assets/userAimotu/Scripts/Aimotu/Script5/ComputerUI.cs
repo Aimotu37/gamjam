@@ -43,6 +43,7 @@ public class ComputerUI : MonoBehaviour
     {
         ComputerPannel.SetActive(false);
         GameMgr?.PopUIBlock("ComputerUI");
+        GameMgr?.PopUIBlock("ComputerMessages");
 
     }
 
