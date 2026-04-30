@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: OpenNoteBook
   m_EditorClassIdentifier: 
   triggerState: 0
-  targetUI: 2
+  targetUI: 4
   isClose: 0
   customSFX: {fileID: 0}
   volume: 1

@@ -4,7 +4,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "ControlUIAction", menuName = "Actions/Control UI")]
 public class ControlUIAction : StateAction
 {
-    public enum UIType { Notebook, NoteBigImage, Map, Cart, OpenNoteBook }
+    public enum UIType { Notebook, NoteBigImage, Map, Cart, OpenNoteBook, OpenComputer, ComputerMessage, NextComputerMessage }
     public UIType targetUI;
     public bool isClose = false; // 新增：是否是关闭操作
     [Header("音效设置")]
@@ -33,6 +33,15 @@ public class ControlUIAction : StateAction
                 break;
             case UIType.OpenNoteBook:
                 HandleOpenNoteBook(manager);
+                break;
+            case UIType.OpenComputer:
+                HandleOpenComputer(manager);
+                break;
+            case UIType.ComputerMessage:
+                HandleComputerMessage(manager);
+                break;
+            case UIType.NextComputerMessage:
+                HandleNextComputerMessage(manager);
                 break;
         }
 
@@ -98,4 +107,32 @@ public class ControlUIAction : StateAction
             NotebookUI.Instance.GetPageContent();
         }
     }
+
+    //打开电脑
+    private void HandleOpenComputer(IGameManager manager)
+    {
+        Debug.Log($"ComputerUI Instance 是否为空: {ComputerUI.Instance == null}");
+        if (isClose)
+            ComputerUI.Instance.Close();
+        else
+            ComputerUI.Instance.Open();
+
+    }
+
+    //打开消息弹窗
+    private void HandleComputerMessage(IGameManager manager)
+    {
+        Debug.Log($"ComputerUI Instance 是否为空: {ComputerUI.Instance == null}");
+        ComputerUI.Instance.OpenMessageWindow();
+        ComputerUI.Instance.GetMessageContent();
+    }
+
+    //下一条消息
+    private void HandleNextComputerMessage(IGameManager manager)
+    {
+        Debug.Log($"ComputerUI Instance 是否为空: {ComputerUI.Instance == null}");
+        ComputerUI.Instance.NextMessage();
+    }
+
+
 }
