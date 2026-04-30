@@ -82,7 +82,7 @@ public class ControlUIAction : StateAction
         }
     }
 
-    //打开note book
+    //打开日记本内页
     private void HandleOpenNoteBook(IGameManager manager)
     {
         Debug.Log($"NoteUI Instance 是否为空: {NoteUI.Instance == null}");
@@ -95,6 +95,7 @@ public class ControlUIAction : StateAction
         {
             manager?.PushUIBlock("DiaryPages");
             NotebookUI.Instance.OpenPages();
+            NotebookUI.Instance.GetPageContent();
         }
     }
 }

@@ -50,15 +50,19 @@ public class NotebookUI : MonoBehaviour
     public void OpenPages()
     {
         pages.SetActive(true);
+        GameMgr?.PushUIBlock("DiaryPages");
+        RefreshDiaryPages();
+    }
+
+    public void GetPageContent()
+    {
         diaryPages[_currentpage].SetActive(true);
-        //GameMgr?.PushUIBlock("DiaryPages");
-        //RefreshDiaryPages();
     }
 
     public void ClosePages()
     {
         pages.SetActive(false);
-        diaryPages[_currentpage].SetActive(true);
+        diaryPages[_currentpage].SetActive(false);
         GameMgr?.PopUIBlock("DiaryPages");
     }
 
