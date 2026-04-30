@@ -8,6 +8,7 @@ public class NotebookUI : MonoBehaviour
 
     [Header("日记本根面板")]
     public GameObject rootPanel;
+    public GameObject pages;
     public GameObject stickyHighlight;
 
     [Header("日记页面 — 按顺序拖入 Page_Diary1~7")]
@@ -41,6 +42,21 @@ public class NotebookUI : MonoBehaviour
         rootPanel.SetActive(false);
         GameMgr?.PopUIBlock("Notebook");
         if (stickyHighlight != null) stickyHighlight.SetActive(false);
+    }
+
+    //———日记页打开————
+    public void OpenPages()
+    {
+
+        pages.SetActive(true);
+        GameMgr?.PushUIBlock("DiaryPages");
+        RefreshDiaryPages();
+    }
+
+    public void ClosePages()
+    {
+        pages.SetActive(false);
+        GameMgr?.PopUIBlock("DiaryPages");
     }
 
     // ── 日记页刷新 ──
