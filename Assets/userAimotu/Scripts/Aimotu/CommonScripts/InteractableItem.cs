@@ -23,7 +23,7 @@ public class InteractableItem : MonoBehaviour
     private bool isPlayerNearby = false;
     public GameObject questionMarkIcon;
 
-    //  private IGameManager GetManager() => FindObjectOfType<MonoBehaviour>() as IGameManager;
+    //private IGameManager GetManager() => FindObjectOfType<MonoBehaviour>() as IGameManager;
 
     [Header("4. Action 系统 (高复用性核心)")]
     public List<StateAction> defaultActions;
@@ -42,6 +42,7 @@ public class InteractableItem : MonoBehaviour
     private IGameManager GetManager()
     {
         if (S4.GameManager.Instance != null) return (IGameManager)S4.GameManager.Instance;
+        if (S5.GameManager.Instance != null) return (IGameManager)S5.GameManager.Instance;
         if (S6.GameManager.Instance != null) return (IGameManager)S6.GameManager.Instance;
         if (S61.GameManager.Instance != null) return (IGameManager)S61.GameManager.Instance;
 

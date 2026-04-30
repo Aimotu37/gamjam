@@ -3417,8 +3417,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: 3b1402817e732e44ea8c6cc9f5503d2c, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -5869,7 +5869,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: c290ab147228deb4cbfff1a771f3cf2a, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 3b1402817e732e44ea8c6cc9f5503d2c, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -7085,12 +7085,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48265cf264811544db45afaad591052e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  eligibleStates: 020000000300000004000000
+  eligibleStates: 
   type: 1
   allowRepeatClick: 1
   canInteract: 0
   questionMarkIcon: {fileID: 694809651}
-  defaultActions: []
+  defaultActions:
+  - {fileID: 11400000, guid: fe3a7dde322606e4b8d87a10c6cace2e, type: 2}
   stateSpecificEvents:
   - triggerState: 2
     actions:
