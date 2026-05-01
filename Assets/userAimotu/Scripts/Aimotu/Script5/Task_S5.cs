@@ -6,16 +6,8 @@ namespace S5
 {
     public class Task_S5 : MonoBehaviour, TaskModule
     {
-        //这里内容先复制的S4，记得改
 
-
-        [Header("UI 文本引用")]
-        public TextMeshProUGUI passwordTaskText;
-        public TextMeshProUGUI diaryTaskText;
-        private const int PASSWORD_TOTAL = 3;
-        private const int DIARY_TOTAL = 1;
-
-        // 每个位的密码状态
+        // 每交互的完成状态
         private bool FishCollected => GlobalData.D1_Fish;
         private bool DollCollected => GlobalData.D1_Doll;
         private bool AwardCollected => GlobalData.D1_Award;
@@ -28,19 +20,36 @@ namespace S5
             if (GameManager.Instance != null)
             {
                 GameManager.OnRoomStateChanged += HandleStateChanged;
+
             }
         }
         private void OnDestroy()
         {
             // 记得取消注册，否则切关会报错
             GameManager.OnRoomStateChanged -= HandleStateChanged;
+
         }
         private void HandleStateChanged(RoomState newState)
         {
             // 每次切换状态时，强行刷一次 UI 和检查
-            UpdateTaskUI();
+            //UpdateTaskUI();
         }
-        // 修改：每个密码位独立记录，防止玩家重复点击同一个物品导致计数错误。
+        /*
+
+        private void HandleNoteReadFinished(RoomState newState)
+        {
+            FinisheReading();
+        }
+
+        public void FinisheReading()
+        {
+            GameManager.Instance.EnterState(RoomState.S5_NoteBookReadFinish);
+        }
+        */
+
+
+
+        /*
         public void CollectPassword(ItemType type)
         {
             Debug.Log($"[Task_S4] CollectPassword 被调用：{type}，D1_Fish={GlobalData.D1_Fish}");
@@ -115,5 +124,14 @@ namespace S5
 
 
     }
+    */
+        public bool IsAllCompleted() => FishCollected && DollCollected && AwardCollected && DiaryCollected;
+        private void UpdateTaskUI()
+        { }
+        public void UpdateUI() => UpdateTaskUI();
+    }
+
+
+
 
 }

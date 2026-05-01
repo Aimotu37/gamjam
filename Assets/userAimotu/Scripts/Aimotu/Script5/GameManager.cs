@@ -12,10 +12,14 @@ namespace S5
             taskS5_Instance != null ? taskS5_Instance.gameObject : null;
         public Task_S5 TaskS5 => taskS5_Instance;
 
+        //S5独有状态trigger event
+
+
+
 
 
         //S5 应该是要建一个新的room state？
-        protected override RoomState InitialState => RoomState.Intro;
+        protected override RoomState InitialState => RoomState.S5_Intro;
         protected override void Awake()
         {
             Instance = this;

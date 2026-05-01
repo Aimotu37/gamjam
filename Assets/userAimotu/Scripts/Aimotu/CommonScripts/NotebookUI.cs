@@ -6,6 +6,7 @@ public class NotebookUI : MonoBehaviour
 {
     public static NotebookUI Instance;
 
+
     [Header("日记本根面板")]
     public GameObject rootPanel;
     public GameObject pages;
@@ -35,6 +36,7 @@ public class NotebookUI : MonoBehaviour
     {
         rootPanel.SetActive(true);
         GameMgr?.PushUIBlock("Notebook");
+        GameMgr?.PushUIBlock("NotebookUI");
         if (stickyHighlight != null) stickyHighlight.SetActive(true);
         RefreshDiaryPages();
     }
@@ -42,6 +44,8 @@ public class NotebookUI : MonoBehaviour
     public void Close()
     {
         rootPanel.SetActive(false);
+        GameMgr?.PopUIBlock("Image_close");
+        GameMgr?.PopUIBlock("NotebookUI");
         GameMgr?.PopUIBlock("Notebook");
         if (stickyHighlight != null) stickyHighlight.SetActive(false);
     }
@@ -85,6 +89,16 @@ public class NotebookUI : MonoBehaviour
             diaryPages[_currentpage].SetActive(false);
             diaryPages[_currentpage + 1].SetActive(true);
             _currentpage++;
+        }
+        if (_currentpage + 1 == diaryPages.Length - 1)
+        {
+
+
+        }
+        if (_currentpage + 1 >= diaryPages.Length)
+        {
+            ClosePages();
+            Close();
         }
     }
 

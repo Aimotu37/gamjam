@@ -1951,8 +1951,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc782ac332ba64167b1fc5e11d4d0e92, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  passwordTaskText: {fileID: 0}
-  diaryTaskText: {fileID: 0}
 --- !u!1 &400223723
 GameObject:
   m_ObjectHideFlags: 0
@@ -3461,15 +3459,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48265cf264811544db45afaad591052e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  eligibleStates: 02000000
+  eligibleStates: 0d000000
   type: 13
   allowRepeatClick: 1
   canInteract: 0
   questionMarkIcon: {fileID: 27933092}
   defaultActions:
-  - {fileID: 0}
+  - {fileID: 11400000, guid: 80d32a6bc4250491e88553da117e1984, type: 2}
   stateSpecificEvents:
-  - triggerState: 1
+  - triggerState: 13
     actions:
     - {fileID: 11400000, guid: 80d32a6bc4250491e88553da117e1984, type: 2}
   clickSFX: {fileID: 8300000, guid: c5d8e70ff9c080a42a041d52eeb872af, type: 3}
@@ -4693,7 +4691,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48265cf264811544db45afaad591052e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  eligibleStates: 
+  eligibleStates: 0d000000
   type: 13
   allowRepeatClick: 1
   canInteract: 0
@@ -4701,7 +4699,7 @@ MonoBehaviour:
   defaultActions:
   - {fileID: 0}
   stateSpecificEvents:
-  - triggerState: 1
+  - triggerState: 13
     actions:
     - {fileID: 11400000, guid: d4803ed32b9524e839d6fe7a9ec9dbe3, type: 2}
   clickSFX: {fileID: 8300000, guid: c5d8e70ff9c080a42a041d52eeb872af, type: 3}
@@ -4980,7 +4978,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48265cf264811544db45afaad591052e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  eligibleStates: 
+  eligibleStates: 0d000000
   type: 13
   allowRepeatClick: 1
   canInteract: 0
@@ -4988,7 +4986,7 @@ MonoBehaviour:
   defaultActions:
   - {fileID: 0}
   stateSpecificEvents:
-  - triggerState: 1
+  - triggerState: 13
     actions:
     - {fileID: 11400000, guid: 1395ae4402f7c42ab833ed5e8766474d, type: 2}
   clickSFX: {fileID: 8300000, guid: c5d8e70ff9c080a42a041d52eeb872af, type: 3}
@@ -6256,8 +6254,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc782ac332ba64167b1fc5e11d4d0e92, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  passwordTaskText: {fileID: 0}
-  diaryTaskText: {fileID: 0}
 --- !u!114 &1576953282
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6283,7 +6279,7 @@ MonoBehaviour:
   child_surprised: {fileID: 0}
   child_pout: {fileID: 0}
   roomStateEvents:
-  - triggerState: 1
+  - triggerState: 12
     actions:
     - {fileID: 11400000, guid: 2538bc4a4095440c6a4736a0a6062027, type: 2}
   - triggerState: 4
@@ -6474,7 +6470,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 0.8000001, g: 0.8000001, b: 0.8000001, a: 1}
-  m_RaycastTarget: 0
+  m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -6877,6 +6873,7 @@ MonoBehaviour:
   defaultActions:
   - {fileID: 11400000, guid: d6ea17ebfe7bf4a95a6407189ceea068, type: 2}
   - {fileID: 11400000, guid: 946d335cf97ec4a9fb53751d1fb5639b, type: 2}
+  - {fileID: 11400000, guid: e4fe8eeef682d434caf18db8d5e680ea, type: 2}
   stateSpecificEvents: []
   clickSFX: {fileID: 0}
 --- !u!114 &1631194124
@@ -6894,6 +6891,7 @@ MonoBehaviour:
   sequence:
   - {fileID: 11400000, guid: d6ea17ebfe7bf4a95a6407189ceea068, type: 2}
   - {fileID: 11400000, guid: 946d335cf97ec4a9fb53751d1fb5639b, type: 2}
+  - {fileID: 11400000, guid: e4fe8eeef682d434caf18db8d5e680ea, type: 2}
 --- !u!114 &1631194125
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8070,22 +8068,7 @@ MonoBehaviour:
   questionMarkIcon: {fileID: 694809651}
   defaultActions:
   - {fileID: 11400000, guid: fe3a7dde322606e4b8d87a10c6cace2e, type: 2}
-  stateSpecificEvents:
-  - triggerState: 2
-    actions:
-    - {fileID: 11400000, guid: 1f2912cf41449ce43a0435ec8fbad66e, type: 2}
-    - {fileID: 11400000, guid: fe3a7dde322606e4b8d87a10c6cace2e, type: 2}
-    - {fileID: 11400000, guid: f733383d6e652a74893240ed057d0c8e, type: 2}
-  - triggerState: 3
-    actions:
-    - {fileID: 11400000, guid: f7ae9c348fa99614da4e01544ac449dc, type: 2}
-    - {fileID: 11400000, guid: 0577dc18ad93c9445bc9702511fda3ce, type: 2}
-    - {fileID: 11400000, guid: d108f938202679e4182002e21583b189, type: 2}
-  - triggerState: 4
-    actions:
-    - {fileID: 11400000, guid: f7ae9c348fa99614da4e01544ac449dc, type: 2}
-    - {fileID: 11400000, guid: 0577dc18ad93c9445bc9702511fda3ce, type: 2}
-    - {fileID: 11400000, guid: d108f938202679e4182002e21583b189, type: 2}
+  stateSpecificEvents: []
   clickSFX: {fileID: 8300000, guid: c5d8e70ff9c080a42a041d52eeb872af, type: 3}
 --- !u!114 &1783712928
 MonoBehaviour:
@@ -8099,8 +8082,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1fa82d7a5ce59aa438e6621d1969cfee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sequence:
-  - {fileID: 11400000, guid: fe3a7dde322606e4b8d87a10c6cace2e, type: 2}
+  sequence: []
 --- !u!1 &1836222241
 GameObject:
   m_ObjectHideFlags: 0
@@ -9294,7 +9276,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48265cf264811544db45afaad591052e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  eligibleStates: 
+  eligibleStates: 0d000000
   type: 13
   allowRepeatClick: 1
   canInteract: 0
