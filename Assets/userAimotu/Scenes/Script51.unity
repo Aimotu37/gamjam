@@ -2983,7 +2983,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: dda934b95bcb7c341afd51ca99c35c31, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e2263de52174fe544b0afe0f928046d4, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -3831,7 +3831,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: dda934b95bcb7c341afd51ca99c35c31, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e2263de52174fe544b0afe0f928046d4, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -5009,7 +5009,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 921aa9a4183390744a4b534134300611, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 354f8e593985f0b409187d95a51063e3, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -6579,7 +6579,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -555.2, y: 103.899994}
+  m_AnchoredPosition: {x: -674, y: 103.899994}
   m_SizeDelta: {x: 2000, y: 2000}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1448239796
@@ -6912,12 +6912,12 @@ MonoBehaviour:
   _transitionMaskGroup: {fileID: 2022238942}
   sfxSource: {fileID: 0}
   dialogueManager: {fileID: 223367415}
-  child_neutral: {fileID: 0}
-  child_happy1: {fileID: 0}
+  child_neutral: {fileID: 21300000, guid: aa945a6acc7bc421680a6d8341910306, type: 3}
+  child_happy1: {fileID: 21300000, guid: f0afca1fa1f8c4cb696848ed1e12f92a, type: 3}
   child_happy2: {fileID: 0}
-  child_confused: {fileID: 0}
-  child_surprised: {fileID: 0}
-  child_pout: {fileID: 0}
+  child_confused: {fileID: 21300000, guid: 5db6ef9c431e84ce790feec59b89e290, type: 3}
+  child_surprised: {fileID: 21300000, guid: 72616ad2bef53454d93892c3679a5dad, type: 3}
+  child_pout: {fileID: 21300000, guid: 5e00cb559dfef47e1878da7ab9472371, type: 3}
   roomStateEvents:
   - triggerState: 12
     actions:
@@ -8052,7 +8052,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 4b639f82118c43048ab7daa987ce006f, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2f505fefd46212a43b31c75440e7ecfc, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1

@@ -15,12 +15,12 @@ MonoBehaviour:
   triggerState: 0
   dialogue:
     lines:
-    - speaker: 0
+    - speaker: 1
       portrait: 6
       text: ......
-    - speaker: 0
+    - speaker: 1
       portrait: 6
       text: "\u2026\u2026\u53C8\u6765\u4E86\u3002"
-    - speaker: 0
+    - speaker: 1
       portrait: 6
       text: "\u70E6\u4EBA\u7684\u5DE5\u4F5C\u3002"

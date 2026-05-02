@@ -15,6 +15,6 @@ MonoBehaviour:
   triggerState: 0
   dialogue:
     lines:
-    - speaker: 0
+    - speaker: 1
       portrait: 1
       text: "\u5403\u892A\u9ED1\u7D20\u597D\u50CF\u5403\u51FA\u6297\u836F\u6027\u6765\u4E86\u2026\u2026\u4ECA\u5929\u5403\u591A\u5C11\u90FD\u7761\u4E0D\u7740\u5427\u3002"
