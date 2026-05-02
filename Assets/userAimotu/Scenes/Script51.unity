@@ -3466,10 +3466,8 @@ MonoBehaviour:
   questionMarkIcon: {fileID: 27933092}
   defaultActions:
   - {fileID: 11400000, guid: 80d32a6bc4250491e88553da117e1984, type: 2}
-  stateSpecificEvents:
-  - triggerState: 13
-    actions:
-    - {fileID: 11400000, guid: 80d32a6bc4250491e88553da117e1984, type: 2}
+  - {fileID: 11400000, guid: 824a1574c9f284d77910256a30c1c619, type: 2}
+  stateSpecificEvents: []
   clickSFX: {fileID: 8300000, guid: c5d8e70ff9c080a42a041d52eeb872af, type: 3}
 --- !u!61 &723266767
 BoxCollider2D:
@@ -4702,6 +4700,7 @@ MonoBehaviour:
   - triggerState: 13
     actions:
     - {fileID: 11400000, guid: d4803ed32b9524e839d6fe7a9ec9dbe3, type: 2}
+    - {fileID: 11400000, guid: b80ae60b4bb4b4e2d8c0617649022ece, type: 2}
   clickSFX: {fileID: 8300000, guid: c5d8e70ff9c080a42a041d52eeb872af, type: 3}
 --- !u!61 &1202053965
 BoxCollider2D:
@@ -4989,6 +4988,7 @@ MonoBehaviour:
   - triggerState: 13
     actions:
     - {fileID: 11400000, guid: 1395ae4402f7c42ab833ed5e8766474d, type: 2}
+    - {fileID: 11400000, guid: 7f4092b00bc0946a0a6721c5103f146a, type: 2}
   clickSFX: {fileID: 8300000, guid: c5d8e70ff9c080a42a041d52eeb872af, type: 3}
 --- !u!61 &1265629780
 BoxCollider2D:
@@ -9301,6 +9301,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 0b088d5f88b16454a968d01fc9b46e38, type: 2}
   - {fileID: 11400000, guid: 015893ba3c92248f88aeb45fd7b43e67, type: 2}
   - {fileID: 11400000, guid: 0bb37bf56aa574e4abe83729046a0f80, type: 2}
+  - {fileID: 11400000, guid: cc307e93ea894497caa955ed63b1d8cd, type: 2}
   stateSpecificEvents: []
   clickSFX: {fileID: 8300000, guid: c5d8e70ff9c080a42a041d52eeb872af, type: 3}
 --- !u!61 &2115599063

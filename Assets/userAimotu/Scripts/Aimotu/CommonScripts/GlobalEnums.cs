@@ -48,6 +48,11 @@ public enum ItemType
     Award,      // 奖状
     Beads,      // 串珠
     Duck,       // 橡皮鸭
+    // Script4 物件
+    Window,
+    ComputerS5,
+    SleepPill,
+    Fish,
 
     // Script6 物件
     Map,        // 手绘地图

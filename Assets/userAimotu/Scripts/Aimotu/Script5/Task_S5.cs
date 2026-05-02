@@ -8,10 +8,11 @@ namespace S5
     {
 
         // 每交互的完成状态
-        private bool FishCollected => GlobalData.D1_Fish;
-        private bool DollCollected => GlobalData.D1_Doll;
-        private bool AwardCollected => GlobalData.D1_Award;
-        private bool DiaryCollected => GlobalData.IsDiaryUnlocked(DiaryID.Diary1_FishAndBeads);
+        private bool WindowInteracted;
+        private bool SleepPillInteracted;
+        private bool FishInteracted;
+
+        private bool ComputerInteracted;
 
 
         private void Start()
@@ -31,101 +32,50 @@ namespace S5
         }
         private void HandleStateChanged(RoomState newState)
         {
-            // 每次切换状态时，强行刷一次 UI 和检查
-            //UpdateTaskUI();
-        }
-        /*
-
-        private void HandleNoteReadFinished(RoomState newState)
-        {
-            FinisheReading();
         }
 
-        public void FinisheReading()
+        //S5 独有完成所有物品交互触发手机状态
+        public void InteractedItem(ItemType type)
         {
-            GameManager.Instance.EnterState(RoomState.S5_NoteBookReadFinish);
-        }
-        */
 
-
-
-        /*
-        public void CollectPassword(ItemType type)
-        {
-            Debug.Log($"[Task_S4] CollectPassword 被调用：{type}，D1_Fish={GlobalData.D1_Fish}");
-
-            bool changed = false;
 
             switch (type)
             {
-                case ItemType.FishTank:
-                    if (!GlobalData.D1_Fish) { GlobalData.D1_Fish = true; changed = true; }
+                case ItemType.Window:
+                    Debug.Log("WindowInteracted");
+                    WindowInteracted = true;
                     break;
-                case ItemType.Doll:
-                    if (!GlobalData.D1_Doll) { GlobalData.D1_Doll = true; changed = true; }
+                case ItemType.SleepPill:
+                    Debug.Log("SleepPillInteracted");
+                    SleepPillInteracted = true;
                     break;
-                case ItemType.Award:
-                    if (!GlobalData.D1_Award) { GlobalData.D1_Award = true; changed = true; }
+
+                case ItemType.Fish:
+                    Debug.Log("FishInteracted");
+                    FishInteracted = true;
                     break;
+                case ItemType.ComputerS5:
+                    Debug.Log("ComputerInteracted");
+                    ComputerInteracted = true;
+                    break;
+
             }
-            if (changed)
+
+
+            if (WindowInteracted && SleepPillInteracted && ComputerInteracted && FishInteracted)
             {
-                int count = CalculatePasswordCount();
-                Debug.Log($"<color=green>[Task S4]</color> 成功收集物件: {type}，当前总进度: {count}/3");
-            }
-            UpdateTaskUI();
-        }
-        private int CalculatePasswordCount()
-        {
-            return (FishCollected ? 1 : 0) + (DollCollected ? 1 : 0) + (AwardCollected ? 1 : 0);
-        }
-
-        public void CollectDiary()
-        {
-            if (!DiaryCollected)
-            {
-                GlobalData.UnlockDiary(DiaryID.Diary1_FishAndBeads);
-                Debug.Log("<color=green>[Task S4]</color> 日记1 已解锁");
-                UpdateTaskUI();
-            }
-        }
-
-        public void ShowTaskUI()
-        {
-            gameObject.SetActive(true);
-            foreach (Transform child in this.transform)
-            {
-                child.gameObject.SetActive(true);
+                GameManager.Instance.EnterState(RoomState.S5_InteractionDone);
+                Debug.Log("完成S5全部交互");
             }
 
-            UpdateTaskUI();
+
         }
 
-        private void UpdateTaskUI()
-        {
-            if (passwordTaskText == null || diaryTaskText == null) return;
-            RoomState currentState = GameManager.Instance.CurrentState;
-            if (currentState == RoomState.Intro || currentState == RoomState.ReadyToExit) return;
-            gameObject.SetActive(true);
-            int passwordCount = CalculatePasswordCount();
-            passwordTaskText.text = $"找到 {passwordCount} / {PASSWORD_TOTAL} 位密码";
-            diaryTaskText.text = $"找回 {(DiaryCollected ? 1 : 0)} / {DIARY_TOTAL} 篇日记";
-            if (passwordCount == PASSWORD_TOTAL) passwordTaskText.text += " √";
-            if (DiaryCollected) diaryTaskText.text += " √";
-            // 全部完成时自动推进状态
-            if (IsAllCompleted() && currentState == RoomState.PasswordCollecting)
-            {
-                Debug.Log("<color=lime>[Task S4]</color> 全部完成，切换到 AllTasksDone");
-                GameManager.Instance.EnterState(RoomState.AllTasksDone);
-            }
-        }
-        public bool IsAllCompleted() => FishCollected && DollCollected && AwardCollected && DiaryCollected;
-        public void UpdateUI() => UpdateTaskUI();
 
 
-    }
-    */
-        public bool IsAllCompleted() => FishCollected && DollCollected && AwardCollected && DiaryCollected;
+
+
+        public bool IsAllCompleted() => FishInteracted && WindowInteracted && SleepPillInteracted && ComputerInteracted;
         private void UpdateTaskUI()
         { }
         public void UpdateUI() => UpdateTaskUI();
