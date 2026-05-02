@@ -4,7 +4,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "ControlUIAction", menuName = "Actions/Control UI")]
 public class ControlUIAction : StateAction
 {
-    public enum UIType { Notebook, NoteBigImage, Map, Cart, OpenNoteBook, OpenComputer, ComputerMessage, NextComputerMessage }
+    public enum UIType { Notebook, NoteBigImage, Map, Cart, OpenNoteBook, OpenComputer, ComputerMessage, NextComputerMessage, OpenPhone, PhoneMessage, NextPhoneMessage }
     public UIType targetUI;
     public bool isClose = false; // 新增：是否是关闭操作
     [Header("音效设置")]
@@ -34,6 +34,8 @@ public class ControlUIAction : StateAction
             case UIType.OpenNoteBook:
                 HandleOpenNoteBook(manager);
                 break;
+
+            //S5电脑
             case UIType.OpenComputer:
                 HandleOpenComputer(manager);
                 break;
@@ -42,6 +44,16 @@ public class ControlUIAction : StateAction
                 break;
             case UIType.NextComputerMessage:
                 HandleNextComputerMessage(manager);
+                break;
+            //S5手机
+            case UIType.OpenPhone:
+                HandleOpenPhone(manager);
+                break;
+            case UIType.PhoneMessage:
+                HandlePhoneMessage(manager);
+                break;
+            case UIType.NextPhoneMessage:
+                HandleNextPhoneMessage(manager);
                 break;
         }
 
@@ -108,6 +120,8 @@ public class ControlUIAction : StateAction
         }
     }
 
+    //-----S5电脑------
+
     //打开电脑
     private void HandleOpenComputer(IGameManager manager)
     {
@@ -132,6 +146,34 @@ public class ControlUIAction : StateAction
     {
         Debug.Log($"ComputerUI Instance 是否为空: {ComputerUI.Instance == null}");
         ComputerUI.Instance.NextMessage();
+    }
+
+    //-----S5手机------
+
+
+    private void HandleOpenPhone(IGameManager manager)
+    {
+        Debug.Log($"ComputerUI Instance 是否为空: {PhoneUI.Instance == null}");
+        if (isClose)
+            PhoneUI.Instance.Close();
+        else
+            PhoneUI.Instance.Open();
+
+    }
+
+    //打开消息弹窗
+    private void HandlePhoneMessage(IGameManager manager)
+    {
+        Debug.Log($"ComputerUI Instance 是否为空: {PhoneUI.Instance == null}");
+        PhoneUI.Instance.OpenMessageWindow();
+        ComputerUI.Instance.GetMessageContent();
+    }
+
+    //下一条消息
+    private void HandleNextPhoneMessage(IGameManager manager)
+    {
+        Debug.Log($"ComputerUI Instance 是否为空: {PhoneUI.Instance == null}");
+        PhoneUI.Instance.NextMessage();
     }
 
 
