@@ -49,12 +49,15 @@ public class InteractableItem : MonoBehaviour
         // 如果单例没拿到，再尝试全局找一次
         var manager = Object.FindAnyObjectByType<MonoBehaviour>() as IGameManager;
         return manager;
+
+
     }
     private void OnMouseDown()
     {
         // 只有弹窗打开时才屏蔽场景点击
         if (PopupSystem.Instance != null && PopupSystem.Instance.IsOpen) return;
         var manager = GetManager();
+        Debug.Log(manager);
         string managerStatus = (manager == null) ? "丢失(NULL)" : "正常";
         bool dialogueActive = (DialogueManager.instance != null && DialogueManager.instance.IsDialogueActive);
 

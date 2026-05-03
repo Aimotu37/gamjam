@@ -1028,7 +1028,7 @@ MonoBehaviour:
   child_pout: {fileID: 0}
   roomStateEvents: []
   uiBlockCount: 0
-  taskS5: {fileID: 0}
+  taskS5_Instance: {fileID: 0}
 --- !u!114 &621935788
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1041,8 +1041,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc782ac332ba64167b1fc5e11d4d0e92, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  passwordTaskText: {fileID: 0}
-  diaryTaskText: {fileID: 0}
 --- !u!1 &691224837
 GameObject:
   m_ObjectHideFlags: 0
@@ -1097,6 +1095,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rootPanel: {fileID: 1087953073}
+  pages: {fileID: 0}
   stickyHighlight: {fileID: 2091909812}
   diaryPages:
   - {fileID: 1886269003}
@@ -1106,6 +1105,7 @@ MonoBehaviour:
   - {fileID: 764548364}
   - {fileID: 1913068203}
   - {fileID: 1027365073}
+  _currentpage: 0
 --- !u!114 &691224840
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1281,8 +1281,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc782ac332ba64167b1fc5e11d4d0e92, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  passwordTaskText: {fileID: 0}
-  diaryTaskText: {fileID: 0}
 --- !u!1 &713248348
 GameObject:
   m_ObjectHideFlags: 0
