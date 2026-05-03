@@ -6,24 +6,30 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/userAimotu/Scenes/Script4.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
-  - enabled: 1
     path: Assets/userAimotu/Scenes/Script7.unity
-    guid: 2d20086e160c8f845af2ba7766074611
+    guid: 6bfceaf80613da546becd780c996d9db
   - enabled: 1
-    path: Assets/userAimotu/Scenes/Script6.unity
-    guid: e3be9f67c0a298b48a7467a5c9f3d6c9
+    path: Assets/userAimotu/Scenes/Script61Mall.unity
+    guid: 5327489d85f3b43b4b9a1acaccc07d61
   - enabled: 1
     path: Assets/userAimotu/Scenes/Script6 1.unity
     guid: 7caedc57478bf1442928b6d4345792e9
   - enabled: 1
-    path: Assets/userAimotu/Scenes/Script1.unity
-    guid: 5a64eb60db728234a8863f7ce3a5f5ab
+    path: Assets/userAimotu/Scenes/Script6.unity
+    guid: e3be9f67c0a298b48a7467a5c9f3d6c9
+  - enabled: 1
+    path: Assets/userAimotu/Scenes/Script5.unity
+    guid: a9d855db89c79475cbe75e0176ff30d1
+  - enabled: 1
+    path: Assets/userAimotu/Scenes/Script4.unity
+    guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/userAimotu/Scenes/Script3.unity
+    guid: eb687a25e7f182f4b9072675d4be0c00
   - enabled: 1
     path: Assets/userAimotu/Scenes/Script2.unity
     guid: abd8a7d706c24be40964727e4a758e76
   - enabled: 1
-    path: Assets/userAimotu/Scenes/Script61Mall.unity
-    guid: 5327489d85f3b43b4b9a1acaccc07d61
+    path: Assets/userAimotu/Scenes/Script1.unity
+    guid: 5a64eb60db728234a8863f7ce3a5f5ab
   m_configObjects: {}

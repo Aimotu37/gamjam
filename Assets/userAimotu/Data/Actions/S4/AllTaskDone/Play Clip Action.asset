@@ -12,12 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e25932e895610f442a8a9feb0ba92796, type: 3}
   m_Name: Play Clip Action
   m_EditorClassIdentifier: Assembly-CSharp::PlayClipAction
-  triggerState: 5
+  triggerState: 6
   useFadeIn: 1
   useFadeOut: 0
   fadeSpeed: 1
+  isAudioFade: 1
+  targetBGMVolume: 0.6
   videoClip: {fileID: 32900000, guid: c0cbd937e6aa7e74db7f8ec7ff662f0a, type: 3}
   transitionSFX: {fileID: 8300000, guid: 613b07287e92d89408d93a57e41ac2cc, type: 3}
   waitForClip: 1
   loopVideo: 0
   enableDebugLog: 1
+  destroyPlayerOnEnd: 1
+  keepMaskAfterPlay: 1

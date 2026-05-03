@@ -12,7 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 438f4013bb2de054db6e3d44c5968d18, type: 3}
   m_Name: SceneTransition
   m_EditorClassIdentifier: 
-  triggerState: 5
-  targetSceneName: Script6
-  fadeDuration: 10
-  playerSpawnPos: {x: 0, y: 0, z: 0}
+  triggerState: 8
+  targetSceneName: Script5
+  fadeDuration: 5

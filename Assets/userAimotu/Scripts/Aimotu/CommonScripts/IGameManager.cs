@@ -31,4 +31,7 @@ public interface IGameManager
 
     // 音效
     void PlayGlobalSFX(AudioClip clip, float volume = 1.0f);
+
+    // 视频淡出遮罩（供 PlayClipAction 使用）
+    //CanvasGroup videoFadeOverlay { get; }
 }

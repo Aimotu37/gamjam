@@ -3,7 +3,25 @@ guid: 94c697d949bd7834f96c09e2b1c50ab5
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - _uiRawImage: {instanceID: 0}
+  - _uiVideoPlayer: {instanceID: 0}
+  - _uiRenderTexture: {instanceID: 0}
+  - _transitionMaskGroup: {instanceID: 0}
+  - sfxSource: {instanceID: 0}
+  - dialogueManager: {instanceID: 0}
+  - child_neutral: {instanceID: 0}
+  - child_happy1: {instanceID: 0}
+  - child_happy2: {instanceID: 0}
+  - child_confused: {instanceID: 0}
+  - child_surprised: {instanceID: 0}
+  - child_pout: {instanceID: 0}
+  - adult_tired: {fileID: 21300000, guid: 767c2c5541e2e134a98fe831f3b5d77c, type: 3}
+  - adult_confused: {fileID: 21300000, guid: 645d4c6ccc6fcf74b8228e1b2fa6f10a, type: 3}
+  - adult_confusedwithhand: {fileID: 21300000, guid: 7e3ebb488c82ec546a516f6f7c705d03, type: 3}
+  - adult_angry: {fileID: 21300000, guid: 9d6a375340e427642af7a41ab36e9ef8, type: 3}
+  - adult_surprised: {fileID: 21300000, guid: 9d6a375340e427642af7a41ab36e9ef8, type: 3}
+  - adult_neutral: {fileID: 21300000, guid: 124a963993bc3b447a0b4dd9543ec6a4, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
