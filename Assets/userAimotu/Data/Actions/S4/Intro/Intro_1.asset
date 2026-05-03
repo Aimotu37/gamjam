@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e31b70980884504fa309a61f273b823, type: 3}
   m_Name: Intro_1
   m_EditorClassIdentifier: 
-  triggerState: 3
+  triggerState: 1
   dialogue:
     lines:
     - speaker: 0

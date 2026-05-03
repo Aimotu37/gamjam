@@ -41,7 +41,6 @@ public class InteractableItem : MonoBehaviour
     // 1. 修改获取方式，直接锁定单例
     private IGameManager GetManager()
     {
-        if (S3.GameManager.Instance != null) return S3.GameManager.Instance;
         if (S4.GameManager.Instance != null) return (IGameManager)S4.GameManager.Instance;
         if (S5.GameManager.Instance != null) return (IGameManager)S5.GameManager.Instance;
         if (S6.GameManager.Instance != null) return (IGameManager)S6.GameManager.Instance;

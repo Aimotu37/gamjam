@@ -9,12 +9,6 @@ public enum RoomState
 {
     None,
 
-    // Script3 - 成年卧室
-    S3_Intro,           // 开场
-    S3_Exploring,       // 自由探索 5 个物件
-    S3_ReadyToSleep,    // 5 个都探索完，床可点
-
-
     // ── Script4：梦境1 卧室 ──
     Intro,               // 开场自动对白
     NoteLocked,          // 可以交互，密码本锁定
@@ -45,13 +39,6 @@ public enum RoomState
 //  可交互物件类型
 public enum ItemType
 {
-    // ItemType（如果还没有）
-    S3_Computer,
-    S3_Notebook,
-    S3_Melatonin,
-    S3_Fish,
-    S3_Bed,
-
     // Script4 物件
     Bed,        // 床
     NoteBook,   // 密码本
@@ -99,11 +86,8 @@ public enum PortraitOption
     Child_Confused,
     Child_Surprised,
     Child_Pout,
-    
-    Adult_Tired,
-    Adult_Confused,
-    Adult_ConfusedwithHand,
-    Adult_Angry,
-    Adult_Surprised,
     Adult_Neutral,
+    Adult_Happy1,
+    Adult_Surprised,
+    Adult_Angery,
 }

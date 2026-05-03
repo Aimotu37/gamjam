@@ -5,7 +5,7 @@ using UnityEngine.Video;
 [CreateAssetMenu(fileName ="PlayClip", menuName = "Actions/Play Clip")]
 public class PlayClipAction : StateAction
 {
-    [Header("淡入淡出")]
+    [Header("遮罩设置")]
     public bool useFadeIn = true;  // 是否需要进入时变黑
     public bool useFadeOut = true; // 是否需要结束后渐显
     public float fadeSpeed = 2.0f; // 渐变速度
@@ -24,11 +24,6 @@ public class PlayClipAction : StateAction
     [Header("调试")]
     public bool enableDebugLog = true;
     public bool destroyPlayerOnEnd = false; // 新增：是否在此转场销毁人物
-
-    [Header("遮罩处理")]
-    // true  = 播完保留黑幕，由后续 SceneTransitionAction 处理（入睡过场用）
-    // false = 播完按 useFadeOut 决定是否淡出（闪屏 / 普通过场用）
-    public bool keepMaskAfterPlay = false;
     public override IEnumerator Execute()
     {
         var manager = GetManager();
@@ -52,7 +47,7 @@ public class PlayClipAction : StateAction
         float duration = 1.0f / fadeSpeed; // 计算实际需要的秒数
 
 
-        // --- 【新增步骤 1：淡入】 ---
+        // --- 【新增步骤 1：场景变昏暗】 ---
         if (useFadeIn)
         {
             if (enableDebugLog) Debug.Log("[PlayClip] 开始渐隐(变暗)...");
@@ -87,23 +82,23 @@ public class PlayClipAction : StateAction
         videoPlayer.playOnAwake = false;
         videoPlayer.audioOutputMode = VideoAudioOutputMode.AudioSource; // 可选：音频设置
 
-
-        // 5.  准备视频（先 Prepare 再显示，避免旧帧闪烁）
-        videoPlayer.Prepare();
-        while (!videoPlayer.isPrepared)
-            yield return null;
-
-        // 清空 RenderTexture，防止上一个视频的残帧闪现
-        RenderTexture.active = renderTexture;
-        GL.Clear(true, true, Color.black);
-        RenderTexture.active = null;
-
+        // 4. 配置 RawImage
         rawImage.texture = renderTexture;
         rawImage.gameObject.SetActive(true);
+
+      //  if (enableDebugLog) Debug.Log("[PlayAnimation] UI 已显示，准备播放视频");
+
+        // 5. 准备视频（重要！）
+        videoPlayer.Prepare();
+
+        // 等待视频准备完成
+        while (!videoPlayer.isPrepared)
+        {
+            yield return null;
+        }
+
+
         // 6. 播放视频
-        bool videoFinished = false;
-        VideoPlayer.EventHandler onLoopPoint = _ => videoFinished = true;
-        videoPlayer.loopPointReached += onLoopPoint;
         videoPlayer.Play();
         yield return new WaitForSeconds(0.2f);
 
@@ -111,17 +106,29 @@ public class PlayClipAction : StateAction
         // 7. 等待播放完成
         if (waitForClip)
         {
-            yield return new WaitUntil(() => videoFinished);
+            // 使用更可靠的检测方式
+            float timeout = 60f; // 60秒超时保护
+            float elapsed = 0f;
 
-            if (enableDebugLog) Debug.Log("[PlayClip] 视频播放完成");
+            while (videoPlayer.isPlaying || videoPlayer.time < videoPlayer.length - 0.1f)
+            {
+                if (!videoPlayer.isPlaying && videoPlayer.time < videoPlayer.length - 0.2f) if (elapsed > timeout)
+                {
+                        videoPlayer.Play(); 
+                }
+                yield return null;
+            }
+
+            // 额外等待一帧确保视频完全结束
+            yield return new WaitForSeconds(0.1f);
+
+            if (enableDebugLog) Debug.Log("[PlayAnimation] 视频播放完成");
         }
         else
         {
-            if (enableDebugLog) Debug.Log("[PlayClip] 跳过等待，立即继续");
+            if (enableDebugLog) Debug.Log("[PlayAnimation] 跳过等待，立即继续");
             yield return null;
         }
-        videoPlayer.loopPointReached -= onLoopPoint;
-        // 8. 销毁玩家（可选）
         if (destroyPlayerOnEnd)
         {
             GameObject player = GameObject.FindWithTag("Player");
@@ -131,17 +138,9 @@ public class PlayClipAction : StateAction
                 if (enableDebugLog) Debug.Log("[PlayClip] 人物已销毁");
             }
         }
-        // 9. 停止视频，隐藏 RawImage，清空 texture 防止残帧
         videoPlayer.Stop();
-        rawImage.texture = null;
         rawImage.gameObject.SetActive(false);
-        // 10. 遮罩处理
-        if (keepMaskAfterPlay)
-        {
-            // 保留黑幕：后续 SceneTransitionAction 负责处理遮罩
-            if (enableDebugLog) Debug.Log("[PlayClip] 保留遮罩，等待后续转场");
-        }
-        else if (useFadeOut)
+        if (useFadeOut)
         {
 
             if (enableDebugLog) Debug.Log("[PlayClip] 开始渐显(恢复)...");
@@ -157,10 +156,13 @@ public class PlayClipAction : StateAction
         {
             // 如果不需要渐显，直接把黑屏关掉
             mask.alpha = 0.0f;
-            mask.blocksRaycasts = false;
         }
         if (enableDebugLog) Debug.Log("[PlayClip] 全流程执行完成");
         manager.PopUIBlock("VideoClip");
+
+
+        mask.alpha = 0f;
+        mask.blocksRaycasts = false;
 
     }
 }
