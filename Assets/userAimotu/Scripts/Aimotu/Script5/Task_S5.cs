@@ -2,6 +2,7 @@
 // 2. 收集日记时调用 GlobalData.UnlockDiary()
 using UnityEngine;
 using TMPro;
+
 namespace S5
 {
     public class Task_S5 : MonoBehaviour, TaskModule
@@ -21,6 +22,7 @@ namespace S5
             if (GameManager.Instance != null)
             {
                 GameManager.OnRoomStateChanged += HandleStateChanged;
+
 
             }
         }
