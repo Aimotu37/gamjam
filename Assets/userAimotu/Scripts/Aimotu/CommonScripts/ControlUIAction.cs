@@ -4,7 +4,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "ControlUIAction", menuName = "Actions/Control UI")]
 public class ControlUIAction : StateAction
 {
-    public enum UIType { Notebook, NoteBigImage, Map, Cart, OpenNoteBook, OpenComputer, ComputerMessage, NextComputerMessage, OpenPhone, PhoneMessage, NextPhoneMessage }
+    public enum UIType { Notebook, NoteBigImage, Map, Cart, OpenNoteBook, OpenComputer, ComputerMessage, NextComputerMessage, OpenPhone, PhoneMessage, NextPhoneMessage, CloseChoice }
     public UIType targetUI;
     public bool isClose = false; // 新增：是否是关闭操作
     [Header("音效设置")]
@@ -54,6 +54,9 @@ public class ControlUIAction : StateAction
                 break;
             case UIType.NextPhoneMessage:
                 HandleNextPhoneMessage(manager);
+                break;
+            case UIType.CloseChoice:
+                HandleCloseChoice(manager);
                 break;
         }
 
@@ -174,6 +177,13 @@ public class ControlUIAction : StateAction
     {
         Debug.Log($"ComputerUI Instance 是否为空: {PhoneUI.Instance == null}");
         PhoneUI.Instance.NextMessage();
+    }
+
+    //关闭选项
+    private void HandleCloseChoice(IGameManager manager)
+    {
+        Debug.Log($"ChoiceUI Instance 是否为空: {ChoiceUISystem.Instance == null}");
+        ChoiceUISystem.Instance.Close();
     }
 
 

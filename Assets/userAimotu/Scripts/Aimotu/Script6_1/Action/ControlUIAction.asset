@@ -9,10 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 438f4013bb2de054db6e3d44c5968d18, type: 3}
-  m_Name: SwitchSceneToStreet
+  m_Script: {fileID: 11500000, guid: 6b2e5aa33e2e2234a9541b465f35b1f4, type: 3}
+  m_Name: ControlUIAction
   m_EditorClassIdentifier: 
   triggerState: 0
-  targetSceneName: Script61Car
-  fadeDuration: 1
-  playerSpawnPos: {x: -1.7, y: -3.06, z: 0}
+  targetUI: 0
+  isClose: 0
+  customSFX: {fileID: 0}
+  volume: 1
