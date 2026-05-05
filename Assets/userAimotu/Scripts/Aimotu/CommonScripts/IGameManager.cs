@@ -22,6 +22,8 @@ public interface IGameManager
     // 子系统引用
     DialogueManager Dialog { get; }
     TaskModule TaskModule { get; }
+    GameObject TaskModuleObject { get; }
+
 
     // 视频播放（供 PlayClipAction 使用）
     RawImage uiRawImage { get; }

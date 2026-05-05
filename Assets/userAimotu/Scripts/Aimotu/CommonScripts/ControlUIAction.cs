@@ -4,7 +4,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "ControlUIAction", menuName = "Actions/Control UI")]
 public class ControlUIAction : StateAction
 {
-    public enum UIType { Notebook, NoteBigImage, Map, Cart, OpenNoteBook, OpenComputer, ComputerMessage, NextComputerMessage, OpenPhone, PhoneMessage, NextPhoneMessage, CloseChoice }
+    public enum UIType { Notebook, NoteBigImage, Map, Cart, OpenNoteBook, OpenComputer, ComputerMessage, NextComputerMessage, OpenPhone, PhoneMessage, NextPhoneMessage, CloseChoice, TaskPanel }
     public UIType targetUI;
     public bool isClose = false; // 新增：是否是关闭操作
     [Header("音效设置")]
@@ -57,6 +57,10 @@ public class ControlUIAction : StateAction
                 break;
             case UIType.CloseChoice:
                 HandleCloseChoice(manager);
+                break;
+                //
+            case UIType.TaskPanel:
+                HandleTaskPanel(manager);
                 break;
         }
 
@@ -185,6 +189,24 @@ public class ControlUIAction : StateAction
         Debug.Log($"ChoiceUI Instance 是否为空: {ChoiceUISystem.Instance == null}");
         ChoiceUISystem.Instance.Close();
     }
-
+    // 任务面板（不阻断交互）
+    private void HandleTaskPanel(IGameManager manager)
+    {
+        var obj = manager?.TaskModuleObject;
+        if (obj == null)
+        {
+            Debug.LogWarning("[ControlUIAction] TaskModuleObject 为空，无法显示任务面板");
+            return;
+        }
+        if (isClose)
+        {
+            obj.SetActive(false);
+        }
+        else
+        {
+            obj.SetActive(true);
+            manager?.TaskModule?.UpdateUI();
+        }
+    }
 
 }
