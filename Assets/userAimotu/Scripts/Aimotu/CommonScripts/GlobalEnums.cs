@@ -31,8 +31,10 @@ public enum RoomState
     S5_Intro,
     S5_NoteBookReadFinish,
     S5_InteractionDone,
-
-
+    //S3
+    S3_Intro,
+    S3_Exploring,
+    S3_AllItemsViewed,
     // S7_Reality,
 }
 
@@ -64,11 +66,6 @@ public enum ItemType
     RockingCar,     // 摇摇车
 
     //S3
-<<<<<<< HEAD
-    S3_Intro,        // 开场对白
-    S3_Explore,      // 玩家自由探索
-    S3_ReadyToSleep, // 闪屏结束，可以点床睡觉
-=======
     S3_PasswordNotebook,
     S3_FishDecor,
     S3_Computer,
@@ -88,7 +85,6 @@ public enum ItemType
     S7_Choice,      // 摔碎手机选项
     S7_Smash,       // 动画+字幕
     S7_End,         // 最终UI
->>>>>>> 832c828 (S3完成)
 }
 
 public enum DiaryID
@@ -113,8 +109,10 @@ public enum PortraitOption
     Child_Confused,
     Child_Surprised,
     Child_Pout,
+    Adult_Tired,
+    Adult_Confused,
+    Adult_Confusedwithhand,
+    Adult_Angry,
+    Adult_Suprised,
     Adult_Neutral,
-    Adult_Happy1,
-    Adult_Surprised,
-    Adult_Angery,
 }
