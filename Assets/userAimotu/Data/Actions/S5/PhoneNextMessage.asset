@@ -15,5 +15,5 @@ MonoBehaviour:
   triggerState: 14
   targetUI: 10
   isClose: 0
-  customSFX: {fileID: 0}
+  customSFX: {fileID: 8300000, guid: 66be9546c29a91044b065f4c9c13ac18, type: 3}
   volume: 1
