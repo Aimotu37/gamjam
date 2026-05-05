@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6b2e5aa33e2e2234a9541b465f35b1f4, type: 3}
-  m_Name: PhoneRing
+  m_Name: OpenNoteBook2
   m_EditorClassIdentifier: 
-  triggerState: 14
-  targetUI: 8
+  triggerState: 0
+  targetUI: 0
   isClose: 0
-  customSFX: {fileID: 8300000, guid: 66be9546c29a91044b065f4c9c13ac18, type: 3}
+  customSFX: {fileID: 8300000, guid: ed30063476228054b83a442155bb285b, type: 3}
   volume: 1
