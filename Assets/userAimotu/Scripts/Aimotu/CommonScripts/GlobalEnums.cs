@@ -62,6 +62,11 @@ public enum ItemType
     ToyPhone,       // 玩具电话
     Computer,       // 网吧电脑
     RockingCar,     // 摇摇车
+
+    //S3
+    S3_Intro,        // 开场对白
+    S3_Explore,      // 玩家自由探索
+    S3_ReadyToSleep, // 闪屏结束，可以点床睡觉
 }
 
 public enum DiaryID

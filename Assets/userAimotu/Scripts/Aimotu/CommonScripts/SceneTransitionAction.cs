@@ -9,9 +9,19 @@ public class SceneTransitionAction : StateAction
     public string targetSceneName;
     public float fadeDuration = 1.0f;
     public Vector3 playerSpawnPos; // 比如设置出现在最右侧
+    public bool skipFadeOut = false;
+
     public override IEnumerator Execute()
     {
-        yield return FadeManager.Instance.FadeOut(fadeDuration);
-        FadeManager.Instance.TransitionToScene(targetSceneName);
+        if (!skipFadeOut)
+            yield return FadeManager.Instance.FadeOut(fadeDuration);
+
+        // skipFadeOut=true 时直接加载，不走 FadeOutAndLoad
+        if (skipFadeOut)
+            FadeManager.Instance.LoadSceneImmediate(targetSceneName);
+        else
+            FadeManager.Instance.TransitionToScene(targetSceneName);
+
+        yield return null;
     }
 }

@@ -9,6 +9,8 @@ public class FadeManager : MonoBehaviour
     public CanvasGroup fadeScreen; // 挂载黑色遮罩的 CanvasGroup
     public AudioSource musicSource; // 挂载你的背景音乐源
     public float fadeDuration = 2.0f; // 淡出持续时间（秒）
+    public bool skipFadeOut = false; // 上一个 Action 已经黑屏时勾选
+
     private void Awake()
     {
         // 确保 FadeManager 在场景切换时不被销毁，这样才能完成淡入
@@ -55,12 +57,11 @@ public class FadeManager : MonoBehaviour
             yield return null;
         }
         if (fadeScreen != null) fadeScreen.alpha = 0;
-
-        // --- 生效结束立刻销毁 ---
-        /*Debug.Log("<color=yellow>[FadeManager]</color> 准备销毁。正在释放所有潜在子物体...");
-        transform.DetachChildren();
-        Instance = null; // 清空单例引用
-        Destroy(this.gameObject*/
+        
+    }
+    public void LoadSceneImmediate(string sceneName)
+    {
+        SceneManager.LoadScene(sceneName);
     }
     public IEnumerator FadeOut(float duration)
     {

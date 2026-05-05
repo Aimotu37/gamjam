@@ -24,6 +24,7 @@ public class PlayClipAction : StateAction
     [Header("调试")]
     public bool enableDebugLog = true;
     public bool destroyPlayerOnEnd = false; // 新增：是否在此转场销毁人物
+
     public override IEnumerator Execute()
     {
         var manager = GetManager();
@@ -50,22 +51,13 @@ public class PlayClipAction : StateAction
         // --- 【新增步骤 1：场景变昏暗】 ---
         if (useFadeIn)
         {
+
             if (enableDebugLog) Debug.Log("[PlayClip] 开始渐隐(变暗)...");
 
             if (transitionSFX != null) AudioManager.Instance.PlaySFX(transitionSFX);
-            if (isAudioFade && AudioManager.Instance != null) 
-                AudioManager.Instance.FadeBGMVolume(0.0f, duration);
-           // GameManager.Instance.StartCoroutine(AudioManager.Instance.FadeBGM(0, fadeSpeed));
-            while (mask.alpha < 1.0f)
-            {
-                mask.alpha = Mathf.MoveTowards(mask.alpha, 1.0f, fadeSpeed * Time.deltaTime);
-                yield return null;
-            }
-        }
-        else
-        {
-            // 如果不需要渐隐过程，但视频需要黑底，直接把 alpha 设为 1
-            mask.alpha = 1.0f;
+            if (isAudioFade && AudioManager.Instance != null)
+                AudioManager.Instance.FadeBGMVolume(0.0f, 1f / fadeSpeed);
+            yield return FadeManager.Instance.FadeOut(1f / fadeSpeed); // 统一用 FadeManager
         }
         // 2. 检查视频剪辑
         if (videoClip == null)
@@ -106,28 +98,31 @@ public class PlayClipAction : StateAction
         // 7. 等待播放完成
         if (waitForClip)
         {
-            // 使用更可靠的检测方式
-            float timeout = 60f; // 60秒超时保护
-            float elapsed = 0f;
+            bool ended = false;
+            void OnEnd(VideoPlayer vp) => ended = true;
+            videoPlayer.loopPointReached += OnEnd;
 
-            while (videoPlayer.isPlaying || videoPlayer.time < videoPlayer.length - 0.1f)
+            
+
+            float timeout = 120f;
+            float elapsed = 0f;
+            while (!ended)
             {
-                if (!videoPlayer.isPlaying && videoPlayer.time < videoPlayer.length - 0.2f) if (elapsed > timeout)
+                elapsed += Time.deltaTime;
+                if (elapsed > timeout)
                 {
-                        videoPlayer.Play(); 
+                    Debug.LogWarning("[PlayClip] 超时强制退出");
+                    break;
                 }
                 yield return null;
             }
 
-            // 额外等待一帧确保视频完全结束
-            yield return new WaitForSeconds(0.1f);
+            // 取消注册，防止下次复用时重复触发
+            videoPlayer.loopPointReached -= OnEnd; 
 
-            if (enableDebugLog) Debug.Log("[PlayAnimation] 视频播放完成");
-        }
-        else
-        {
-            if (enableDebugLog) Debug.Log("[PlayAnimation] 跳过等待，立即继续");
-            yield return null;
+            yield return new WaitForSeconds(0.1f);
+            if (enableDebugLog) Debug.Log("[PlayClip] 视频播放完成");
+        
         }
         if (destroyPlayerOnEnd)
         {
@@ -142,20 +137,14 @@ public class PlayClipAction : StateAction
         rawImage.gameObject.SetActive(false);
         if (useFadeOut)
         {
-
-            if (enableDebugLog) Debug.Log("[PlayClip] 开始渐显(恢复)...");
-           if (isAudioFade && AudioManager.Instance != null)
-                AudioManager.Instance.FadeBGMVolume(targetBGMVolume, duration);
-            while (mask.alpha > 0.0f)
-            {
-                mask.alpha = Mathf.MoveTowards(mask.alpha, 0.0f, fadeSpeed * Time.deltaTime);
-                yield return null;
-            }
+            if (isAudioFade) AudioManager.Instance.FadeBGMVolume(targetBGMVolume, 1f / fadeSpeed);
+            yield return FadeManager.Instance.FadeIn(1f / fadeSpeed); // 统一用 FadeManager
         }
+        // useFadeOut = false 时保持黑屏，什么都不做
         else
         {
-            // 如果不需要渐显，直接把黑屏关掉
-            mask.alpha = 0.0f;
+            if (enableDebugLog) Debug.Log("[PlayClip] 保持黑屏，等待下一个 Action");
+
         }
         if (enableDebugLog) Debug.Log("[PlayClip] 全流程执行完成");
         manager.PopUIBlock("VideoClip");
@@ -164,5 +153,7 @@ public class PlayClipAction : StateAction
         mask.alpha = 0f;
         mask.blocksRaycasts = false;
 
+   
+     
     }
 }
