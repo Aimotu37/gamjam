@@ -18,7 +18,7 @@ MonoBehaviour:
   fadeSpeed: 2
   isAudioFade: 1
   targetBGMVolume: 0.6
-  videoClip: {fileID: 32900000, guid: 1bafb525a4365b640999da02f27c02d6, type: 3}
+  videoClip: {fileID: 32900000, guid: 752332ed1e3f64e52a91e37a062ace6b, type: 3}
   transitionSFX: {fileID: 0}
   waitForClip: 1
   loopVideo: 0
