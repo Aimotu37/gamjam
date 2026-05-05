@@ -21,7 +21,7 @@ namespace S61
 
         protected override void Awake()
         {
-            DontDestroyOnLoad(this.gameObject);
+
             Instance = this;
             base.Awake();
             Debug.Log("<color=green>[S61 GameManager]</color> 初始化完成");
