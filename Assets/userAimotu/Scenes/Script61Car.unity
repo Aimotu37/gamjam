@@ -3523,14 +3523,14 @@ MonoBehaviour:
   _uiVideoPlayer: {fileID: 53924601}
   _uiRenderTexture: {fileID: 8400000, guid: 218264d0fef85f448baec61fd85f6990, type: 2}
   _transitionMaskGroup: {fileID: 2022238942}
-  sfxSource: {fileID: 0}
-  dialogueManager: {fileID: 0}
+  sfxSource: {fileID: 1606480128}
+  dialogueManager: {fileID: 223367415}
   child_neutral: {fileID: 0}
   child_happy1: {fileID: 0}
   child_happy2: {fileID: 0}
   child_confused: {fileID: 0}
-  child_surprised: {fileID: 0}
-  child_pout: {fileID: 0}
+  child_surprised: {fileID: 21300000, guid: e565b6bf4116f0a4c9cb5b9cfe702113, type: 3}
+  child_pout: {fileID: 21300000, guid: d5c93d1fb5ae4a84992b4e281a59715d, type: 3}
   roomStateEvents: []
   uiBlockCount: 0
   taskS61_Instance: {fileID: 0}
@@ -4449,7 +4449,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 7f992a15583a5f1479af88f4abb4180e, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 80f28b5005c224fcc92cfd9498245fea, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.3
   m_Pitch: 1
