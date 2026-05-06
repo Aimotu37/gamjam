@@ -4,7 +4,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "ControlUIAction", menuName = "Actions/Control UI")]
 public class ControlUIAction : StateAction
 {
-    public enum UIType { Notebook, NoteBigImage, Map, Cart, OpenNoteBook, OpenComputer, ComputerMessage, NextComputerMessage, OpenPhone, PhoneMessage, NextPhoneMessage, CloseChoice, TaskPanel }
+    public enum UIType { Notebook, NoteBigImage, Map, Cart, OpenNoteBook, OpenComputer, ComputerMessage, NextComputerMessage, OpenPhone, PhoneMessage, NextPhoneMessage, CloseChoice, TaskPanel, }
     public UIType targetUI;
     public bool isClose = false; // 新增：是否是关闭操作
     [Header("音效设置")]
@@ -31,6 +31,8 @@ public class ControlUIAction : StateAction
             case UIType.Cart:
                 HandleCart(manager);
                 break;
+
+            //S5日记本内页
             case UIType.OpenNoteBook:
                 HandleOpenNoteBook(manager);
                 break;
@@ -58,7 +60,7 @@ public class ControlUIAction : StateAction
             case UIType.CloseChoice:
                 HandleCloseChoice(manager);
                 break;
-                //
+            //
             case UIType.TaskPanel:
                 HandleTaskPanel(manager);
                 break;
