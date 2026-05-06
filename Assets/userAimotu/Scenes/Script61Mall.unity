@@ -2370,6 +2370,12 @@ MonoBehaviour:
   child_confused: {fileID: 0}
   child_surprised: {fileID: 0}
   child_pout: {fileID: 0}
+  adult_tired: {fileID: 0}
+  adult_confused: {fileID: 0}
+  adult_confusedwithhand: {fileID: 0}
+  adult_angry: {fileID: 0}
+  adult_suprised: {fileID: 0}
+  adult_neutral: {fileID: 0}
   roomStateEvents: []
   uiBlockCount: 0
   taskS61_Instance: {fileID: 0}
@@ -4963,6 +4969,7 @@ MonoBehaviour:
   fadeScreen: {fileID: 2022238942}
   musicSource: {fileID: 0}
   fadeDuration: 3
+  skipFadeOut: 0
 --- !u!4 &1902834620
 Transform:
   m_ObjectHideFlags: 0

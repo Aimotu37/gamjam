@@ -5,28 +5,32 @@ using UnityEngine;
 public class MallManager : MonoBehaviour
 {
 
-    //1.ÇĞ»»¿Ö²ÀÉÌ³¡×´Ì¬-×ßµ½ÉÌ³¡×îÓÒ±ß´¥·¢+²¥·ÅÊÓÆµ£¡
-    //2.×ß»Øµ½µçÊÓ»ú¸½½üÏÅÈË(²¥·ÅÊÓÆµ£¡)
-    //3.×ß»Ø×î×ó²àµ¯³ö»Øµ½½ÖµÀÑ¡Ïî
+    //1.åˆ‡æ¢ææ€–å•†åœºçŠ¶æ€-èµ°åˆ°å•†åœºæœ€å³è¾¹è§¦å‘+æ’­æ”¾è§†é¢‘ï¼
+    //2.èµ°å›åˆ°ç”µè§†æœºé™„è¿‘å“äºº(æ’­æ”¾è§†é¢‘ï¼)
+    //3.èµ°å›æœ€å·¦ä¾§å¼¹å‡ºå›åˆ°è¡—é“é€‰é¡¹
 
-    //µØÍ¼
+    //åœ°å›¾
     public GameObject _backgroundMall;
     public GameObject _backgroundScaryMall;
 
-    //±³¾°ÊÓÆµ
+    //èƒŒæ™¯è§†é¢‘
     public GameObject _scrayTransitionVideo;
     public GameObject _scaryTVVideo;
 
-    //Íæ¼ÒÎ»ÖÃ
+    //ç©å®¶ä½ç½®
     public Rigidbody2D _playerRb;
     public SpriteRenderer _playerSpriteRender;
 
-    //ÊÇ·ñÒÑ½øÈë¿Ö²ÀÉÌ³¡×´Ì¬
+    //æ˜¯å¦å·²è¿›å…¥ææ€–å•†åœºçŠ¶æ€
     private bool _creepyMall = false;
 
     public List<StateAction> _ScaryTransitionActions;
     public List<StateAction> _exitMallActions;
-    private bool isExecuting = false; // Àà³ÉÔ±±äÁ¿
+    private bool isExecuting = false; // ç±»æˆå‘˜å˜é‡
+
+    //æ˜¯å¦å¾€å‰èµ°åå›å¤´
+    private bool _walked = false;
+    private bool _lookBack = false;
 
 
 
@@ -38,7 +42,7 @@ public class MallManager : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D other)
     {
-        EnterScaryMallState();
+
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -57,6 +61,14 @@ public class MallManager : MonoBehaviour
 
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.D))
+        {
+            _walked = true;
+        }
+        if (_walked && Input.GetKeyDown(KeyCode.A))
+        {
+            EnterScaryMallState();
+        }
 
     }
 
@@ -66,9 +78,9 @@ public class MallManager : MonoBehaviour
         if (_creepyMall == false)
         {
             StartCoroutine(ExecuteActions(_ScaryTransitionActions));
-            Debug.Log("µ¯³ö¶Ô»°");
-            Debug.Log("²¥·ÅÊÓÆµ");
-            Debug.Log("ÇĞ»»±³¾°");
+            Debug.Log("å¼¹å‡ºå¯¹è¯");
+            Debug.Log("æ’­æ”¾è§†é¢‘");
+            Debug.Log("åˆ‡æ¢èƒŒæ™¯");
             _creepyMall = true;
             //_backgroundMall.SetActive(false);
             _scrayTransitionVideo.SetActive(true);
@@ -82,7 +94,7 @@ public class MallManager : MonoBehaviour
     {
         if (_creepyMall == true)
         {
-            Debug.Log("µçÊÓÉÁÆÁ");
+            Debug.Log("ç”µè§†é—ªå±");
             _scaryTVVideo.SetActive(true);
         }
     }
@@ -91,7 +103,7 @@ public class MallManager : MonoBehaviour
     {
         if (_creepyMall == true)
         {
-            Debug.Log("µ¯³öÑ¡Ïî");
+            Debug.Log("å¼¹å‡ºé€‰é¡¹");
             StartCoroutine(ExecuteActions(_exitMallActions));
         }
     }
@@ -104,7 +116,7 @@ public class MallManager : MonoBehaviour
             if (action != null)
                 yield return action.Execute();
         }
-        isExecuting = false; // ½áÊøºó½âËø
+        isExecuting = false; // ç»“æŸåè§£é”
     }
 
 }
