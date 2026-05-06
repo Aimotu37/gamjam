@@ -49,7 +49,12 @@ public abstract class SceneManagerBase : MonoBehaviour, IGameManager
     public Sprite child_confused;
     public Sprite child_surprised;
     public Sprite child_pout;
-
+    public Sprite adult_tired;
+    public Sprite adult_confused;
+    public Sprite adult_confusedwithhand;
+    public Sprite adult_angry;
+    public Sprite adult_suprised;
+    public Sprite adult_neutral;
     [Header("状态机事件")]
     public List<RoomStateEvent> roomStateEvents;
 
@@ -204,6 +209,12 @@ public abstract class SceneManagerBase : MonoBehaviour, IGameManager
             PortraitOption.Child_Confused  => child_confused,
             PortraitOption.Child_Surprised => child_surprised,
             PortraitOption.Child_Pout      => child_pout,
+            PortraitOption.Adult_Tired     => adult_tired,
+            PortraitOption.Adult_Confused  => adult_confused,
+            PortraitOption.Adult_Confusedwithhand => adult_confusedwithhand,
+            PortraitOption.Adult_Angry     =>adult_angry,
+            PortraitOption.Adult_Suprised  =>adult_suprised,
+            PortraitOption.Adult_Neutral   =>adult_neutral,
             _                              => null
         };
     }

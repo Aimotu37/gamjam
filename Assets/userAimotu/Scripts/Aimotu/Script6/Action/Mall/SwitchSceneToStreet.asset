@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: SwitchSceneToStreet
   m_EditorClassIdentifier: 
   triggerState: 0
-  targetSceneName: Script6 1
+  targetSceneName: Script61Car
   fadeDuration: 1
   playerSpawnPos: {x: -1.7, y: -3.06, z: 0}

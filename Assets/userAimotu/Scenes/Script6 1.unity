@@ -478,7 +478,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &85574493
 GameObject:
@@ -854,7 +854,7 @@ Transform:
   m_Children:
   - {fileID: 22595862}
   m_Father: {fileID: 0}
-  m_RootOrder: 15
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &257013312
 BoxCollider2D:
@@ -2062,7 +2062,7 @@ Transform:
   - {fileID: 1755816977}
   - {fileID: 1606480127}
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &664661043
 MonoBehaviour:
@@ -2239,37 +2239,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 839975364}
   m_CullTransparentMesh: 1
---- !u!1 &880116566
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 880116568}
-  m_Layer: 0
-  m_Name: TestController
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &880116568
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 880116566}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 960, y: 540, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 9
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &956718707
 GameObject:
   m_ObjectHideFlags: 0
@@ -2317,7 +2286,7 @@ Transform:
   m_Children:
   - {fileID: 483502484}
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &956718710
 MonoBehaviour:
@@ -3020,7 +2989,7 @@ Transform:
   m_Children:
   - {fileID: 810845211}
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1310276387
 GameObject:
@@ -3606,7 +3575,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1576953279}
   - component: {fileID: 1576953280}
-  - component: {fileID: 1576953282}
   - component: {fileID: 1576953281}
   m_Layer: 0
   m_Name: GameManager
@@ -3672,21 +3640,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 1576953277}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e2111618334811e479a3a80c105591c8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  diaryTaskText: {fileID: 0}
-  snackCartPanel: {fileID: 0}
-  finalChoiceSequence: {fileID: 0}
---- !u!114 &1576953282
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1576953277}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6d4678424d1479b47a4ea749ecea44c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
@@ -3704,7 +3657,7 @@ MonoBehaviour:
   child_pout: {fileID: 0}
   roomStateEvents: []
   uiBlockCount: 0
-  taskS61_Instance: {fileID: 1576953281}
+  taskS61_Instance: {fileID: 0}
 --- !u!1 &1586963481
 GameObject:
   m_ObjectHideFlags: 0
@@ -4376,7 +4329,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 7f992a15583a5f1479af88f4abb4180e, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 80f28b5005c224fcc92cfd9498245fea, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.3
   m_Pitch: 1
@@ -4838,7 +4791,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1951633200
 GameObject:
@@ -5392,7 +5345,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 16
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2096241311
 GameObject:

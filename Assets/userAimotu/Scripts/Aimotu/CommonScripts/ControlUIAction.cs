@@ -4,17 +4,17 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "ControlUIAction", menuName = "Actions/Control UI")]
 public class ControlUIAction : StateAction
 {
-    public enum UIType { Notebook, NoteBigImage, Map, Cart }
+    public enum UIType { Notebook, NoteBigImage, Map, Cart, OpenNoteBook, OpenComputer, ComputerMessage, NextComputerMessage, OpenPhone, PhoneMessage, NextPhoneMessage, CloseChoice, TaskPanel }
     public UIType targetUI;
-    public bool isClose = false; // �������Ƿ��ǹرղ���
-    [Header("��Ч����")]
+    public bool isClose = false; // 新增：是否是关闭操作
+    [Header("音效设置")]
     public AudioClip customSFX;
     [Range(0f, 1f)]
-    public float volume = 1.0f; // ��������������
+    public float volume = 1.0f; // 新增：音量控制
     public override IEnumerator Execute()
     {
         var manager = GetManager();
-        Debug.Log($"<color=cyan>[UI Debug]</color> ��ǰ Action ��Ŀ����: {targetUI}�� ��Դ����: {name}");
+        Debug.Log($"<color=cyan>[UI Debug]</color> 当前 Action 的目标是: {targetUI}， 资源名称: {name}");
 
         manager?.PlayGlobalSFX(customSFX, volume);
         switch (targetUI)
@@ -31,8 +31,39 @@ public class ControlUIAction : StateAction
             case UIType.Cart:
                 HandleCart(manager);
                 break;
+            case UIType.OpenNoteBook:
+                HandleOpenNoteBook(manager);
+                break;
+
+            //S5电脑
+            case UIType.OpenComputer:
+                HandleOpenComputer(manager);
+                break;
+            case UIType.ComputerMessage:
+                HandleComputerMessage(manager);
+                break;
+            case UIType.NextComputerMessage:
+                HandleNextComputerMessage(manager);
+                break;
+            //S5手机
+            case UIType.OpenPhone:
+                HandleOpenPhone(manager);
+                break;
+            case UIType.PhoneMessage:
+                HandlePhoneMessage(manager);
+                break;
+            case UIType.NextPhoneMessage:
+                HandleNextPhoneMessage(manager);
+                break;
+            case UIType.CloseChoice:
+                HandleCloseChoice(manager);
+                break;
+                //
+            case UIType.TaskPanel:
+                HandleTaskPanel(manager);
+                break;
         }
-      
+
         yield return null;
     }
     private void HandleNotebook(IGameManager manager)
@@ -53,7 +84,7 @@ public class ControlUIAction : StateAction
     {
         if (isClose)
         {
-            // ������ĵ�ͼ UI ������ MapUI
+            // 假设你的地图 UI 类名叫 MapUI
             MapUI.Instance.Close();
             manager?.PopUIBlock("Map");
         }
@@ -63,19 +94,119 @@ public class ControlUIAction : StateAction
             MapUI.Instance.Open();
         }
     }
-    // ���Ӷ�Ӧ�Ĵ�������
+    // 增加对应的处理方法
     private void HandleCart(IGameManager manager)
     {
-        Debug.Log($"CartUI Instance �Ƿ�Ϊ��: {CartUI.Instance == null}");
+        Debug.Log($"CartUI Instance 是否为空: {CartUI.Instance == null}");
         if (isClose)
         {
-            CartUI.Instance.Close(); // ����С�Գ�UI�Ĺر�
+            CartUI.Instance.Close(); // 调用小吃车UI的关闭
             manager?.PopUIBlock("Cart");
         }
         else
         {
             manager?.PushUIBlock("Cart");
-            CartUI.Instance.Open(); // ����С�Գ�UI�Ŀ���
+            CartUI.Instance.Open(); // 调用小吃车UI的开启
         }
     }
+
+    //打开日记本内页
+    private void HandleOpenNoteBook(IGameManager manager)
+    {
+        Debug.Log($"NoteUI Instance 是否为空: {NoteUI.Instance == null}");
+        if (isClose)
+        {
+            NotebookUI.Instance.ClosePages();
+            manager?.PopUIBlock("DiaryPages");
+        }
+        else
+        {
+            manager?.PushUIBlock("DiaryPages");
+            NotebookUI.Instance.OpenPages();
+            NotebookUI.Instance.GetPageContent();
+        }
+    }
+
+    //-----S5电脑------
+
+    //打开电脑
+    private void HandleOpenComputer(IGameManager manager)
+    {
+        Debug.Log($"ComputerUI Instance 是否为空: {ComputerUI.Instance == null}");
+        if (isClose)
+            ComputerUI.Instance.Close();
+        else
+            ComputerUI.Instance.Open();
+
+    }
+
+    //打开消息弹窗
+    private void HandleComputerMessage(IGameManager manager)
+    {
+        Debug.Log($"ComputerUI Instance 是否为空: {ComputerUI.Instance == null}");
+        ComputerUI.Instance.OpenMessageWindow();
+        ComputerUI.Instance.GetMessageContent();
+    }
+
+    //下一条消息
+    private void HandleNextComputerMessage(IGameManager manager)
+    {
+        Debug.Log($"ComputerUI Instance 是否为空: {ComputerUI.Instance == null}");
+        ComputerUI.Instance.NextMessage();
+    }
+
+    //-----S5手机------
+
+
+    private void HandleOpenPhone(IGameManager manager)
+    {
+        Debug.Log($"ComputerUI Instance 是否为空: {PhoneUI.Instance == null}");
+        if (isClose)
+            PhoneUI.Instance.Close();
+        else
+            PhoneUI.Instance.Open();
+
+    }
+
+    //打开消息弹窗
+    private void HandlePhoneMessage(IGameManager manager)
+    {
+        Debug.Log($"ComputerUI Instance 是否为空: {PhoneUI.Instance == null}");
+        PhoneUI.Instance.OpenMessageWindow();
+        ComputerUI.Instance.GetMessageContent();
+    }
+
+    //下一条消息
+    private void HandleNextPhoneMessage(IGameManager manager)
+    {
+        Debug.Log($"ComputerUI Instance 是否为空: {PhoneUI.Instance == null}");
+        PhoneUI.Instance.NextMessage();
+    }
+
+    //关闭选项
+    private void HandleCloseChoice(IGameManager manager)
+    {
+        Debug.Log($"ChoiceUI Instance 是否为空: {ChoiceUISystem.Instance == null}");
+        ChoiceUISystem.Instance.Close();
+    }
+    // 任务面板（不阻断交互）
+    private void HandleTaskPanel(IGameManager manager)
+    {
+        var obj = manager?.TaskModuleObject;
+        if (obj == null)
+        {
+            Debug.LogWarning("[ControlUIAction] TaskModuleObject 为空，无法显示任务面板");
+            return;
+        }
+        if (isClose)
+        {
+            obj.SetActive(false);
+        }
+        else
+        {
+            obj.SetActive(true);
+            manager?.TaskModule?.UpdateUI();
+        }
+    }
+
 }

@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/userAimotu/Scenes/Script4.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
+    path: Assets/userAimotu/Scenes/Script5.unity
+    guid: 48b58465787cc4e7c8ec3c2842e450be
+  - enabled: 1
     path: Assets/userAimotu/Scenes/Script7.unity
     guid: 2d20086e160c8f845af2ba7766074611
   - enabled: 1
@@ -18,8 +21,17 @@ EditorBuildSettings:
     path: Assets/userAimotu/Scenes/Script6 1.unity
     guid: 7caedc57478bf1442928b6d4345792e9
   - enabled: 1
+    path: Assets/userAimotu/Scenes/Script51.unity
+    guid: 48b58465787cc4e7c8ec3c2842e450be
+  - enabled: 1
+    path: Assets/userAimotu/Scenes/Script61Car.unity
+    guid: 644a62a1361e74becb539a7ad3c540ca
+  - enabled: 1
     path: Assets/userAimotu/Scenes/Script1.unity
     guid: 5a64eb60db728234a8863f7ce3a5f5ab
+  - enabled: 1
+    path: Assets/userAimotu/Scenes/Script3.unity
+    guid: 2b5ef69c272fa4144b00ca08245eaf02
   - enabled: 1
     path: Assets/userAimotu/Scenes/Script2.unity
     guid: abd8a7d706c24be40964727e4a758e76

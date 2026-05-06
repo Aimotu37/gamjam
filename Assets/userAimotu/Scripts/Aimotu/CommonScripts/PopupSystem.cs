@@ -94,12 +94,12 @@ public class PopupSystem : MonoBehaviour
             return;
         }
         Debug.Log($"[PopupSystem] Open by {gameObject.name}", this);
-        isOpen = true; 
+        isOpen = true;
         popupPanel.SetActive(true);
         GetManager()?.PushUIBlock("Popup");
 
         if (contentText != null) contentText.text = text.Replace("\\n", "\n");
-        
+
         SetSticker(sticker);
         onClosedCallback = onClosed;
 

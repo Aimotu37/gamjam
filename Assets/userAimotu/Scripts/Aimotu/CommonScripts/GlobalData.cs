@@ -40,4 +40,12 @@ public static class GlobalData
         _unlockedDiaries.Clear();
         Debug.Log("[GlobalData] 所有进度已重置");
     }
+    //统计已解锁的日记数量：
+    public static int UnlockedDiaryCount()
+    {
+        int count = 0;
+        foreach (DiaryID id in System.Enum.GetValues(typeof(DiaryID)))
+            if (id != DiaryID.None && IsDiaryUnlocked(id)) count++;
+        return count;
+    }
 }

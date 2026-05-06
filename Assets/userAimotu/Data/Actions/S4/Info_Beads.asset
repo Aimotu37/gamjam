@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e967a21024cc3b64d8ff8fa63b0c011a, type: 3}
   m_Name: Info_Beads
   m_EditorClassIdentifier: 
-  triggerState: 0
+  triggerState: 12
   stickerType: 4
   content: "\u4E00\u9897\u4E00\u9897\u4E32\u8D77\u6765\uFF0C\u597D\u50CF\u5F88\u6709\u8010\u5FC3\uFF0C\n\u88AB\u98CE\u5439\u5439\uFF0C\u5374\u4F1A\u8F7B\u6613\u6447\u6643\u3002\n\u50CF\u5F88\u591A\u8D39\u52B2\u5FC3\u6C14\uFF0C\u53C8\u65E0\u6CD5\u786E\u5B9A\u7684\u4E8B\u60C5\u3002"

@@ -23,7 +23,15 @@ namespace S6
         {
             Instance = this;
             base.Awake();
-            Debug.Log("<color=green>[S6 GameManager]</color> 初始化完�?");
+            Debug.Log("<color=green>[S6 GameManager]</color> 初始化完");
+        }
+        protected override void OnStateEntered(RoomState newState)
+        {
+            if (newState == RoomState.Dream2_Bedroom)
+                taskS6_Instance?.ShowTaskUI();
+
+            foreach (var item in FindObjectsOfType<InteractableItem>())
+                item.RefreshInteractable();
         }
     }
 }

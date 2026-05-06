@@ -1,0 +1,69 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &7059314173435352120
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7059314173435352122}
+  - component: {fileID: 7059314173435352135}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7059314173435352122
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7059314173435352120}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -10.390015, y: -0.17999268, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7059314173435352135
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7059314173435352120}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 872fd41c7e50c6c43ac12134a3480f9b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _uiRawImage: {fileID: 0}
+  _uiVideoPlayer: {fileID: 0}
+  _uiRenderTexture: {fileID: 8400000, guid: 218264d0fef85f448baec61fd85f6990, type: 2}
+  _transitionMaskGroup: {fileID: 0}
+  sfxSource: {fileID: 0}
+  dialogueManager: {fileID: 0}
+  child_neutral: {fileID: 21300000, guid: 74665b29e4017814da936b25358bf491, type: 3}
+  child_happy1: {fileID: 21300000, guid: 77d0cff24627b814386963dc34444155, type: 3}
+  child_happy2: {fileID: 21300000, guid: 058d795b1523ae14aa2f1b366356efb8, type: 3}
+  child_confused: {fileID: 21300000, guid: d5c93d1fb5ae4a84992b4e281a59715d, type: 3}
+  child_surprised: {fileID: 21300000, guid: e565b6bf4116f0a4c9cb5b9cfe702113, type: 3}
+  child_pout: {fileID: 21300000, guid: a1dec3b71ca59c948a098aafd4c192c9, type: 3}
+  roomStateEvents:
+  - triggerState: 1
+    actions:
+    - {fileID: 11400000, guid: 01ef02dad7c7dc845b352bbb9bf8b1c5, type: 2}
+    - {fileID: 11400000, guid: ae23a81fa21b3c64c86ced5b20ab6f37, type: 2}
+    - {fileID: 11400000, guid: feb65c66347041742b52f3326022adc6, type: 2}
+  - triggerState: 2
+    actions:
+    - {fileID: 11400000, guid: 7ac8a59537c97f344af4d9a52263d137, type: 2}
+  uiBlockCount: 0
+  taskS4_Instance: {fileID: 0}

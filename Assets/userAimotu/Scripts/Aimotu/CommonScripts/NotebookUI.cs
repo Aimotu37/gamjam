@@ -6,12 +6,16 @@ public class NotebookUI : MonoBehaviour
 {
     public static NotebookUI Instance;
 
+
     [Header("日记本根面板")]
     public GameObject rootPanel;
+    public GameObject pages;
     public GameObject stickyHighlight;
 
     [Header("日记页面 — 按顺序拖入 Page_Diary1~7")]
     public GameObject[] diaryPages; // 0=日记1, 1=日记2 ... 6=日记7
+
+    public int _currentpage = 0;
 
 
     private IGameManager GameMgr => (IGameManager)FindAnyObjectByType<SceneManagerBase>();
@@ -32,6 +36,7 @@ public class NotebookUI : MonoBehaviour
     {
         rootPanel.SetActive(true);
         GameMgr?.PushUIBlock("Notebook");
+        GameMgr?.PushUIBlock("NotebookUI");
         if (stickyHighlight != null) stickyHighlight.SetActive(true);
         RefreshDiaryPages();
     }
@@ -39,9 +44,65 @@ public class NotebookUI : MonoBehaviour
     public void Close()
     {
         rootPanel.SetActive(false);
+        GameMgr?.PopUIBlock("Image_close");
+        GameMgr?.PopUIBlock("NotebookUI");
         GameMgr?.PopUIBlock("Notebook");
         if (stickyHighlight != null) stickyHighlight.SetActive(false);
     }
+
+    //———日记页打开————
+    public void OpenPages()
+    {
+        pages.SetActive(true);
+        GameMgr?.PushUIBlock("DiaryPages");
+        RefreshDiaryPages();
+    }
+
+    public void GetPageContent()
+    {
+        diaryPages[_currentpage].SetActive(true);
+    }
+
+    public void ClosePages()
+    {
+        pages.SetActive(false);
+        diaryPages[_currentpage].SetActive(false);
+        GameMgr?.PopUIBlock("DiaryPages");
+    }
+
+    //———日记页翻页————
+
+    public void TurnPageLeft()
+    {
+        if (_currentpage - 1 >= 0)
+        {
+            diaryPages[_currentpage].SetActive(false);
+            diaryPages[_currentpage - 1].SetActive(true);
+            _currentpage--;
+        }
+    }
+
+    public void TurnPageRight()
+    {
+        if (_currentpage + 1 < diaryPages.Length)
+        {
+            diaryPages[_currentpage].SetActive(false);
+            diaryPages[_currentpage + 1].SetActive(true);
+            _currentpage++;
+        }
+        if (_currentpage + 1 == diaryPages.Length - 1)
+        {
+
+
+        }
+        if (_currentpage + 1 >= diaryPages.Length)
+        {
+            ClosePages();
+            Close();
+        }
+    }
+
+
 
     // ── 日记页刷新 ──
     private void RefreshDiaryPages()
