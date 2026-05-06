@@ -16,3 +16,4 @@ MonoBehaviour:
   targetSceneName: Script6
   fadeDuration: 1
   playerSpawnPos: {x: 0, y: 0, z: 0}
+  skipFadeOut: 1
