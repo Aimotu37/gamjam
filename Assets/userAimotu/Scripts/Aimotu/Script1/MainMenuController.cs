@@ -20,6 +20,11 @@ public class MainMenuController : SceneManagerBase
     private void Start()
     {
         base.Start();
+
+        if (continueBtn != null)
+        {
+            continueBtn.interactable = SaveSystem.HasSaveFile();
+        }
         playBtn.onClick.AddListener(OnClickPlay);
         continueBtn.onClick.AddListener(OnClickContinue);
         setBtn.onClick.AddListener(OnClickSetting);
@@ -29,6 +34,7 @@ public class MainMenuController : SceneManagerBase
 
     private void OnClickPlay()
     {
+        SceneManagerBase.PendingStateIndex = null;
         StartCoroutine(FadeToScene("Script2"));
     }
     
@@ -53,7 +59,14 @@ public class MainMenuController : SceneManagerBase
 
     private void OnClickContinue()
     {
-        
+        GameSaveData data = SaveSystem.Load();
+
+        if (data != null)
+        {
+            SceneManagerBase.PendingStateIndex = data.roomStateIndex;
+            
+            StartCoroutine(FadeToScene(data.sceneName));
+        }
     }
 
     private void OnClickSetting()

@@ -28,6 +28,11 @@ public abstract class SceneManagerBase : MonoBehaviour, IGameManager
     public RenderTexture uiRenderTexture => _uiRenderTexture;
     public CanvasGroup transitionMaskGroup => _transitionMaskGroup;
 
+    /// <summary>
+    /// 添加一个静态变量，用于跨场景传递读取到的状态
+    /// </summary>
+    public static int? PendingStateIndex = null;
+
 
     [Header("音效")]
     public AudioSource sfxSource;
@@ -87,7 +92,20 @@ public abstract class SceneManagerBase : MonoBehaviour, IGameManager
         }
         EnterState(InitialState);
         //Debug.Log($"Screen Size: {Screen.width} x {Screen.height}");
+        
+        //判断是否从"继续游戏"跳转
+        if (PendingStateIndex.HasValue)
+        {
+            RoomState savedState = (RoomState)PendingStateIndex.Value;
+            PendingStateIndex = null;
+            EnterState(savedState);
+        }
+        else
+        {
+            EnterState(InitialState);
+        }
     }
+    
 
     // ──────────────────────────────────────────
     //  UI Block（完全共享，不需要再写了）
@@ -131,6 +149,15 @@ public abstract class SceneManagerBase : MonoBehaviour, IGameManager
         // S4 特有：刷新所有可交互物件
         OnStateEntered(newState);
 
+        TryPlayStateEvent(newState);
+
+        if (newState != RoomState.None)
+        {
+            SaveSystem.Save(UnityEngine.SceneManagement.SceneManager.GetActiveScene().name, newState);
+        }
+        
+        OnRoomStateChanged?.Invoke(newState);
+        OnStateEntered(newState);
         TryPlayStateEvent(newState);
     }
 
