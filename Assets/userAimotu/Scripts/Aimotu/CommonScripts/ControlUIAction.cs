@@ -103,11 +103,11 @@ public class ControlUIAction : StateAction
         if (isClose)
         {
             CartUI.Instance.Close(); // 调用小吃车UI的关闭
-            manager?.PopUIBlock("Cart");
+            manager?.PopUIBlock("CartUI");
         }
         else
         {
-            manager?.PushUIBlock("Cart");
+            manager?.PushUIBlock("CartUI");
             CartUI.Instance.Open(); // 调用小吃车UI的开启
         }
     }
