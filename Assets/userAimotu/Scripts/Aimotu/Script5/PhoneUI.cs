@@ -8,6 +8,7 @@ public class PhoneUI : MonoBehaviour
 
     [Header("电脑+消息页面背景")]
     public GameObject PhonePannel;
+    public GameObject Phone_Lower;
     public GameObject MessageCanvas;
 
 
@@ -51,6 +52,7 @@ public class PhoneUI : MonoBehaviour
     public void OpenMessageWindow()
     {
         MessageCanvas.SetActive(true);
+        Phone_Lower.SetActive(false);
         GameMgr?.PushUIBlock("PhoneMessages");
     }
 
