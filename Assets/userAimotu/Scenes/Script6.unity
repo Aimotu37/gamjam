@@ -544,6 +544,14 @@ MonoBehaviour:
   stickyHighlight: {fileID: 311656051}
   diaryPages: []
   _currentpage: 0
+  bypassDiaryFilter: 0
+  onClose:
+    m_PersistentCalls:
+      m_Calls: []
+  triggerPageIndex: -1
+  onTriggerPageShown:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &301002193
 GameObject:
   m_ObjectHideFlags: 0
@@ -1476,7 +1484,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 35f63402e98e68e44ad0d5910b1577d0, type: 2}
   - {fileID: 11400000, guid: f69725251a6715042bf6399a797be126, type: 2}
   stateSpecificEvents: []
-  clickSFX: {fileID: 0}
+  clickSFX: {fileID: 8300000, guid: ed30063476228054b83a442155bb285b, type: 3}
 --- !u!114 &536721211
 MonoBehaviour:
   m_ObjectHideFlags: 0

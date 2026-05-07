@@ -41,15 +41,18 @@ public class InteractableItem : MonoBehaviour
     // 1. 修改获取方式，直接锁定单例
     private IGameManager GetManager()
     {
-        if (S3.GameManager.Instance != null) return (IGameManager)S3.GameManager.Instance;
+       /* if (S3.GameManager.Instance != null) return (IGameManager)S3.GameManager.Instance;
         if (S4.GameManager.Instance != null) return (IGameManager)S4.GameManager.Instance;
         if (S5.GameManager.Instance != null) return (IGameManager)S5.GameManager.Instance;
         if (S6.GameManager.Instance != null) return (IGameManager)S6.GameManager.Instance;
         if (S61.GameManager.Instance != null) return (IGameManager)S61.GameManager.Instance;
-       // if (S7.GameManager.Instance != null) return (IGameManager)S3.GameManager.Instance;
+        if (S7.GameManager.Instance != null) return (IGameManager)S3.GameManager.Instance;
         // 如果单例没拿到，再尝试全局找一次
         var manager = Object.FindAnyObjectByType<MonoBehaviour>() as IGameManager;
-        return manager;
+        return manager;*/
+        // 直接找当前场景里的 SceneManagerBase，不依赖各 S* 的 static Instance
+        // （static 字段可能持有上个场景被销毁但未清空的引用，导致链式返回 null）
+        return Object.FindAnyObjectByType<SceneManagerBase>() as IGameManager;
     }
     private void OnMouseDown()
     {

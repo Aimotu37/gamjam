@@ -35,7 +35,14 @@ public enum RoomState
     S3_Intro,
     S3_Exploring,
     S3_AllItemsViewed,
-    // S7_Reality,
+    // ── Script7：黄粱（demo 终章） ──
+    S7_Intro,
+    S7_DiaryReading,
+    S7_PhoneInterruptDone,
+    S7_BeforeSmash,
+    S7_AfterSmash,
+    S7_MemoryErase,
+    S7_End,
 }
 
 //  可交互物件类型
@@ -71,20 +78,9 @@ public enum ItemType
     S3_Computer,
     S3_Melatonin,
     S3_Bed,
-    // S7
-    S7_Intro,
-    S7_Reading_1,   // 第一段日记可读
-    S7_Phone_1,     // 刘总打断
-    S7_Reading_2,
-    S7_Phone_2,     // 清理系统打断
-    S7_Reading_3,
-    S7_Phone_3,     // 朋友打断
-    S7_Reading_4,
-    S7_Phone_4,     // 群聊+刘总连环
-    S7_Chaos,       // 背景音叠加
-    S7_Choice,      // 摔碎手机选项
-    S7_Smash,       // 动画+字幕
-    S7_End,         // 最终UI
+    //S7
+    S7_Notebook,
+    
 }
 
 public enum DiaryID

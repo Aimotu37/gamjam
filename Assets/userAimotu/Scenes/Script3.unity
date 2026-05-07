@@ -475,7 +475,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: c58b2c9aacacaff42b6642babe277c89, type: 2}
   - {fileID: 11400000, guid: 612c28a90ad3381488f7e339b4db4543, type: 2}
   stateSpecificEvents: []
-  clickSFX: {fileID: 8300000, guid: c29ba37ad755d3749ab629b12d15ae9f, type: 3}
+  clickSFX: {fileID: 8300000, guid: c5d8e70ff9c080a42a041d52eeb872af, type: 3}
 --- !u!61 &386477779
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -981,7 +981,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: e5124389c4045404d91c96ea9630404f, type: 2}
   - {fileID: 11400000, guid: 79c54d874605c914cbdc2f43f8c3d49d, type: 2}
   stateSpecificEvents: []
-  clickSFX: {fileID: 8300000, guid: c29ba37ad755d3749ab629b12d15ae9f, type: 3}
+  clickSFX: {fileID: 8300000, guid: c5d8e70ff9c080a42a041d52eeb872af, type: 3}
 --- !u!61 &534545641
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2237,7 +2237,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 49a04f048fa578b4c8ed2ccaf2f340ed, type: 2}
   - {fileID: 11400000, guid: aac821744af3cf64fa1fa5717a6098a3, type: 2}
   stateSpecificEvents: []
-  clickSFX: {fileID: 8300000, guid: c29ba37ad755d3749ab629b12d15ae9f, type: 3}
+  clickSFX: {fileID: 8300000, guid: c5d8e70ff9c080a42a041d52eeb872af, type: 3}
 --- !u!61 &1290976271
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2441,7 +2441,7 @@ MonoBehaviour:
     - {fileID: 11400000, guid: 62cb351b1f9667c4d9ddd4cc02178e3e, type: 2}
     - {fileID: 11400000, guid: 13147156e64051845a5b8aca4497263c, type: 2}
     - {fileID: 11400000, guid: 351c52fb2fabe5b4da30d354a453f69c, type: 2}
-  clickSFX: {fileID: 8300000, guid: c29ba37ad755d3749ab629b12d15ae9f, type: 3}
+  clickSFX: {fileID: 8300000, guid: c5d8e70ff9c080a42a041d52eeb872af, type: 3}
 --- !u!61 &1419960262
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2607,7 +2607,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: b15b42b70c71f0d44b35f86f62df9c65, type: 2}
   - {fileID: 11400000, guid: 52130e875641e724f8351c1d49b531c4, type: 2}
   stateSpecificEvents: []
-  clickSFX: {fileID: 8300000, guid: c29ba37ad755d3749ab629b12d15ae9f, type: 3}
+  clickSFX: {fileID: 8300000, guid: c5d8e70ff9c080a42a041d52eeb872af, type: 3}
 --- !u!61 &1502620729
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2668,6 +2668,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2492961794056117310, guid: f06abd3aa33fa0c44a9066203594b064, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 35087abfeb13441a3978568e2000f78c, type: 3}
+    - target: {fileID: 2492961794271906094, guid: f06abd3aa33fa0c44a9066203594b064, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2492961794946995228, guid: f06abd3aa33fa0c44a9066203594b064, type: 3}
       propertyPath: m_RootOrder
       value: 10

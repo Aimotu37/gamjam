@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class PhoneUI : MonoBehaviour
 {
@@ -16,6 +17,16 @@ public class PhoneUI : MonoBehaviour
     public GameObject[] Messages;
 
     public int _currentMessage = 0;
+
+    public bool IsOpen => PhonePannel != null && PhonePannel.activeSelf;
+
+    [Header("最后一条消息显示时触发（每次 Open 重置一次）")]
+    public UnityEvent onLastMessageShown;
+
+    [Header("关闭手机时触发")]
+    public UnityEvent onClose;
+
+    private bool _lastMessageFired = false;
 
 
     private IGameManager GameMgr => (IGameManager)FindAnyObjectByType<SceneManagerBase>();
@@ -38,6 +49,7 @@ public class PhoneUI : MonoBehaviour
         PhonePannel.SetActive(true);
         GameMgr?.PushUIBlock("PhoneUI");
 
+        _lastMessageFired = false;
     }
 
     public void Close()
@@ -46,19 +58,37 @@ public class PhoneUI : MonoBehaviour
         GameMgr?.PopUIBlock("PhoneUI");
         GameMgr?.PopUIBlock("PhoneMessages");
 
+        onClose?.Invoke();
+
     }
 
     // 消息弹出
     public void OpenMessageWindow()
     {
         MessageCanvas.SetActive(true);
-        Phone_Lower.SetActive(false);
+        if (Phone_Lower != null) Phone_Lower.SetActive(false);
         GameMgr?.PushUIBlock("PhoneMessages");
     }
 
     public void GetMessageContent()
     {
+        if (Messages == null || Messages.Length == 0)
+        {
+            Debug.LogError($"[PhoneUI] Messages 数组未配置（长度=0）。请在 Inspector 拖入消息 GameObject。");
+            return;
+        }
+        if (_currentMessage < 0 || _currentMessage >= Messages.Length)
+        {
+            Debug.LogError($"[PhoneUI] _currentMessage={_currentMessage} 越界，Messages.Length={Messages.Length}");
+            return;
+        }
+        if (Messages[_currentMessage] == null)
+        {
+            Debug.LogError($"[PhoneUI] Messages[{_currentMessage}] 为 null（Inspector 里这一格没拖 GameObject）");
+            return;
+        }
         Messages[_currentMessage].SetActive(true);
+        TryFireLastMessage();
     }
 
     //Next Message
@@ -70,7 +100,17 @@ public class PhoneUI : MonoBehaviour
             Messages[_currentMessage].SetActive(false);
             Messages[_currentMessage + 1].SetActive(true);
             _currentMessage++;
+            TryFireLastMessage();
         }
+    }
+    private void TryFireLastMessage()
+    {
+        if (_lastMessageFired) return;
+        if (Messages == null || Messages.Length == 0) return;
+        if (_currentMessage != Messages.Length - 1) return;
+
+        _lastMessageFired = true;
+        onLastMessageShown?.Invoke();
     }
 
     /*
