@@ -2039,7 +2039,10 @@ MonoBehaviour:
   adult_angry: {fileID: 21300000, guid: 5e00cb559dfef47e1878da7ab9472371, type: 3}
   adult_suprised: {fileID: 21300000, guid: 72616ad2bef53454d93892c3679a5dad, type: 3}
   adult_neutral: {fileID: 21300000, guid: aa945a6acc7bc421680a6d8341910306, type: 3}
-  roomStateEvents: []
+  roomStateEvents:
+  - triggerState: 18
+    actions:
+    - {fileID: 11400000, guid: e3345a4a945734e80aae777a15770af1, type: 2}
   uiBlockCount: 0
   taskUIRoot: {fileID: 0}
 --- !u!4 &565370021
