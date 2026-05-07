@@ -43,6 +43,7 @@ public class NotebookUI : MonoBehaviour
 
     public void Close()
     {
+
         rootPanel.SetActive(false);
         GameMgr?.PopUIBlock("Image_close");
         GameMgr?.PopUIBlock("NotebookUI");

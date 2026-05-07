@@ -2179,7 +2179,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &839975365
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3543,13 +3543,13 @@ MonoBehaviour:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
+  m_Maskable: 0
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
   m_Sprite: {fileID: 21300000, guid: 4b639f82118c43048ab7daa987ce006f, type: 3}
   m_Type: 0
-  m_PreserveAspect: 1
+  m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
@@ -3647,17 +3647,23 @@ MonoBehaviour:
   _uiVideoPlayer: {fileID: 0}
   _uiRenderTexture: {fileID: 0}
   _transitionMaskGroup: {fileID: 0}
-  sfxSource: {fileID: 0}
-  dialogueManager: {fileID: 0}
+  sfxSource: {fileID: 1606480128}
+  dialogueManager: {fileID: 223367415}
   child_neutral: {fileID: 0}
   child_happy1: {fileID: 0}
   child_happy2: {fileID: 0}
   child_confused: {fileID: 0}
   child_surprised: {fileID: 0}
   child_pout: {fileID: 0}
+  adult_tired: {fileID: 0}
+  adult_confused: {fileID: 0}
+  adult_confusedwithhand: {fileID: 0}
+  adult_angry: {fileID: 0}
+  adult_suprised: {fileID: 0}
+  adult_neutral: {fileID: 0}
   roomStateEvents: []
   uiBlockCount: 0
-  taskS61_Instance: {fileID: 0}
+  taskS61_Instance: {fileID: 392834806}
 --- !u!1 &1586963481
 GameObject:
   m_ObjectHideFlags: 0
@@ -4778,6 +4784,7 @@ MonoBehaviour:
   fadeScreen: {fileID: 2022238942}
   musicSource: {fileID: 1606480128}
   fadeDuration: 3
+  skipFadeOut: 0
 --- !u!4 &1902834620
 Transform:
   m_ObjectHideFlags: 0

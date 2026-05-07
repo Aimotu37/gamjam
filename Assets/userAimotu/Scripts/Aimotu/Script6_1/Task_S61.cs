@@ -77,7 +77,7 @@ namespace S61
             // 3. 对话结束了，多等 0.2 秒给 UI 动画一点缓冲时间，彻底避免“撞车”
             yield return new WaitForSeconds(0.3f);
 
-            
+
 
             Debug.Log("<color=cyan>[Task S61]</color> 对话框已空闲，触发选择序列");
             finalChoiceSequence?.TriggerSequence();
@@ -89,13 +89,13 @@ namespace S61
             if (index != 0) return;
             if (snackCartPanel != null) snackCartPanel.SetActive(false);
             UpdateTaskUI();
-            StartCoroutine(PlayEndingSequence());
+            //StartCoroutine(PlayEndingSequence());
         }
         private IEnumerator PlayEndingSequence()
         {
             yield return new WaitForSeconds(0.5f);
             Debug.Log("<color=yellow>[Task S61]</color> 开始播放结束任务的旁白...");
-           
+
         }
         private void UpdateTaskUI()
         {
