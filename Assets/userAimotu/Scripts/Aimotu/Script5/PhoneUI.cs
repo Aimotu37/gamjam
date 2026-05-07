@@ -17,6 +17,8 @@ public class PhoneUI : MonoBehaviour
 
     public int _currentMessage = 0;
 
+    public bool IsOpen => PhonePannel != null && PhonePannel.activeSelf;
+
 
     private IGameManager GameMgr => (IGameManager)FindAnyObjectByType<SceneManagerBase>();
 
