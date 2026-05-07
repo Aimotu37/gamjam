@@ -3166,6 +3166,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: VideoCanvas
       objectReference: {fileID: 0}
+    - target: {fileID: 2175412531810374660, guid: 8794a80729b56354fa2f57de59592322, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8794a80729b56354fa2f57de59592322, type: 3}
 --- !u!1001 &3718292913607929768
