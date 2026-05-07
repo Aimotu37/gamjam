@@ -57,7 +57,6 @@ public class NotebookUI : MonoBehaviour
     public void Close()
     {
         rootPanel.SetActive(false);
-        GameMgr?.PopUIBlock("Image_close");
         GameMgr?.PopUIBlock("NotebookUI");
         GameMgr?.PopUIBlock("Notebook");
         if (stickyHighlight != null) stickyHighlight.SetActive(false);
@@ -89,6 +88,9 @@ public class NotebookUI : MonoBehaviour
 
     public void TurnPageLeft()
     {
+
+        Debug.Log($"<color=yellow>[Notebook]</color> TurnPageLeft 被调用 当前页={_currentpage} 总页数={(diaryPages == null ? 0 : diaryPages.Length)}");
+
         if (_currentpage - 1 >= 0)
         {
             diaryPages[_currentpage].SetActive(false);
@@ -102,21 +104,19 @@ public class NotebookUI : MonoBehaviour
     {
         if (_currentpage + 1 < diaryPages.Length)
         {
+            Debug.Log($"<color=yellow>[Notebook]</color> TurnPageRight 被调用 当前页={_currentpage} 总页数={(diaryPages == null ? 0 : diaryPages.Length)}");
             diaryPages[_currentpage].SetActive(false);
             diaryPages[_currentpage + 1].SetActive(true);
             _currentpage++;
             TryFireTriggerPage();
         }
-        if (_currentpage + 1 == diaryPages.Length - 1)
-        {
-
-
-        }
-        if (_currentpage + 1 >= diaryPages.Length)
+        else
         {
             ClosePages();
             Close();
         }
+          
+        
     }
     // 当前页 == triggerPageIndex 时触发一次 onTriggerPageShown
     private void TryFireTriggerPage()

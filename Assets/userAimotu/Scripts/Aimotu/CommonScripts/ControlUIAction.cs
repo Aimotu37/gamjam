@@ -119,11 +119,9 @@ public class ControlUIAction : StateAction
         if (isClose)
         {
             NotebookUI.Instance.ClosePages();
-            manager?.PopUIBlock("DiaryPages");
         }
         else
         {
-            manager?.PushUIBlock("DiaryPages");
             NotebookUI.Instance.OpenPages();
             NotebookUI.Instance.GetPageContent();
         }
@@ -174,6 +172,8 @@ public class ControlUIAction : StateAction
     private void HandlePhoneMessage(IGameManager manager)
     {
         Debug.Log($"ComputerUI Instance 是否为空: {PhoneUI.Instance == null}");
+        if (PhoneUI.Instance == null) return;
+        if (!PhoneUI.Instance.IsOpen) PhoneUI.Instance.Open();
         PhoneUI.Instance.OpenMessageWindow();
         ComputerUI.Instance.GetMessageContent();
     }

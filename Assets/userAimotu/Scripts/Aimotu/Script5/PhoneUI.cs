@@ -66,12 +66,27 @@ public class PhoneUI : MonoBehaviour
     public void OpenMessageWindow()
     {
         MessageCanvas.SetActive(true);
-        Phone_Lower.SetActive(false);
+        if (Phone_Lower != null) Phone_Lower.SetActive(false);
         GameMgr?.PushUIBlock("PhoneMessages");
     }
 
     public void GetMessageContent()
     {
+        if (Messages == null || Messages.Length == 0)
+        {
+            Debug.LogError($"[PhoneUI] Messages 数组未配置（长度=0）。请在 Inspector 拖入消息 GameObject。");
+            return;
+        }
+        if (_currentMessage < 0 || _currentMessage >= Messages.Length)
+        {
+            Debug.LogError($"[PhoneUI] _currentMessage={_currentMessage} 越界，Messages.Length={Messages.Length}");
+            return;
+        }
+        if (Messages[_currentMessage] == null)
+        {
+            Debug.LogError($"[PhoneUI] Messages[{_currentMessage}] 为 null（Inspector 里这一格没拖 GameObject）");
+            return;
+        }
         Messages[_currentMessage].SetActive(true);
         TryFireLastMessage();
     }
