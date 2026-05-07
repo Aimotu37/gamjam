@@ -2827,6 +2827,14 @@ MonoBehaviour:
   - {fileID: 1927640071}
   - {fileID: 1028192214}
   _currentpage: 0
+  bypassDiaryFilter: 0
+  onClose:
+    m_PersistentCalls:
+      m_Calls: []
+  triggerPageIndex: -1
+  onTriggerPageShown:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &266715956
 GameObject:
   m_ObjectHideFlags: 0
@@ -20657,7 +20665,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1783712923}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3.4260361, y: 1.0946411, z: 0.055066742}
+  m_LocalPosition: {x: 13.07, y: 3.67, z: 0.055066742}
   m_LocalScale: {x: 3, y: 3, z: 3}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -22156,6 +22164,12 @@ MonoBehaviour:
   - {fileID: 607053360}
   - {fileID: 1190547637}
   _currentMessage: 0
+  onLastMessageShown:
+    m_PersistentCalls:
+      m_Calls: []
+  onClose:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1890250848
 GameObject:
   m_ObjectHideFlags: 0

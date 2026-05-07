@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class PhoneUI : MonoBehaviour
 {
@@ -18,6 +19,14 @@ public class PhoneUI : MonoBehaviour
     public int _currentMessage = 0;
 
     public bool IsOpen => PhonePannel != null && PhonePannel.activeSelf;
+
+    [Header("最后一条消息显示时触发（每次 Open 重置一次）")]
+    public UnityEvent onLastMessageShown;
+
+    [Header("关闭手机时触发")]
+    public UnityEvent onClose;
+
+    private bool _lastMessageFired = false;
 
 
     private IGameManager GameMgr => (IGameManager)FindAnyObjectByType<SceneManagerBase>();
@@ -40,6 +49,7 @@ public class PhoneUI : MonoBehaviour
         PhonePannel.SetActive(true);
         GameMgr?.PushUIBlock("PhoneUI");
 
+        _lastMessageFired = false;
     }
 
     public void Close()
@@ -47,6 +57,8 @@ public class PhoneUI : MonoBehaviour
         PhonePannel.SetActive(false);
         GameMgr?.PopUIBlock("PhoneUI");
         GameMgr?.PopUIBlock("PhoneMessages");
+
+        onClose?.Invoke();
 
     }
 
@@ -61,6 +73,7 @@ public class PhoneUI : MonoBehaviour
     public void GetMessageContent()
     {
         Messages[_currentMessage].SetActive(true);
+        TryFireLastMessage();
     }
 
     //Next Message
@@ -72,7 +85,17 @@ public class PhoneUI : MonoBehaviour
             Messages[_currentMessage].SetActive(false);
             Messages[_currentMessage + 1].SetActive(true);
             _currentMessage++;
+            TryFireLastMessage();
         }
+    }
+    private void TryFireLastMessage()
+    {
+        if (_lastMessageFired) return;
+        if (Messages == null || Messages.Length == 0) return;
+        if (_currentMessage != Messages.Length - 1) return;
+
+        _lastMessageFired = true;
+        onLastMessageShown?.Invoke();
     }
 
     /*
