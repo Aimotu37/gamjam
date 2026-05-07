@@ -979,7 +979,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 167a39451f8f9574b93f035a59495138, type: 2}
   - {fileID: 11400000, guid: a49eca0aa10b8534b980cb0594c18194, type: 2}
   - {fileID: 11400000, guid: e5124389c4045404d91c96ea9630404f, type: 2}
-  - {fileID: 11400000, guid: d108f938202679e4182002e21583b189, type: 2}
   - {fileID: 11400000, guid: 79c54d874605c914cbdc2f43f8c3d49d, type: 2}
   stateSpecificEvents: []
   clickSFX: {fileID: 8300000, guid: c5d8e70ff9c080a42a041d52eeb872af, type: 3}
@@ -2834,10 +2833,22 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2175412530268554294, guid: 8794a80729b56354fa2f57de59592322, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2175412531810374660, guid: 8794a80729b56354fa2f57de59592322, type: 3}
       propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2175412531810374662, guid: 8794a80729b56354fa2f57de59592322, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2175412531810374662, guid: 8794a80729b56354fa2f57de59592322, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2175412531810374662, guid: 8794a80729b56354fa2f57de59592322, type: 3}
+      propertyPath: m_Color.r
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []

@@ -30,7 +30,16 @@ public class NotebookUI : MonoBehaviour
     private bool _triggerPageFired = false;
 
 
-    private IGameManager GameMgr => (IGameManager)FindAnyObjectByType<SceneManagerBase>();
+    private IGameManager _cachedManager;
+    private IGameManager GameMgr
+    {
+        get
+        {
+            if (_cachedManager == null)
+                _cachedManager = FindAnyObjectByType<SceneManagerBase>() as IGameManager;
+            return _cachedManager;
+        }
+    }
 
     private void Awake()
     {

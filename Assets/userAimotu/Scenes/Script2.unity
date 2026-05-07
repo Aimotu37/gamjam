@@ -232,6 +232,12 @@ MonoBehaviour:
   child_confused: {fileID: 0}
   child_surprised: {fileID: 0}
   child_pout: {fileID: 0}
+  adult_tired: {fileID: 0}
+  adult_confused: {fileID: 0}
+  adult_confusedwithhand: {fileID: 0}
+  adult_angry: {fileID: 0}
+  adult_suprised: {fileID: 0}
+  adult_neutral: {fileID: 0}
   roomStateEvents: []
   uiBlockCount: 0
   nextSceneName: Script3
@@ -302,7 +308,7 @@ VideoPlayer:
   m_RenderMode: 2
   m_AspectRatio: 2
   m_DataSource: 0
-  m_PlaybackSpeed: 1
+  m_PlaybackSpeed: 10
   m_AudioOutputMode: 2
   m_TargetAudioSources:
   - {fileID: 0}
@@ -627,7 +633,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!225 &1413221102
 CanvasGroup:
   m_ObjectHideFlags: 0

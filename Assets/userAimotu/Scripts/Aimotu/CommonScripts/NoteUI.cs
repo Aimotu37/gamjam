@@ -5,9 +5,14 @@ using UnityEngine;
 public class NoteUI : MonoBehaviour
 {
     public GameObject canvasRoot;
-    public static NoteUI Instance; 
-    private IGameManager GetManager() =>
-    FindAnyObjectByType<SceneManagerBase>() as IGameManager;
+    public static NoteUI Instance;
+    private IGameManager _cachedManager;
+    private IGameManager GetManager()
+    {
+        if (_cachedManager == null)
+            _cachedManager = FindAnyObjectByType<SceneManagerBase>() as IGameManager;
+        return _cachedManager;
+    }
 
     private void Awake()
     {

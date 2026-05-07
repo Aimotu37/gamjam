@@ -26,7 +26,8 @@ public class Scene2Manger : SceneManagerBase
     protected override void Start()
     {
         base.Start();
-
+        StopAllCoroutines();
+        transitionMaskGroup.alpha = 0f;
         if (uiVideoPlayer != null)
         {
             
