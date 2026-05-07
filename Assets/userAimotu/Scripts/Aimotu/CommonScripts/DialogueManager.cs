@@ -156,7 +156,9 @@ public class DialogueManager : MonoBehaviour
             nameText.gameObject.SetActive(true);
             nameText.text = speakerName;
         }
-        Sprite portraitSprite = lines.GetPortrait(GetManager());
+        var mgr = GetManager();
+        Sprite portraitSprite = lines.GetPortrait(mgr);
+        Debug.Log($"[Portrait] option={lines.portrait} manager={(mgr == null ? "NULL" : mgr.GetType().Name)} sprite={(portraitSprite == null ? "NULL" : portraitSprite.name)}");
 
         if (portraitSprite != null)
         {

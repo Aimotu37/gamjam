@@ -16701,12 +16701,12 @@ MonoBehaviour:
   child_confused: {fileID: 21300000, guid: 5db6ef9c431e84ce790feec59b89e290, type: 3}
   child_surprised: {fileID: 21300000, guid: 72616ad2bef53454d93892c3679a5dad, type: 3}
   child_pout: {fileID: 21300000, guid: 5e00cb559dfef47e1878da7ab9472371, type: 3}
-  adult_tired: {fileID: 0}
-  adult_confused: {fileID: 0}
-  adult_confusedwithhand: {fileID: 0}
-  adult_angry: {fileID: 0}
-  adult_suprised: {fileID: 0}
-  adult_neutral: {fileID: 0}
+  adult_tired: {fileID: 21300000, guid: f0afca1fa1f8c4cb696848ed1e12f92a, type: 3}
+  adult_confused: {fileID: 21300000, guid: 20a275fd64de1432bba83c3f773f2c56, type: 3}
+  adult_confusedwithhand: {fileID: 21300000, guid: 5db6ef9c431e84ce790feec59b89e290, type: 3}
+  adult_angry: {fileID: 21300000, guid: 5e00cb559dfef47e1878da7ab9472371, type: 3}
+  adult_suprised: {fileID: 21300000, guid: 72616ad2bef53454d93892c3679a5dad, type: 3}
+  adult_neutral: {fileID: 21300000, guid: aa945a6acc7bc421680a6d8341910306, type: 3}
   roomStateEvents:
   - triggerState: 12
     actions:
