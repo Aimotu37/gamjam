@@ -82,6 +82,7 @@ public class ChoiceUISystem : MonoBehaviour
     {
         var manager = GetManager();
         manager.PopUIBlock("ChoiceUI");
+        manager.PopUIBlock("Choice");
         choicePanel.SetActive(false);
     }
 
