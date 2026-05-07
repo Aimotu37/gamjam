@@ -5470,6 +5470,8 @@ MonoBehaviour:
   sequence:
   - {fileID: 11400000, guid: edb4873cee8bb4fbea3d9b4c9e74e137, type: 2}
   - {fileID: 11400000, guid: c0fe1225d1f004a4a99029b8d0ee6a70, type: 2}
+  - {fileID: 11400000, guid: b6d37c558a7b047beb7fd397588da96b, type: 2}
+  - {fileID: 11400000, guid: e5124389c4045404d91c96ea9630404f, type: 2}
   - {fileID: 11400000, guid: dfbd603a855cd4eac94c85b3c6222658, type: 2}
   - {fileID: 11400000, guid: a280b38fbac6a5a40b8c2e79cf893b16, type: 2}
 --- !u!114 &1408390552
@@ -7060,6 +7062,54 @@ MonoBehaviour:
   - {fileID: 11400000, guid: b0804fea44be34d3c93d2967a6bc78e9, type: 2}
   - {fileID: 11400000, guid: 5544e8e60ce7c4497a0afc5b9ed4aa4c, type: 2}
   - {fileID: 11400000, guid: b0804fea44be34d3c93d2967a6bc78e9, type: 2}
+--- !u!1 &1999243237
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1999243239}
+  - component: {fileID: 1999243238}
+  m_Layer: 0
+  m_Name: Fade
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1999243238
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1999243237}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce802e7c4ce745044ba88f858f39fc74, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fadeScreen: {fileID: 0}
+  musicSource: {fileID: 0}
+  fadeDuration: 3
+  skipFadeOut: 0
+--- !u!4 &1999243239
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1999243237}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 24.48, y: -2.84, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 12
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2003229470
 GameObject:
   m_ObjectHideFlags: 0
