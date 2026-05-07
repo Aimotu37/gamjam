@@ -29,7 +29,7 @@ public class Scene2Manger : SceneManagerBase
 
         if (uiVideoPlayer != null)
         {
-            // 确保视频从头播放
+            
             uiVideoPlayer.Stop(); 
             uiVideoPlayer.Play();
             uiVideoPlayer.loopPointReached += OnVideoFinished;
@@ -50,11 +50,10 @@ public class Scene2Manger : SceneManagerBase
     private IEnumerator FadeAndExit()
     {
         _isExiting = true;
-
-        // 1. 锁定 UI
+        
         PushUIBlock("Transition");
 
-        // 2. 渐黑效果
+       
         if (transitionMaskGroup != null)
         {
             transitionMaskGroup.blocksRaycasts = true;
@@ -67,10 +66,10 @@ public class Scene2Manger : SceneManagerBase
             }
         }
 
-        // 3. 稍微停顿，给玩家一点反应时间
+       
         yield return new WaitForSeconds(0.3f);
 
-        // 4. 加载场景
+        
         if (!string.IsNullOrEmpty(nextSceneName))
         {
             SceneManager.LoadScene(nextSceneName);
@@ -83,7 +82,7 @@ public class Scene2Manger : SceneManagerBase
 
     private void OnDestroy()
     {
-        // 记得取消注册，防止内存泄漏
+        
         if (uiVideoPlayer != null)
         {
             uiVideoPlayer.loopPointReached -= OnVideoFinished;

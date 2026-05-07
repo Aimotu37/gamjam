@@ -7,15 +7,22 @@ using UnityEngine;
 public class PlayDialogueAction : StateAction
 {
     public DialogueSession dialogue;
+    
+    private bool isRunning = false;
     // public bool changeStateAfterDialogue = false;
     //  public GameManager.RoomState nextState;
     public override IEnumerator Execute()
     {
+        if (isRunning) yield break;
+        if (DialogueManager.instance.IsDialogueActive) yield break;
+
+        isRunning = true; // 上锁
+
         yield return new WaitForEndOfFrame();
-        if (dialogue == null) yield break;
-        if (DialogueManager.instance == null)
+
+        if (dialogue == null || DialogueManager.instance == null)
         {
-            Debug.LogError("场景中缺少 DialogueManager!");
+            isRunning = false;
             yield break;
         }
 
@@ -23,7 +30,10 @@ public class PlayDialogueAction : StateAction
 
         DialogueManager.instance.StartDialogue(dialogue, () => { finished = true; });
 
-        while (!finished) yield return null;
+        while (!finished)
+            yield return null;
+
+        isRunning = false;
 
     }
 }

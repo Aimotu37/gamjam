@@ -91,29 +91,18 @@ public class DialogueManager : MonoBehaviour
             Debug.LogWarning("PlayOneLine 被忽略：已有对话在进行");
             return;
         }
-        var currentLine = linesQueue.Dequeue();
-        var tempDialogue = new DialogueSession
+        DialogueLine line = new DialogueLine
         {
-            lines = new DialogueLine[]
-            {
-            new DialogueLine
-            {
-                speaker = speaker,
-                text = text,
-                portrait = portraitOption
-            }
-            }
+            speaker = speaker,
+            text = text,
+            portrait = portraitOption
         };
-        Sprite portraitSprite = currentLine.GetPortrait(GetManager());
-        Debug.Log($"[Dialogue] 尝试获取立绘: {currentLine.portrait}, 结果是否为空: {portraitSprite == null}");
 
-        if (portraitSprite != null)
-        {
-            portraitImage.gameObject.SetActive(true);
-            portraitImage.sprite = portraitSprite;
-        }
+        DialogueSession tempSession = new DialogueSession();
+        tempSession.lines = new DialogueLine[] { line };
 
-        StartDialogue(tempDialogue);
+
+        StartDialogue(tempSession);
     }
     private void Update()
     {
@@ -244,4 +233,5 @@ public class DialogueManager : MonoBehaviour
         }
         return path;
     }
+    
 }

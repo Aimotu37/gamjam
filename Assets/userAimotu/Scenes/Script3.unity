@@ -430,6 +430,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: NotebookCanvas Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 6125249627950680380, guid: a6195b48ca5e52242bb884d0ff322c01, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a6195b48ca5e52242bb884d0ff322c01, type: 3}
 --- !u!1 &386477777
@@ -2821,11 +2825,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2175412530268554294, guid: 8794a80729b56354fa2f57de59592322, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2175412531810374660, guid: 8794a80729b56354fa2f57de59592322, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8794a80729b56354fa2f57de59592322, type: 3}
