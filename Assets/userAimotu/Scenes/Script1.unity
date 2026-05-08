@@ -3588,6 +3588,8 @@ MonoBehaviour:
   settingsPanel: {fileID: 98723867}
   detailsPanel: {fileID: 1796281823}
   openSound: {fileID: 8300000, guid: a6ec82f56ed083e4490908599752567e, type: 3}
+  hoverSound: {fileID: 8300000, guid: 605bf588ab18a9243b63314751960196, type: 3}
+  clickSound: {fileID: 8300000, guid: 43295f06b0e1ae44a8902e48b064b99d, type: 3}
 --- !u!1 &1590213249
 GameObject:
   m_ObjectHideFlags: 0
