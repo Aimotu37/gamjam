@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 using UnityEngine.UI;
 
 public class SettingsPanel : MonoBehaviour
@@ -9,7 +10,10 @@ public class SettingsPanel : MonoBehaviour
     public Slider bgmSlider;
     public Slider sfxSlider;
     
+    public AudioClip closeSound;
+    
     public GameObject settingsPanel;
+    
 
     private void Start()
     {
@@ -26,6 +30,10 @@ public class SettingsPanel : MonoBehaviour
 
     private void OnClickClose()
     {
+        if (AudioManager.Instance != null && closeSound != null)
+        {
+            AudioManager.Instance.PlaySFX(closeSound);
+        }
         settingsPanel.SetActive(false);
     }
 

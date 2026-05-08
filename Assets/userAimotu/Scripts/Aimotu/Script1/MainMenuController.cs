@@ -14,6 +14,8 @@ public class MainMenuController : SceneManagerBase
     public GameObject settingsPanel;
     public GameObject detailsPanel;
 
+    [Header("Audio")] public AudioClip openSound;
+
     protected override RoomState InitialState => RoomState.None;
     public override GameObject TaskModuleObject => null;
 
@@ -71,6 +73,10 @@ public class MainMenuController : SceneManagerBase
 
     private void OnClickSetting()
     {
+        if (AudioManager.Instance != null && openSound != null)
+        {
+            AudioManager.Instance.PlaySFX(openSound);
+        }
         settingsPanel.SetActive(true);
     }
 
