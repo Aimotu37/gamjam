@@ -9,10 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 887e9bf79b1e51f41824eb32fd8b491a, type: 3}
-  m_Name: AreaSwitchAction
+  m_Script: {fileID: 11500000, guid: 6b2e5aa33e2e2234a9541b465f35b1f4, type: 3}
+  m_Name: S7PhoneNextMessage
   m_EditorClassIdentifier: 
   triggerState: 0
-  targetSceneName: Script6 2
-  playerSpawnPosition: {x: 0, y: 0, z: 0}
-  nextState: 10
+  targetUI: 10
+  isClose: 0
+  customSFX: {fileID: 8300000, guid: 0a10de14d8103ea4398cdabb0c2e3d1a, type: 3}
+  volume: 1

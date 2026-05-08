@@ -9,10 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 887e9bf79b1e51f41824eb32fd8b491a, type: 3}
-  m_Name: AreaSwitchAction
+  m_Script: {fileID: 11500000, guid: 438f4013bb2de054db6e3d44c5968d18, type: 3}
+  m_Name: SwitchToS1
   m_EditorClassIdentifier: 
   triggerState: 0
-  targetSceneName: Script6 2
-  playerSpawnPosition: {x: 0, y: 0, z: 0}
-  nextState: 10
+  targetSceneName: Script1
+  fadeDuration: 1
+  playerSpawnPos: {x: 0, y: 0, z: 0}
+  skipFadeOut: 1

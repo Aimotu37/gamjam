@@ -1314,7 +1314,7 @@ MonoBehaviour:
   fadeScreen: {fileID: 1829847783}
   musicSource: {fileID: 1823055838}
   fadeDuration: 3
-  skipFadeOut: 0
+  skipFadeOut: 1
 --- !u!4 &708158716
 Transform:
   m_ObjectHideFlags: 0

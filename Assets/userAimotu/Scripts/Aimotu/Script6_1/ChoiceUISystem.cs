@@ -12,6 +12,7 @@ public class ChoiceUISystem : MonoBehaviour
     {
         // 1. 尝试直接通过单例获取（最推荐）
         if (S61.GameManager.Instance != null) return (IGameManager)S61.GameManager.Instance;
+        if (S7.GameManager.Instance != null) return (IGameManager)S7.GameManager.Instance;
 
         // 2. 如果单例不可用，尝试在场景中寻找挂载了 GameManager 脚本的物体
         var gm = FindObjectOfType<S61.GameManager>();
@@ -64,7 +65,7 @@ public class ChoiceUISystem : MonoBehaviour
         {
             Debug.LogWarning("ChoiceUISystem: 找不到 GameManager，跳过 PushUIBlock。请检查场景配置。");
         }
-        manager.PushUIBlock("ChoiceUI");
+       // manager.PushUIBlock("ChoiceUI");
 
         // 清理旧按钮
         foreach (Transform child in buttonContainer) Destroy(child.gameObject);
