@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using UnityEngine.Audio;
 
 public class AudioManager : MonoBehaviour
 {
@@ -8,13 +9,14 @@ public class AudioManager : MonoBehaviour
     [Header("Audio Sources")]
     public AudioSource bgmSource;
     public AudioSource sfxSource;
-    private Coroutine fadeCoroutine; // ���ڼ�¼��ǰ���ڽ��еĽ��䣬��ֹ��ͻ
+    public AudioMixer mainMixer;
+    private Coroutine fadeCoroutine; // ???????????????????????????
     private void Awake()
     {
         if (Instance == null)
         {
             Instance = this;
-            // �����������ŵ���ĳ�� Canvas ��������£�ǿ���Ƴ�����Ŀ¼
+            // ?????????????????? Canvas ??????????????????????
             if (transform.parent != null) transform.SetParent(null);
         }
         else
@@ -41,13 +43,13 @@ public class AudioManager : MonoBehaviour
         bgmSource.volume = targetVolume;
     }
 
-    // ����˲ʱ��Ч (�����Ը�)
+    // ?????????? (???????)
     public void PlaySFX(AudioClip clip, float volume = 1f)
     {
         if (clip != null) sfxSource.PlayOneShot(clip, volume);
     }
 
-    // ���ű�������
+    // ???????????
     public void PlayBGM(AudioClip clip, bool loop = true)
     {
         if (bgmSource.clip == clip) return;
@@ -56,14 +58,19 @@ public class AudioManager : MonoBehaviour
         bgmSource.Play();
     }
 
-    //�������Ʒ���
+    //???????????
     public void SetBGMVolume(float volume)
     {
+       
         bgmSource.volume = volume;
     }
 
     public void SetSFXVolume(float volume)
     {
+        float db = Mathf.Log10(Mathf.Clamp(volume,0.0001f, 1f)) * 20f;
+        
+        mainMixer.SetFloat("SFXVolume", db);
+        PlayerPrefs.SetFloat("SFXVolume", db);
         sfxSource.volume = volume;
     }
 
@@ -74,7 +81,7 @@ public class AudioManager : MonoBehaviour
 
     public float GetSFXVolume()
     {
-        return sfxSource.volume;
+        return PlayerPrefs.GetFloat("SFXVolume");
     }
 
 }
