@@ -33,14 +33,25 @@ public class PlayClipAction : StateAction
         manager.PushUIBlock("VideoClip");
 
         // 1. 等待 GameManager 初始化
+        float waitTimeout = 5f;
+        float waitElapsed = 0f;
         yield return new WaitUntil(() =>
-            manager != null &&
-            manager.uiRawImage != null &&
-            manager.uiVideoPlayer != null &&
-            manager.uiRenderTexture != null &&
-            manager.transitionMaskGroup != null
-        );
-
+        { 
+            waitElapsed += Time.deltaTime;
+            return waitElapsed >= waitTimeout ||
+            (manager.uiRawImage != null &&
+             manager.uiVideoPlayer != null &&
+             manager.uiRenderTexture != null &&
+             manager.transitionMaskGroup != null);
+        });
+        // 超时后检查是否真的准备好了
+        if (manager.uiRawImage == null || manager.uiVideoPlayer == null ||
+            manager.uiRenderTexture == null || manager.transitionMaskGroup == null)
+        {
+            Debug.LogError("[PlayClip] Manager 组件未赋值，跳过视频");
+            manager.PopUIBlock("VideoClip");
+            yield break;
+        }
         var rawImage = manager.uiRawImage;
         var videoPlayer = manager.uiVideoPlayer;
         var renderTexture = manager.uiRenderTexture;
@@ -63,6 +74,7 @@ public class PlayClipAction : StateAction
         if (videoClip == null)
         {
             Debug.LogError("[PlayAnimation] VideoClip 未赋值！请在 Inspector 中设置视频文件");
+            manager.PopUIBlock("VideoClip");  
             yield break;
         }
 
@@ -91,39 +103,34 @@ public class PlayClipAction : StateAction
 
 
         // 6. 播放视频
+        // ✅ 先注册，再播放
+        bool ended = false;
+        void OnEnd(VideoPlayer vp) => ended = true;
+        videoPlayer.loopPointReached += OnEnd;
+
+        videoPlayer.errorReceived += (vp, msg) => {
+            Debug.LogError($"[PlayClip] 视频错误: {msg}");
+            ended = true;
+        };
+
         videoPlayer.Play();
-        yield return new WaitForSeconds(0.2f);
+        // 删掉 WaitForSeconds(0.2f)
 
-
-        // 7. 等待播放完成
-        if (waitForClip)
+        float timeout = 120f;
+        float elapsed = 0f;
+        while (!ended)
         {
-            bool ended = false;
-            void OnEnd(VideoPlayer vp) => ended = true;
-            videoPlayer.loopPointReached += OnEnd;
-
-            
-
-            float timeout = 120f;
-            float elapsed = 0f;
-            while (!ended)
+            elapsed += Time.deltaTime;
+            if (elapsed > timeout)
             {
-                elapsed += Time.deltaTime;
-                if (elapsed > timeout)
-                {
-                    Debug.LogWarning("[PlayClip] 超时强制退出");
-                    break;
-                }
-                yield return null;
+                Debug.LogWarning("[PlayClip] 超时强制退出");
+                break;
             }
-
-            // 取消注册，防止下次复用时重复触发
-            videoPlayer.loopPointReached -= OnEnd; 
-
-            yield return new WaitForSeconds(0.1f);
-            if (enableDebugLog) Debug.Log("[PlayClip] 视频播放完成");
-        
+            yield return null;
         }
+
+        videoPlayer.loopPointReached -= OnEnd;
+      
         if (destroyPlayerOnEnd)
         {
             GameObject player = GameObject.FindWithTag("Player");

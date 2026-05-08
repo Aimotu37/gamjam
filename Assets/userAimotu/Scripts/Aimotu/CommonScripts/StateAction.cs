@@ -8,9 +8,10 @@ public abstract class StateAction : ScriptableObject
     public abstract IEnumerator Execute();
     protected IGameManager GetManager()
     {
-        var manager = Object.FindAnyObjectByType<SceneManagerBase>() as IGameManager;
+        var manager = Object.FindAnyObjectByType<SceneManagerBase>(
+            FindObjectsInactive.Exclude) as IGameManager; // 只加 Exclude 非激活
         if (manager == null)
-            Debug.LogError("[StateAction] 找不到 GameManager，请确认场景内有继承 SceneManagerBase 的组件");
+            Debug.LogError("[StateAction] 找不到 GameManager");
         return manager;
     }
 

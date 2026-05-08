@@ -8,13 +8,18 @@ using System.Collections.Generic;
 
 public class DialogueManager : MonoBehaviour
 {
-    private IGameManager _cachedManager;
+    /*private IGameManager _cachedManager;
     private IGameManager GetManager()
     {
         if (_cachedManager == null)
             _cachedManager = FindAnyObjectByType<SceneManagerBase>() as IGameManager;
         return _cachedManager;
-    }
+    }*/
+
+    [Header("Manager 引用")]
+    public SceneManagerBase sceneManager; // Inspector 直接拖赋值
+
+    private IGameManager GetManager() => sceneManager;
 
     public static DialogueManager instance;
     public string Name;

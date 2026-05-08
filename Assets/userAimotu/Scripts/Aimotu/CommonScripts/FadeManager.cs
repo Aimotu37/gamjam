@@ -17,7 +17,7 @@ public class FadeManager : MonoBehaviour
         if (Instance == null)
         {
             Instance = this;
-            DontDestroyOnLoad(gameObject); 
+            //DontDestroyOnLoad(gameObject); 
           
         }
         else

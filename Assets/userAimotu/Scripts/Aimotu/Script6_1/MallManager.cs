@@ -93,7 +93,7 @@ public class MallManager : MonoBehaviour
 
     void ScaryTV()
     {
-        if (_creepyMall == true)
+        if (_creepyMall && !isExecuting)
         {
             Debug.Log("电视闪屏");
             StartCoroutine(ExecuteActions(_ScaryTVActions));
@@ -104,7 +104,7 @@ public class MallManager : MonoBehaviour
 
     void LeaveMall()
     {
-        if (_creepyMall == true)
+        if (_creepyMall && !isExecuting)
         {
             Debug.Log("弹出选项");
             StartCoroutine(ExecuteActions(_exitMallActions));

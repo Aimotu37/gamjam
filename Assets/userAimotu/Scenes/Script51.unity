@@ -2368,6 +2368,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6632df91b834df243978a03ed06fe195, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sceneManager: {fileID: 1576953282}
   Name: "\u96E8\u6F29"
   dialoguePanel: {fileID: 1391738443}
   portraitImage: {fileID: 1448239796}
@@ -7478,6 +7479,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bgmSource: {fileID: 1755816976}
   sfxSource: {fileID: 1606480128}
+  mainMixer: {fileID: 0}
 --- !u!4 &664661042
 Transform:
   m_ObjectHideFlags: 0
@@ -16710,6 +16712,7 @@ MonoBehaviour:
   roomStateEvents:
   - triggerState: 12
     actions:
+    - {fileID: 11400000, guid: 8aa81676e12f801479cc18f12b3cad66, type: 2}
     - {fileID: 11400000, guid: 2538bc4a4095440c6a4736a0a6062027, type: 2}
   - triggerState: 14
     actions:

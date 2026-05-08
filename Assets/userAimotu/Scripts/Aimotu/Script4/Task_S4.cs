@@ -18,14 +18,16 @@ namespace S4
         private bool AwardCollected => GlobalData.D1_Award;
         private bool DiaryCollected => GlobalData.IsDiaryUnlocked(DiaryID.Diary1_FishAndBeads);
 
-
+        private void Awake()
+        {
+            // ✅ 在所有 Start 之前注册，保证不错过初始状态事件
+            GameManager.OnRoomStateChanged += HandleStateChanged;
+        }
         private void Start()
         {
-            // 必须在这里加一个延迟或初始化确保 GameManager 已经存在
+            // ✅ Start 里主动刷一次，补上 Awake 到 Start 之间可能错过的状态
             if (GameManager.Instance != null)
-            {
-                GameManager.OnRoomStateChanged += HandleStateChanged;
-            }
+                UpdateTaskUI();
         }
         private void OnDestroy()
         {

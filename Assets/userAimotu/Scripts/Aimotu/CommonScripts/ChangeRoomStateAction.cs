@@ -14,6 +14,8 @@ public class ChangeRoomStateAction : StateAction
         if (manager != null)
         {
             Debug.Log($"<color=magenta>[Action]</color> ChangeRoomStateAction 开始执行 -> 目标: {nextState}");
+            Debug.Log($"[ChangeState] Manager InstanceID={((MonoBehaviour)manager).GetInstanceID()}, 目标={nextState}");
+
             manager.EnterState(nextState);
             Debug.Log($"<color=magenta>[Action]</color> 状态已切换为: {manager.CurrentState}");
         }

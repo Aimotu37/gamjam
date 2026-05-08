@@ -15,17 +15,17 @@ namespace S5
 
         private bool ComputerInteracted;
 
-
+        private void Awake()
+        {
+            GameManager.OnRoomStateChanged += HandleStateChanged;
+        }
         private void Start()
         {
-            // 必须在这里加一个延迟或初始化确保 GameManager 已经存在
+            // ✅ Start 里主动刷一次，补上 Awake 到 Start 之间可能错过的状态
             if (GameManager.Instance != null)
-            {
-                GameManager.OnRoomStateChanged += HandleStateChanged;
-
-
-            }
+                UpdateTaskUI();
         }
+       
         private void OnDestroy()
         {
             // 记得取消注册，否则切关会报错

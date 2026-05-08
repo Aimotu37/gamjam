@@ -13,6 +13,7 @@ public class PlayDialogueAction : StateAction
     //  public GameManager.RoomState nextState;
     public override IEnumerator Execute()
     {
+        isRunning = false; // 每次执行前强制重置
         if (isRunning) yield break;
         if (DialogueManager.instance.IsDialogueActive) yield break;
 

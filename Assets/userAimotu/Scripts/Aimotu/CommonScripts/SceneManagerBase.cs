@@ -137,12 +137,7 @@ public abstract class SceneManagerBase : MonoBehaviour, IGameManager
     {
         CurrentState = newState;
 
-        // 对话未激活时重置 UIBlock
-        if (dialogueManager != null && !dialogueManager.dialoguePanel.activeInHierarchy)
-        {
-            uiBlockCount = 0;
-            uiBlockStack.Clear();
-        }
+       
 
         Debug.Log($"[State] -> {newState}");
         OnRoomStateChanged?.Invoke(newState);

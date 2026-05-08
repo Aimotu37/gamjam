@@ -4,6 +4,11 @@ using UnityEngine;
 
 public static class GlobalData
 {
+    public static bool S3_NotebookViewed;
+    public static bool S3_FishDecorViewed;
+    public static bool S3_ComputerViewed;
+    public static bool S3_MelatoninViewed;
+
     // ──────────────────────────────────────────
     //  梦境1（Script4）密码线索
     // ──────────────────────────────────────────

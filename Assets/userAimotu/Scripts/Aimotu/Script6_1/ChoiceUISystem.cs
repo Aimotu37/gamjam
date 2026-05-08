@@ -33,7 +33,7 @@ public class ChoiceUISystem : MonoBehaviour
         if (Instance == null)
         {
             Instance = this;
-            // 如果你希望在切关后保留，可以加上 DontDestroyOnLoad(gameObject);
+           
         }
         else
         {

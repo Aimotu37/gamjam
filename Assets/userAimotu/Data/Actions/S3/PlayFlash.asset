@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e25932e895610f442a8a9feb0ba92796, type: 3}
   m_Name: PlayFlash
   m_EditorClassIdentifier: 
-  triggerState: 15
+  triggerState: 17
   useFadeIn: 0
   useFadeOut: 0
   fadeSpeed: 2
