@@ -32,7 +32,7 @@ public class MallManager : MonoBehaviour
     //是否往前走后回头
     private bool _walked = false;
     private bool _lookBack = false;
-
+    private bool _inTV = false;
 
 
 
@@ -54,10 +54,27 @@ public class MallManager : MonoBehaviour
         }
         else
         {
+            _inTV = true;
+            ScaryTV();
+        }
+    }
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        if (_playerRb.position.x > -20)
+        {
+            _inTV = false;
+        }
+    }
+
+    private void OnMouseDown()
+    {
+        if (_inTV)
+        {
             ScaryTV();
         }
 
     }
+
 
 
     void Update()
@@ -91,7 +108,7 @@ public class MallManager : MonoBehaviour
 
     }
 
-    void ScaryTV()
+    public void ScaryTV()
     {
         if (_creepyMall && !isExecuting)
         {
