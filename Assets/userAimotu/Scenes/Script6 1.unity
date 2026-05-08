@@ -3649,12 +3649,12 @@ MonoBehaviour:
   _transitionMaskGroup: {fileID: 0}
   sfxSource: {fileID: 1606480128}
   dialogueManager: {fileID: 223367415}
-  child_neutral: {fileID: 0}
-  child_happy1: {fileID: 0}
-  child_happy2: {fileID: 0}
-  child_confused: {fileID: 0}
-  child_surprised: {fileID: 0}
-  child_pout: {fileID: 0}
+  child_neutral: {fileID: 21300000, guid: 74665b29e4017814da936b25358bf491, type: 3}
+  child_happy1: {fileID: 21300000, guid: 77d0cff24627b814386963dc34444155, type: 3}
+  child_happy2: {fileID: 21300000, guid: 058d795b1523ae14aa2f1b366356efb8, type: 3}
+  child_confused: {fileID: 21300000, guid: d5c93d1fb5ae4a84992b4e281a59715d, type: 3}
+  child_surprised: {fileID: 21300000, guid: e565b6bf4116f0a4c9cb5b9cfe702113, type: 3}
+  child_pout: {fileID: 21300000, guid: a1dec3b71ca59c948a098aafd4c192c9, type: 3}
   adult_tired: {fileID: 0}
   adult_confused: {fileID: 0}
   adult_confusedwithhand: {fileID: 0}

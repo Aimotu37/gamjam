@@ -2833,10 +2833,22 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2175412530268554294, guid: 8794a80729b56354fa2f57de59592322, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2175412531810374660, guid: 8794a80729b56354fa2f57de59592322, type: 3}
       propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2175412531810374662, guid: 8794a80729b56354fa2f57de59592322, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2175412531810374662, guid: 8794a80729b56354fa2f57de59592322, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2175412531810374662, guid: 8794a80729b56354fa2f57de59592322, type: 3}
+      propertyPath: m_Color.r
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []

@@ -8,8 +8,13 @@ using System.Collections.Generic;
 
 public class DialogueManager : MonoBehaviour
 {
-    private IGameManager GetManager() =>
-    FindAnyObjectByType<SceneManagerBase>() as IGameManager;
+    private IGameManager _cachedManager;
+    private IGameManager GetManager()
+    {
+        if (_cachedManager == null)
+            _cachedManager = FindAnyObjectByType<SceneManagerBase>() as IGameManager;
+        return _cachedManager;
+    }
 
     public static DialogueManager instance;
     public string Name;
@@ -151,7 +156,9 @@ public class DialogueManager : MonoBehaviour
             nameText.gameObject.SetActive(true);
             nameText.text = speakerName;
         }
-        Sprite portraitSprite = lines.GetPortrait(GetManager());
+        var mgr = GetManager();
+        Sprite portraitSprite = lines.GetPortrait(mgr);
+        Debug.Log($"[Portrait] option={lines.portrait} manager={(mgr == null ? "NULL" : mgr.GetType().Name)} sprite={(portraitSprite == null ? "NULL" : portraitSprite.name)}");
 
         if (portraitSprite != null)
         {

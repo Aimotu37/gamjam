@@ -10,14 +10,8 @@ using UnityEngine.Video;
 
 public abstract class SceneManagerBase : MonoBehaviour, IGameManager
 {
-    // ──────────────────────────────────────────
-    //  子类必须实现：返回初始状态
-    // ──────────────────────────────────────────
     protected abstract RoomState InitialState { get; }
 
-    // ──────────────────────────────────────────
-    //  Inspector 字段（每个 Scene 都一样的部分）
-    // ──────────────────────────────────────────
     [Header("Video Setup")]
     [SerializeField] private RawImage _uiRawImage;
     [SerializeField] private VideoPlayer _uiVideoPlayer;
@@ -28,15 +22,11 @@ public abstract class SceneManagerBase : MonoBehaviour, IGameManager
     public RenderTexture uiRenderTexture => _uiRenderTexture;
     public CanvasGroup transitionMaskGroup => _transitionMaskGroup;
 
-    /// <summary>
-    /// 添加一个静态变量，用于跨场景传递读取到的状态
-    /// </summary>
+    // 跨场景传递"继续游戏"状态
     public static int? PendingStateIndex = null;
-
 
     [Header("音效")]
     public AudioSource sfxSource;
-   // public PlayClipAction playClipAction;
 
     [Header("对话")]
     public DialogueManager dialogueManager;
@@ -55,12 +45,10 @@ public abstract class SceneManagerBase : MonoBehaviour, IGameManager
     public Sprite adult_angry;
     public Sprite adult_suprised;
     public Sprite adult_neutral;
+
     [Header("状态机事件")]
     public List<RoomStateEvent> roomStateEvents;
 
-    // ──────────────────────────────────────────
-    //  运行时状态
-    // ──────────────────────────────────────────
     public RoomState CurrentState { get; private set; }
     public static event Action<RoomState> OnRoomStateChanged;
 
@@ -69,36 +57,31 @@ public abstract class SceneManagerBase : MonoBehaviour, IGameManager
     private Stack<string> uiBlockStack = new Stack<string>();
     public bool IsUIBlocking => uiBlockCount > 0;
 
-    // ──────────────────────────────────────────
-    //  接口实现
-    // ──────────────────────────────────────────
-    public abstract GameObject TaskModuleObject { get; }
-    public TaskModule TaskModule => TaskModuleObject?.GetComponent<TaskModule>();//满足 IGameManager 接口
+    private RoomState _lastFiredState = (RoomState)(-1);
+    private int _lastFiredFrame = -1;
 
+    public abstract GameObject TaskModuleObject { get; }
+    public TaskModule TaskModule => TaskModuleObject?.GetComponent<TaskModule>();
 
     // ──────────────────────────────────────────
     //  生命周期
     // ──────────────────────────────────────────
-    protected virtual void Awake()
-    {
-        // 子类可以 override Awake() 并调用 base.Awake()
-        // 在这里注册单例由子类自己做（因为类型不同）
-    }
+    protected virtual void Awake() { }
 
     protected virtual void Start()
     {
         uiBlockCount = 0;
         uiBlockStack.Clear();
-        // 确保转场遮罩初始不拦截点击
+
+        // 淡入转场遮罩
         if (_transitionMaskGroup != null)
         {
-            _transitionMaskGroup.alpha = 0;
+            _transitionMaskGroup.alpha = 1f;
             _transitionMaskGroup.blocksRaycasts = false;
+            StartCoroutine(FadeInTransition());
         }
-        EnterState(InitialState);
-        //Debug.Log($"Screen Size: {Screen.width} x {Screen.height}");
-        
-        //判断是否从"继续游戏"跳转
+
+        // 只调用一次 EnterState
         if (PendingStateIndex.HasValue)
         {
             RoomState savedState = (RoomState)PendingStateIndex.Value;
@@ -110,10 +93,23 @@ public abstract class SceneManagerBase : MonoBehaviour, IGameManager
             EnterState(InitialState);
         }
     }
-    
+
+    protected IEnumerator FadeInTransition(float duration = 0.5f)
+    {
+        float elapsed = 0f;
+        while (elapsed < duration)
+        {
+            elapsed += Time.deltaTime;
+            if (_transitionMaskGroup != null)
+                _transitionMaskGroup.alpha = 1f - Mathf.Clamp01(elapsed / duration);
+            yield return null;
+        }
+        if (_transitionMaskGroup != null)
+            _transitionMaskGroup.alpha = 0f;
+    }
 
     // ──────────────────────────────────────────
-    //  UI Block（完全共享，不需要再写了）
+    //  UI Block
     // ──────────────────────────────────────────
     public void PushUIBlock(string source = "Unknown")
     {
@@ -135,13 +131,13 @@ public abstract class SceneManagerBase : MonoBehaviour, IGameManager
     }
 
     // ──────────────────────────────────────────
-    //  状态机（完全共享）
+    //  状态机
     // ──────────────────────────────────────────
     public void EnterState(RoomState newState)
     {
         CurrentState = newState;
 
-        // 重置 UIBlock（对话面板不在的时候）
+        // 对话未激活时重置 UIBlock
         if (dialogueManager != null && !dialogueManager.dialoguePanel.activeInHierarchy)
         {
             uiBlockCount = 0;
@@ -150,29 +146,27 @@ public abstract class SceneManagerBase : MonoBehaviour, IGameManager
 
         Debug.Log($"[State] -> {newState}");
         OnRoomStateChanged?.Invoke(newState);
-
-        // S4 特有：刷新所有可交互物件
         OnStateEntered(newState);
-
-        TryPlayStateEvent(newState);
 
         if (newState != RoomState.None)
-        {
             SaveSystem.Save(UnityEngine.SceneManagement.SceneManager.GetActiveScene().name, newState);
-        }
-        
-        OnRoomStateChanged?.Invoke(newState);
-        OnStateEntered(newState);
+
         TryPlayStateEvent(newState);
     }
 
-    // 子类可以 override 这里来加场景特有逻辑（比如 S4 的 RefreshInteractable）
     protected virtual void OnStateEntered(RoomState newState) { }
 
     private void TryPlayStateEvent(RoomState state)
     {
         if (DialogueManager.instance != null && DialogueManager.instance.IsDialogueActive)
             return;
+
+        // 同一帧内同一状态只触发一次，防止 Start() 双重调用重复执行
+        if (state == _lastFiredState && Time.frameCount == _lastFiredFrame)
+            return;
+
+        _lastFiredState = state;
+        _lastFiredFrame = Time.frameCount;
 
         foreach (var ev in roomStateEvents)
         {
@@ -191,7 +185,7 @@ public abstract class SceneManagerBase : MonoBehaviour, IGameManager
     }
 
     // ──────────────────────────────────────────
-    //  工具方法（完全共享）
+    //  工具方法
     // ──────────────────────────────────────────
     public void PlayGlobalSFX(AudioClip clip, float volume = 1.0f)
     {
@@ -203,19 +197,19 @@ public abstract class SceneManagerBase : MonoBehaviour, IGameManager
     {
         return option switch
         {
-            PortraitOption.Child_Neutral   => child_neutral,
-            PortraitOption.Child_Happy1    => child_happy1,
-            PortraitOption.Child_Happy2    => child_happy2,
-            PortraitOption.Child_Confused  => child_confused,
+            PortraitOption.Child_Neutral => child_neutral,
+            PortraitOption.Child_Happy1 => child_happy1,
+            PortraitOption.Child_Happy2 => child_happy2,
+            PortraitOption.Child_Confused => child_confused,
             PortraitOption.Child_Surprised => child_surprised,
-            PortraitOption.Child_Pout      => child_pout,
-            PortraitOption.Adult_Tired     => adult_tired,
-            PortraitOption.Adult_Confused  => adult_confused,
+            PortraitOption.Child_Pout => child_pout,
+            PortraitOption.Adult_Tired => adult_tired,
+            PortraitOption.Adult_Confused => adult_confused,
             PortraitOption.Adult_Confusedwithhand => adult_confusedwithhand,
-            PortraitOption.Adult_Angry     =>adult_angry,
-            PortraitOption.Adult_Suprised  =>adult_suprised,
-            PortraitOption.Adult_Neutral   =>adult_neutral,
-            _                              => null
+            PortraitOption.Adult_Angry => adult_angry,
+            PortraitOption.Adult_Suprised => adult_suprised,
+            PortraitOption.Adult_Neutral => adult_neutral,
+            _ => null
         };
     }
 }
