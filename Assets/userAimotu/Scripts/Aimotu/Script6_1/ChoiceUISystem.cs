@@ -65,7 +65,7 @@ public class ChoiceUISystem : MonoBehaviour
         {
             Debug.LogWarning("ChoiceUISystem: 找不到 GameManager，跳过 PushUIBlock。请检查场景配置。");
         }
-        manager.PushUIBlock("ChoiceUI");
+       // manager.PushUIBlock("ChoiceUI");
 
         // 清理旧按钮
         foreach (Transform child in buttonContainer) Destroy(child.gameObject);
