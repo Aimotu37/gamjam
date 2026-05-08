@@ -18,4 +18,6 @@ MonoBehaviour:
   - "\u6454\u788E\u624B\u673A"
   branchActions:
   - actions:
+    - {fileID: 11400000, guid: c0fe1225d1f004a4a99029b8d0ee6a70, type: 2}
+    - {fileID: 11400000, guid: 6324a5b00170f47c8ae48a110eb99fbb, type: 2}
     - {fileID: 11400000, guid: 091486c8c8c1e473c88a17838d142ee2, type: 2}
