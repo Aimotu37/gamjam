@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 887e9bf79b1e51f41824eb32fd8b491a, type: 3}
   m_Name: AreaSwitchAction
   m_EditorClassIdentifier: 
-  triggerState: 7
+  triggerState: 0
   targetSceneName: Script6 2
+  playerSpawnPosition: {x: 0, y: 0, z: 0}
   nextState: 10
