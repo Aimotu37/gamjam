@@ -175,13 +175,13 @@ public class ControlUIAction : StateAction
         if (PhoneUI.Instance == null) return;
         if (!PhoneUI.Instance.IsOpen) PhoneUI.Instance.Open();
         PhoneUI.Instance.OpenMessageWindow();
-        ComputerUI.Instance.GetMessageContent();
+
     }
 
     //下一条消息
     private void HandleNextPhoneMessage(IGameManager manager)
     {
-        Debug.Log($"ComputerUI Instance 是否为空: {PhoneUI.Instance == null}");
+        Debug.Log($"PhoneUI Instance 是否为空: {PhoneUI.Instance == null}");
         PhoneUI.Instance.NextMessage();
     }
 
