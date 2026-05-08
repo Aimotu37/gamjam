@@ -62,11 +62,11 @@ public class MallManager : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.D))
+        if (Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow))
         {
             _walked = true;
         }
-        if (_walked && Input.GetKeyDown(KeyCode.A))
+        if (_walked && (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.LeftArrow)))
         {
             EnterScaryMallState();
         }

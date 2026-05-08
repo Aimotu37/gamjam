@@ -15,7 +15,7 @@ MonoImporter:
   - cakeSticker: {fileID: 21300000, guid: fc2b74d816ef0df4ab78957b5af7468c, type: 3}
   - bubbleteaSticker: {fileID: 21300000, guid: cc7492b120dcc244fa6e701ed9f7ea64, type: 3}
   - barbecueSticker: {fileID: 21300000, guid: 56e58805d3c785042a39c6b70fce0e51, type: 3}
-  executionOrder: 0
+  executionOrder: -150
   icon: {instanceID: 0}
   userData: 
   assetBundleName: 
