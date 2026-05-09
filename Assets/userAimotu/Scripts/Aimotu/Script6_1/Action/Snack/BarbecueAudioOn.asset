@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: BarbecueAudioOn
   m_EditorClassIdentifier: 
   triggerState: 9
-  command: 1
+  command: 0
   clip: {fileID: 8300000, guid: a4ee962e8a44aa94ab60ea643310ba82, type: 3}
   volume: 0.74
   fadeDuration: 1
-  loop: 1
+  loop: 0

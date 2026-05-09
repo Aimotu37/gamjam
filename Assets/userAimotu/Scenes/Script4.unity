@@ -384,7 +384,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48265cf264811544db45afaad591052e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  eligibleStates: 0300000004000000
+  eligibleStates: 03000000
   type: 4
   allowRepeatClick: 1
   canInteract: 0
@@ -520,7 +520,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48265cf264811544db45afaad591052e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  eligibleStates: 0300000004000000
+  eligibleStates: 03000000
   type: 3
   allowRepeatClick: 1
   canInteract: 0
@@ -1316,7 +1316,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48265cf264811544db45afaad591052e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  eligibleStates: 0300000004000000
+  eligibleStates: 03000000
   type: 5
   allowRepeatClick: 1
   canInteract: 0
@@ -1803,7 +1803,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48265cf264811544db45afaad591052e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  eligibleStates: 020000000300000004000000
+  eligibleStates: 0200000004000000
   type: 7
   allowRepeatClick: 1
   canInteract: 0
@@ -2470,7 +2470,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 255e6b93ea9ee994f8bb00ee094f088d, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.42
+  m_Volume: 1
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -2695,7 +2695,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48265cf264811544db45afaad591052e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  eligibleStates: 020000000300000004000000
+  eligibleStates: 0200000003000000
   type: 1
   allowRepeatClick: 1
   canInteract: 0
@@ -2995,7 +2995,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48265cf264811544db45afaad591052e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  eligibleStates: 020000000300000004000000
+  eligibleStates: 0200000003000000
   type: 6
   allowRepeatClick: 1
   canInteract: 0
@@ -3120,6 +3120,18 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2175412530268554281, guid: 8794a80729b56354fa2f57de59592322, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2175412530268554281, guid: 8794a80729b56354fa2f57de59592322, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2175412530268554281, guid: 8794a80729b56354fa2f57de59592322, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2175412530268554281, guid: 8794a80729b56354fa2f57de59592322, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -3167,9 +3179,45 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2175412530268554282, guid: 8794a80729b56354fa2f57de59592322, type: 3}
+      propertyPath: m_RenderMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2175412530268554283, guid: 8794a80729b56354fa2f57de59592322, type: 3}
+      propertyPath: m_UiScaleMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2175412530268554283, guid: 8794a80729b56354fa2f57de59592322, type: 3}
+      propertyPath: m_ScreenMatchMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2175412530268554283, guid: 8794a80729b56354fa2f57de59592322, type: 3}
+      propertyPath: m_PresetInfoIsWorld
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2175412530268554283, guid: 8794a80729b56354fa2f57de59592322, type: 3}
+      propertyPath: m_ReferenceResolution.x
+      value: 1920
+      objectReference: {fileID: 0}
+    - target: {fileID: 2175412530268554283, guid: 8794a80729b56354fa2f57de59592322, type: 3}
+      propertyPath: m_ReferenceResolution.y
+      value: 1080
+      objectReference: {fileID: 0}
     - target: {fileID: 2175412530268554294, guid: 8794a80729b56354fa2f57de59592322, type: 3}
       propertyPath: m_Name
       value: VideoCanvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 2175412530528959744, guid: 8794a80729b56354fa2f57de59592322, type: 3}
+      propertyPath: m_AspectRatio
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2175412531020122280, guid: 8794a80729b56354fa2f57de59592322, type: 3}
+      propertyPath: m_OverrideSorting
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2175412531020122280, guid: 8794a80729b56354fa2f57de59592322, type: 3}
+      propertyPath: m_OverridePixelPerfect
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2175412531810374660, guid: 8794a80729b56354fa2f57de59592322, type: 3}
       propertyPath: m_IsActive
@@ -3657,8 +3705,20 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2118723411}
     - target: {fileID: 7059314173435352135, guid: 5a16ac39547eade43bf810c04f32446c, type: 3}
+      propertyPath: roomStateEvents.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7059314173435352135, guid: 5a16ac39547eade43bf810c04f32446c, type: 3}
+      propertyPath: roomStateEvents.Array.data[2].triggerState
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7059314173435352135, guid: 5a16ac39547eade43bf810c04f32446c, type: 3}
       propertyPath: roomStateEvents.Array.data[0].actions.Array.size
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7059314173435352135, guid: 5a16ac39547eade43bf810c04f32446c, type: 3}
+      propertyPath: roomStateEvents.Array.data[2].actions.Array.size
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7059314173435352135, guid: 5a16ac39547eade43bf810c04f32446c, type: 3}
       propertyPath: roomStateEvents.Array.data[0].actions.Array.data[0]
@@ -3676,6 +3736,10 @@ PrefabInstance:
       propertyPath: roomStateEvents.Array.data[0].actions.Array.data[3]
       value: 
       objectReference: {fileID: 11400000, guid: feb65c66347041742b52f3326022adc6, type: 2}
+    - target: {fileID: 7059314173435352135, guid: 5a16ac39547eade43bf810c04f32446c, type: 3}
+      propertyPath: roomStateEvents.Array.data[2].actions.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: 7ac8a59537c97f344af4d9a52263d137, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5a16ac39547eade43bf810c04f32446c, type: 3}
 --- !u!114 &7059314172814750086 stripped
