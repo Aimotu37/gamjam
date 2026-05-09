@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.EventSystems;
 using System.Collections;
 using System.Collections.Generic;
 
@@ -57,6 +58,9 @@ public class InteractableItem : MonoBehaviour
     private void OnMouseDown()
     {
         // 只有弹窗打开时才屏蔽场景点击
+        if (EventSystem.current != null && EventSystem.current.IsPointerOverGameObject())
+            return;
+
         if (PopupSystem.Instance != null && PopupSystem.Instance.IsOpen) return;
         var manager = GetManager();
         string managerStatus = (manager == null) ? "丢失(NULL)" : "正常";

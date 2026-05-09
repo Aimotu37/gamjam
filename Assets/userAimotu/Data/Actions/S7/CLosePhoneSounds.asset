@@ -16,5 +16,5 @@ MonoBehaviour:
   command: 0
   clip: {fileID: 8300000, guid: df207e9d76d46a042a3c2f210215c2e0, type: 3}
   volume: 1
-  fadeDuration: 1
-  loop: 1
+  fadeDuration: 0
+  loop: 0

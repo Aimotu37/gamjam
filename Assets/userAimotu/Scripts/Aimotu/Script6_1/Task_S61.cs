@@ -76,8 +76,10 @@ namespace S61
 
             // 3. 对话结束了，多等 0.2 秒给 UI 动画一点缓冲时间，彻底避免“撞车”
             yield return new WaitForSeconds(0.3f);
+            // ✅ 弹出选择前停止正在播放的音效
+            AudioManager.Instance?.StopSFX();
 
-
+           
 
             Debug.Log("<color=cyan>[Task S61]</color> 对话框已空闲，触发选择序列");
             finalChoiceSequence?.TriggerSequence();
@@ -101,7 +103,7 @@ namespace S61
         {
             if (diaryTaskText == null) return;
             int current = SnackTaskDone ? 1 : 0;
-            diaryTaskText.text = $"找回 {current} / 1 篇日记{(SnackTaskDone ? " ✓" : "")}";
+            diaryTaskText.text = $"找回 {current} / 1 篇日记{(SnackTaskDone ? "√" : "")}";
         }
 
         public void UpdateUI() => UpdateTaskUI();

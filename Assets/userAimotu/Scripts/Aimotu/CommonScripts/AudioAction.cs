@@ -4,7 +4,7 @@ using System.Collections;
 [CreateAssetMenu(fileName = "AudioAction", menuName = "Actions/Audio Control")]
 public class AudioAction : StateAction
 {
-    public enum AudioCommand { PlaySFX, PlayBGM, StopBGM, FadeBGM }
+    public enum AudioCommand { PlaySFX, PlayBGM, StopBGM, FadeBGM, StopSFX }
 
     [Header("√¸¡Ó…Ë÷√")]
     public AudioCommand command;
@@ -39,6 +39,9 @@ public class AudioAction : StateAction
                 break;
             case AudioCommand.FadeBGM:
                 AudioManager.Instance.FadeBGMVolume(volume, fadeDuration);
+                break;
+            case AudioCommand.StopSFX:
+                AudioManager.Instance.StopSFX();
                 break;
         }
 

@@ -9,12 +9,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5e31b70980884504fa309a61f273b823, type: 3}
-  m_Name: S7SmashPhoneDialogue
+  m_Script: {fileID: 11500000, guid: 98631841dfea1ab43a91af861af324fa, type: 3}
+  m_Name: StopSFX
   m_EditorClassIdentifier: 
   triggerState: 0
-  dialogue:
-    lines:
-    - speaker: 1
-      portrait: 10
-      text: "\u90FD\u75AF\u4E86\u5417\uFF1F"
+  command: 4
+  clip: {fileID: 0}
+  volume: 1
+  fadeDuration: 1
+  loop: 0

@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5e31b70980884504fa309a61f273b823, type: 3}
-  m_Name: PlayDialogueAction
+  m_Name: GotoBed
   m_EditorClassIdentifier: 
-  triggerState: 9
+  triggerState: 0
   dialogue:
     lines:
-    - speaker: 0
-      portrait: 10
-      text: "\u662F\u4E0D\u662F\uFF0C\u6211\u73B0\u5728\uFF0C\u80FD\u591F\u5B9E\u73B0\uFF0C\u8FC7\u53BB\u6CA1\u6709\u5B9E\u73B0\u7684\u613F\u671B\u3002"
+    - speaker: 1
+      portrait: 4
+      text: "\u773C\u76AE\u53D8\u5F97\u5F88\u6C89\u91CD...\u60F3\u56DE\u5230\u67D4\u8F6F\u7684\u5730\u65B9\u4F11\u606F\u4E00\u4E0B\u3002"

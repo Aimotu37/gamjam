@@ -1469,7 +1469,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &354597966
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2176,7 +2176,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &513073123
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2376,6 +2376,9 @@ MonoBehaviour:
   adult_neutral: {fileID: 21300000, guid: aa945a6acc7bc421680a6d8341910306, type: 3}
   roomStateEvents:
   - triggerState: 18
+    actions:
+    - {fileID: 11400000, guid: e3345a4a945734e80aae777a15770af1, type: 2}
+  - triggerState: 22
     actions:
     - {fileID: 11400000, guid: e3345a4a945734e80aae777a15770af1, type: 2}
   uiBlockCount: 0
@@ -2761,7 +2764,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 0}
-  m_RaycastTarget: 0
+  m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -3179,7 +3182,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &873698775
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5501,8 +5504,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 19.677, y: 58.66667}
-  m_SizeDelta: {x: 152.63, y: 360}
+  m_AnchoredPosition: {x: -227.3116, y: 60.029}
+  m_SizeDelta: {x: 646.6071, y: 362.72}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1408390551
 MonoBehaviour:
@@ -5636,7 +5639,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1442707492
 RectTransform:
   m_ObjectHideFlags: 0
@@ -7101,7 +7104,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1996210335
 Transform:
   m_ObjectHideFlags: 0

@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.Audio;
 
@@ -46,7 +46,10 @@ public class AudioManager : MonoBehaviour
     // ?????????? (???????)
     public void PlaySFX(AudioClip clip, float volume = 1f)
     {
-        if (clip != null) sfxSource.PlayOneShot(clip, volume);
+        if (clip == null || sfxSource == null) return;
+        sfxSource.clip = clip;
+        sfxSource.volume = volume;
+        sfxSource.Play(); // ✅ 会打断正在播放的音效
     }
 
     // ???????????
@@ -82,6 +85,15 @@ public class AudioManager : MonoBehaviour
     public float GetSFXVolume()
     {
         return PlayerPrefs.GetFloat("SFXVolume");
+    }
+    public void StopSFX()
+    {
+        if (sfxSource != null) sfxSource.Stop();
+    }
+
+    public void StopBGM()
+    {
+        if (bgmSource != null) bgmSource.Stop();
     }
 
 }

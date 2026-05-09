@@ -19,7 +19,21 @@ public class DialogueManager : MonoBehaviour
     [Header("Manager 引用")]
     public SceneManagerBase sceneManager; // Inspector 直接拖赋值
 
-    private IGameManager GetManager() => sceneManager;
+    private IGameManager GetManager()
+    {
+        // 不缓存，每次找当前场景的 Manager，排除 DontDestroyOnLoad 残留
+        var all = Object.FindObjectsByType<SceneManagerBase>(
+            FindObjectsInactive.Exclude, FindObjectsSortMode.None);
+
+        foreach (var m in all)
+        {
+            if (m.gameObject.scene.name != "DontDestroyOnLoad")
+                return m as IGameManager;
+        }
+
+        Debug.LogError("[DialogueManager] 找不到有效的 GameManager");
+        return null;
+    }
 
     public static DialogueManager instance;
     public string Name;

@@ -1675,7 +1675,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &880116568
 Transform:
   m_ObjectHideFlags: 0
@@ -1698,7 +1698,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 880116566}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4cbe492d046753a4ba58bd34e3747b72, type: 3}
   m_Name: 
@@ -3706,7 +3706,7 @@ PrefabInstance:
       objectReference: {fileID: 2118723411}
     - target: {fileID: 7059314173435352135, guid: 5a16ac39547eade43bf810c04f32446c, type: 3}
       propertyPath: roomStateEvents.Array.size
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7059314173435352135, guid: 5a16ac39547eade43bf810c04f32446c, type: 3}
       propertyPath: roomStateEvents.Array.data[2].triggerState
@@ -3718,7 +3718,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7059314173435352135, guid: 5a16ac39547eade43bf810c04f32446c, type: 3}
       propertyPath: roomStateEvents.Array.data[2].actions.Array.size
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7059314173435352135, guid: 5a16ac39547eade43bf810c04f32446c, type: 3}
       propertyPath: roomStateEvents.Array.data[0].actions.Array.data[0]
@@ -3739,7 +3739,7 @@ PrefabInstance:
     - target: {fileID: 7059314173435352135, guid: 5a16ac39547eade43bf810c04f32446c, type: 3}
       propertyPath: roomStateEvents.Array.data[2].actions.Array.data[0]
       value: 
-      objectReference: {fileID: 11400000, guid: 7ac8a59537c97f344af4d9a52263d137, type: 2}
+      objectReference: {fileID: 11400000, guid: 98b6a7086d3f42442b374a4bba86870c, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5a16ac39547eade43bf810c04f32446c, type: 3}
 --- !u!114 &7059314172814750086 stripped

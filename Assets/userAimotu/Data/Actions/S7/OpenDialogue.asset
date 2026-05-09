@@ -16,5 +16,5 @@ MonoBehaviour:
   dialogue:
     lines:
     - speaker: 0
-      portrait: 0
+      portrait: 12
       text: ......

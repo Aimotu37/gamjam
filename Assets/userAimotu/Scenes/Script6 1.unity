@@ -330,10 +330,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sequence:
+  - {fileID: 11400000, guid: 2976c90b178e60d4a968e7eaa0ec7392, type: 2}
   - {fileID: 11400000, guid: 649764de2636bd446ba03d5da7e559e1, type: 2}
-  - {fileID: 0}
   - {fileID: 11400000, guid: 79036e9db86571d4e9686ab52a4b18ee, type: 2}
-  - {fileID: 0}
 --- !u!114 &52411354
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2889,8 +2888,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   eligibleStates: 
-  type: 10
-  allowRepeatClick: 1
+  type: 13
+  allowRepeatClick: 0
   canInteract: 0
   questionMarkIcon: {fileID: 810845209}
   defaultActions: []
@@ -4137,10 +4136,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sequence:
+  - {fileID: 11400000, guid: 2976c90b178e60d4a968e7eaa0ec7392, type: 2}
   - {fileID: 11400000, guid: 82d3b145f4eaa4d489e9f814c4a77f8d, type: 2}
-  - {fileID: 0}
   - {fileID: 11400000, guid: 3cc764e91dbc1b340838ef8b77eefefc, type: 2}
-  - {fileID: 0}
 --- !u!114 &1705361572
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4965,10 +4963,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sequence:
+  - {fileID: 11400000, guid: 2976c90b178e60d4a968e7eaa0ec7392, type: 2}
   - {fileID: 11400000, guid: 1b72bde0d9fd36d4ab1705d5b7ad0335, type: 2}
-  - {fileID: 0}
   - {fileID: 11400000, guid: 7c3eb26174306d64f8ad2c2c01cb998b, type: 2}
-  - {fileID: 0}
 --- !u!114 &1951633206
 MonoBehaviour:
   m_ObjectHideFlags: 0

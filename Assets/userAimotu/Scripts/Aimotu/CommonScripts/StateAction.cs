@@ -8,11 +8,17 @@ public abstract class StateAction : ScriptableObject
     public abstract IEnumerator Execute();
     protected IGameManager GetManager()
     {
-        var manager = Object.FindAnyObjectByType<SceneManagerBase>(
-            FindObjectsInactive.Exclude) as IGameManager; // 只加 Exclude 非激活
-        if (manager == null)
-            Debug.LogError("[StateAction] 找不到 GameManager");
-        return manager;
+        var all = Object.FindObjectsByType<SceneManagerBase>(
+        FindObjectsInactive.Exclude, FindObjectsSortMode.None);
+
+        foreach (var m in all)
+        {
+            if (m.gameObject.scene.name != "DontDestroyOnLoad")
+                return m as IGameManager;
+        }
+
+        Debug.LogError("[StateAction] 找不到有效的 GameManager");
+        return null;
     }
 
 }
