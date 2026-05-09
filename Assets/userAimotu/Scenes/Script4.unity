@@ -3181,11 +3181,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2175412530268554282, guid: 8794a80729b56354fa2f57de59592322, type: 3}
       propertyPath: m_RenderMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2175412530268554283, guid: 8794a80729b56354fa2f57de59592322, type: 3}
+      propertyPath: m_UiScaleMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2175412530268554283, guid: 8794a80729b56354fa2f57de59592322, type: 3}
+      propertyPath: m_ScreenMatchMode
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2175412530268554283, guid: 8794a80729b56354fa2f57de59592322, type: 3}
       propertyPath: m_PresetInfoIsWorld
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2175412530268554283, guid: 8794a80729b56354fa2f57de59592322, type: 3}
+      propertyPath: m_ReferenceResolution.x
+      value: 1920
+      objectReference: {fileID: 0}
+    - target: {fileID: 2175412530268554283, guid: 8794a80729b56354fa2f57de59592322, type: 3}
+      propertyPath: m_ReferenceResolution.y
+      value: 1080
       objectReference: {fileID: 0}
     - target: {fileID: 2175412530268554294, guid: 8794a80729b56354fa2f57de59592322, type: 3}
       propertyPath: m_Name
@@ -3194,6 +3210,14 @@ PrefabInstance:
     - target: {fileID: 2175412530528959744, guid: 8794a80729b56354fa2f57de59592322, type: 3}
       propertyPath: m_AspectRatio
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2175412531020122280, guid: 8794a80729b56354fa2f57de59592322, type: 3}
+      propertyPath: m_OverrideSorting
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2175412531020122280, guid: 8794a80729b56354fa2f57de59592322, type: 3}
+      propertyPath: m_OverridePixelPerfect
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2175412531810374660, guid: 8794a80729b56354fa2f57de59592322, type: 3}
       propertyPath: m_IsActive
