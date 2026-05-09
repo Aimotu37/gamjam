@@ -9,18 +9,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e25932e895610f442a8a9feb0ba92796, type: 3}
-  m_Name: PlayClip
+  m_Script: {fileID: 11500000, guid: 25004e57e73da48e7aee064ad4603fe6, type: 3}
+  m_Name: PlaySleepVideo
   m_EditorClassIdentifier: 
   triggerState: 0
   useFadeIn: 1
-  useFadeOut: 0
+  useFadeOut: 1
   fadeSpeed: 2
   isAudioFade: 1
   targetBGMVolume: 0.6
   videoClip: {fileID: 32900000, guid: 752332ed1e3f64e52a91e37a062ace6b, type: 3}
   transitionSFX: {fileID: 0}
-  waitForClip: 0
+  waitForClip: 1
   loopVideo: 0
   enableDebugLog: 1
   destroyPlayerOnEnd: 0
