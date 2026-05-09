@@ -3100,8 +3100,8 @@ MonoBehaviour:
   _uiVideoPlayer: {fileID: 0}
   _uiRenderTexture: {fileID: 0}
   _transitionMaskGroup: {fileID: 0}
-  sfxSource: {fileID: 0}
-  dialogueManager: {fileID: 0}
+  sfxSource: {fileID: 1606480128}
+  dialogueManager: {fileID: 223367415}
   child_neutral: {fileID: 21300000, guid: 74665b29e4017814da936b25358bf491, type: 3}
   child_happy1: {fileID: 21300000, guid: 058d795b1523ae14aa2f1b366356efb8, type: 3}
   child_happy2: {fileID: 21300000, guid: 77d0cff24627b814386963dc34444155, type: 3}
@@ -3745,7 +3745,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 62098363ac77b1a40aaef7707ae0a1c7, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 255e6b93ea9ee994f8bb00ee094f088d, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.42
   m_Pitch: 1
