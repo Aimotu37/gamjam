@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: CakeAudioOn
   m_EditorClassIdentifier: 
   triggerState: 9
-  command: 1
+  command: 0
   clip: {fileID: 8300000, guid: 60ca48703fd39c24b82531ee48163926, type: 3}
   volume: 0.74
   fadeDuration: 1

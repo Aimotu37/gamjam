@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 98631841dfea1ab43a91af861af324fa, type: 3}
-  m_Name: BarbecueAudioOn
+  m_Name: BGMPlayAgain
   m_EditorClassIdentifier: 
-  triggerState: 9
-  command: 0
-  clip: {fileID: 8300000, guid: a4ee962e8a44aa94ab60ea643310ba82, type: 3}
-  volume: 0.74
+  triggerState: 0
+  command: 1
+  clip: {fileID: 8300000, guid: b3d56ceea5957f3419849d3180e4c26f, type: 3}
+  volume: 0.85
   fadeDuration: 1
-  loop: 0
+  loop: 1
