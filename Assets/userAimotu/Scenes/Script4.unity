@@ -728,8 +728,7 @@ MonoBehaviour:
     - {fileID: 11400000, guid: 1013031fbbe009a4da67bd05d26814db, type: 2}
     - {fileID: 11400000, guid: f5773e11838e74c4e904730e335336c6, type: 2}
     - {fileID: 11400000, guid: 3c2bd23751c6249678aee63d34d4ca3a, type: 2}
-    - {fileID: 11400000, guid: b3788a11aaa5d46e6a5e6959a4432574, type: 2}
-    - {fileID: 11400000, guid: eaa01827471ee8043b1d552ee2abc563, type: 2}
+    - {fileID: 11400000, guid: f88b9b597518747d9bf858bd0d4ad119, type: 2}
     - {fileID: 11400000, guid: d525a73adc59e1142aca5ca46e2a4372, type: 2}
   clickSFX: {fileID: 8300000, guid: c29ba37ad755d3749ab629b12d15ae9f, type: 3}
 --- !u!224 &223367412 stripped
