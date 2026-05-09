@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Video;
 using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -19,6 +20,10 @@ public class MainMenuController : SceneManagerBase
     public AudioClip openSound;
     public AudioClip hoverSound;
     public AudioClip clickSound;
+    
+    [Header("Video")]
+    public VideoPlayer introVideoPlayer;
+    public GameObject mainPanel;
 
     protected override RoomState InitialState => RoomState.None;
     public override GameObject TaskModuleObject => null;
@@ -27,6 +32,20 @@ public class MainMenuController : SceneManagerBase
     {
         base.Start();
 
+        if (mainPanel != null) mainPanel.SetActive(false);
+
+        if (introVideoPlayer != null)
+        {
+            // 注册视频播放结束后的回调
+            introVideoPlayer.loopPointReached += OnVideoFinished;
+            introVideoPlayer.Play();
+        }
+        else
+        {
+            // 如果没分配视频，直接显示界面
+            ShowMainMenu();
+        }
+        
         if (continueBtn != null)
         {
             continueBtn.interactable = SaveSystem.HasSaveFile();
@@ -122,5 +141,20 @@ public class MainMenuController : SceneManagerBase
         });
 
         trigger.triggers.Add(entry);
+    }
+
+    private void OnVideoFinished(VideoPlayer vp)
+    {
+        vp.gameObject.SetActive(false);
+        ShowMainMenu();
+    }
+
+    private void ShowMainMenu()
+    {
+        if (mainPanel != null)
+        {
+            mainPanel.SetActive(true);
+            
+        } 
     }
 }
