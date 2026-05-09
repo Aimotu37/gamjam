@@ -13468,7 +13468,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 960cbd29947ca6643a8e865fb3c4a00d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
+  speed: 4
   footstepSource: {fileID: 1586963482}
   background: {fileID: 1673434993}
 --- !u!58 &1310276391
