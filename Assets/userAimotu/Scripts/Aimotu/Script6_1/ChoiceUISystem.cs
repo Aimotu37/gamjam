@@ -18,6 +18,7 @@ public class ChoiceUISystem : MonoBehaviour
         var gm = FindObjectOfType<S61.GameManager>();
         if (gm != null) return (IGameManager)gm;
 
+
         return null;
     }
     [Header("UI 引用")]
